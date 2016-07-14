@@ -17,6 +17,8 @@
 <!--<link href="css/navbar-fixed-top.css" rel="stylesheet">-->
   </head>
   <body>
+		<div id="fadeWhite"> </div>  
+		
 		<nav id="fixedNavBar" class="navbar navbar-default navbar-fixed-top">
       <div class="container resposive_nav">
         <div class="navbar-header">
@@ -30,18 +32,19 @@
 					<div class="logo">
 						<dl>
 							<dt>
-								<img id="persion1" height="60" width="60" src="imgs/persion1.jpg">
-								<img id="persion2" height="60" width="60" src="imgs/persion2.jpg">
+								<img id="persion1" height="60" width="60" src="imgs/person1_.jpg">
+								<img id="persion2" height="60" width="60" src="imgs/person2_.jpg">
 							</dt>
 							<dd><dd>
 						</dl>
 					</div>
-					<a class="navbar-brand oneng" href="index.html" style="margin-left: 20px;">Project name</a>
+					<a class="navbar-brand oneng" href="index.html" style="margin-left: 20px;">RESUME</a>
 					
         </div>
         <div id="navbar" class="navbar-collapse collapse inner">
+					<div id="navSelected"></div>
           <ul class="nav navbar-nav navbar-right">
-            <li class="custom_active"><a id="demo1Btn" href="#demo1">Home</a></li>
+            <li id="navCurr" class="custom_active"><a id="demo1Btn" href="#demo1">Home</a></li>
             <li><a id="demo2Btn" href="#demo2">Notes</a></li>
             <li><a id="demo3Btn" href="#demo3">Experience</a></li>
 						<li><a id="demo4Btn" href="javascript:alert('Building...soon')">About</a></li>
@@ -57,7 +60,7 @@
 			
 				<section class="homebackground" id="demo1" style="background:#DD4E3C"><!--homebackground background-image: url(imgs/background1c.jpg)-->
 					<div class="cover-container wow fadeInDown">
-						<div class="inner cover contenttitle">
+						<div class="inner cover contenttitle" style="visibility:hidden">
 							<h4 class="cover-heading"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h1>
 							<p class="divider"></p>
 							<p class="lead_adv">我是邱杰</p>
@@ -72,28 +75,38 @@
 				</section>
 				
 				<section class="homebackground" id="demo2" style="background:#12F39C">
+					<div class="inner">
+							<h3 class="cover-heading">简单介绍</h3>
+							<div class="decoration"></div>
+						</div>
+				
 				</section>
 				
 				<section class="homebackground" id="demo3" style="background:#8ACDFF">
 				</section>
       
 			</div>
-		
+			
     </div>
 		
+		<div id="demo1Btn" class="demo1Btn">
+      <a class="first-link" href="">&nbsp</a>
+      <a href="">UP</a>
+    </div>  
 
 		<footer>
 			<p>Like it? Contact <a href="#" title="Here we go">qiujie8092916@126.com</a>.</p>
 		</footer>
 		
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
-		<script src="js/wow.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/Scrolld.0.2.1.js"></script>
+		<script src="js/scrolld.min.js"></script>
 		<script src="js/index.js"></script>
 
-		<script></script>
+		<script>
+			$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
+			$('#fadeWhite').fadeOut(400);
+		</script>
   </body>
 </html>
