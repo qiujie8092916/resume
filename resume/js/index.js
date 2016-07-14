@@ -1,6 +1,9 @@
 ﻿$(function(){
 		var $win = $(window)
-		setTimeout(function(){$(".decoration").css("width", $(this).prev(".cover-heading").width())},2000)
+		setTimeout(function(){
+			var $homebackground_id = $($("#navCurr").children().attr("href"))
+			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
+		},2000)
 		
 		if($(document).width() <= 768){
 			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
@@ -113,10 +116,4 @@
 					$("#persion2").animate({opacity: "0"}, 600)
 			}
 		)
-		/*
-		$(".oneng").hover(function(){
-				$(this).text("Resume")
-		}, function(){
-				$(this).text("个人简历")
-		})*/
 })
