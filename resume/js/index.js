@@ -1,4 +1,23 @@
 ﻿$(function(){
+		var $win = $(window)
+		setTimeout(function(){$(".decoration").css("width", $(this).prev(".cover-heading").width())},2000)
+		
+		if($(document).width() <= 768){
+			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
+				//$("ul.nav.navbar-nav.navbar-right").toggle()
+				$("#navbar").removeClass("in")
+				$("button.navbar-toggle").css("background", "transparent")
+			})
+			
+			$("button.navbar-toggle.collapsed").click(function(){
+					if(!$("#navbar").hasClass("in")){
+							$(this).css("background", "#ddd")
+					} else{
+							$(this).css("background", "transparent")
+					}
+			})
+		}
+	
 		//擦除效果
 		jQuery.extend(jQuery.easing, {
 				easeOutBack: function (x, t, b, c, d, s){
@@ -8,7 +27,6 @@
 		});
 	
 	//nav初始化选中
-		var $win = $(window)
 		var navCurr = $("#navCurr")
 		$("#navSelected").css("left", navCurr[0].offsetLeft)
 		var changeActive = function(e){
@@ -26,11 +44,11 @@
 				setTimeout(function(){
 						var y = $win.scrollTop()
 						var h = $win.height()
+						var res = y / h
 						var hBtn = $('.demo1Btn')
 						var upM = 'upMotion'
 						var upOM = 'upOutMotion'
 						a.stopImmediatePropagation()
-						var res = y / h
 						
 						if(y >= h / 2){
 								hBtn.fadeIn(1).removeClass(upOM).addClass(upM);
@@ -39,22 +57,25 @@
 						} else{
 								hBtn.fadeOut(1000).removeClass(upM).addClass(upOM);
 						}
-						
-						if(res < 2/3){
-								changeActive($("#demo1Btn"))
-								removeActive($("#demo1Btn"))
-						} else if((2/3) <= res && res < (1+2/3)){
-								changeActive($("#demo2Btn"))
-								removeActive($("#demo2Btn"))
-						} else if((1+2/3) <= res){
-								changeActive($("#demo3Btn"))
-								removeActive($("#demo3Btn"))
+						var $bnt, $demo
+						if(res <= 1){
+								$bnt = $("#demo1Btn")
+								$demo = $("#demo1")
+						} else if((1) < res && res <= (2)){
+								$bnt = $("#demo2Btn")
+								$demo = $("#demo2")
+						} else if((2) <res){
+								$bnt = $("#demo3Btn")
+								$demo = $("#demo3")
 						}
+						changeActive($bnt)
+						removeActive($bnt)
+						setTimeout(function(){$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())},300)
+						
 						navCurr = $("#navCurr")
 						$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
 						$("#navSelected").width($(".custom_active").width())
 						
-						$(".decoration").css("width", "100px")
 						return false;
 				}, 200);
 		})
