@@ -66,6 +66,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 	.navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:hover, .navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:focus { border-bottom: 0; color:#FF6F79; }
 	.navbar-brand.oneng{font-size:18px;}
 	.resposive_nav{ margin:0; padding:0 10px; width:100%; }
+	.webtip{display:none;}
 	
 	#navbar{ padding:0; overflow-x: hidden;}
 	#navSelected{display:none}
