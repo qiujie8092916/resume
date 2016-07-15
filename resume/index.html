@@ -13,7 +13,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/cover.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
-		<link href="css/grid.css" rel="stylesheet">
+<!--<link href="css/grid.css" rel="stylesheet"> -->
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/jquery.qtip.css" rel="stylesheet">
 		<script>
@@ -25,7 +25,7 @@
 		<div id="fadeWhite"> </div>  
 		
 		<nav id="fixedNavBar" class="navbar navbar-default navbar-fixed-top">
-      <div class="container resposive_nav">
+      <div class="container resposive_nav col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -37,13 +37,13 @@
 					<div class="logo">
 						<dl>
 							<dt>
-								<img id="persion1" height="60" width="60" src="imgs/person1_.jpg">
-								<img id="persion2" height="60" width="60" src="imgs/person2_.jpg">
+								<img id="persion1" height="60" width="60" src="imgs/person1.jpg">
+								<img id="persion2" height="60" width="60" src="imgs/person2.jpg">
 							</dt>
 							<dd><dd>
 						</dl>
 					</div>
-					<a class="navbar-brand oneng" href="index.html" style="margin-left: 20px;">RESUME</a>
+					<a class="navbar-brand oneng" href="index.html">RESUME</a>
 					
         </div>
         <div id="navbar" class="navbar-collapse collapse inner">
@@ -78,21 +78,18 @@
       <div class="site-wrapper-inner">
 			
 				<section class="homebackground" id="demo1" style="background:#DD4E3C"><!--homebackground background-image: url(imgs/background1c.jpg)-->
-						<div class="inner cover contenttitle" style="visibility:hidden; margin-top:210px;">
-							<h4 class="cover-heading"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
+						<div class="inner cover" style="/visibility:hidden; margin-top:210px;">
+							<h4 class="contenttitle"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
 							<p class="decoration"></p>
-							<p class="lead_adv">我是邱杰</p>
-							<p class="lead_adv">25岁</p>
-							<p class="lead_adv">qiujie8092916@126.com</p>
-							<p class="lead_adv">Web前端、网站建设</p>
-<!--					<p class="lead">
-								<a href="#" class="btn btn_custom btn-default">Learn more</a>
-							</p> -->
+							<p class="lead_adv contenttitle">我叫邱杰</p>
+							<p class="lead_adv contenttitle">25岁</p>
+							<p class="lead_adv contenttitle">qiujieee_empty@outlook.com</p>
+							<p class="lead_adv contenttitle">Web前端、网站建设</p>
 						</div>
 				</section>
 				
 				<section class="homebackground" id="demo2" style="background:#12F39C">
-					<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:100px;">
+					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
 						<h3 class="cover-heading"><strong>简单介绍</strong></h3>
 						<div class="decoration"></div>
 					</div>
@@ -100,22 +97,69 @@
 				</section>
 				
 				<section class="homebackground" id="demo3" style="background:#ECF343">
-					<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:100px;">
+					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
 						<h3 class="cover-heading"><strong>工作经验</strong></h3>
 						<div class="decoration"></div>
 					</div>
 					<h5 class="subt">Experience</h5>
 				</section>
 				
-				<section class="homebackground" id="demo4" style="background:#8ACDFF">
-					<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:70px;">
+				<section class="homebackground" id="demo4" style="background:#8ACDFF; position: relative">
+					<div class="inner cover" style="/visibility:hidden; margin-top:1%;">
 						<h3 class="cover-heading"><strong>项目经验</strong></h3>
 						<div class="decoration"></div>
-						<div class="">
-							
-						</div>
+						
 					</div>
 					<h5 class="subt">Project</h5>
+						<div class="major col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2" style="position:absolute; top: 27%;">
+						
+							<div class="col-lg-6 col-md-6 slideL" style="margin-bottom: 50px;">
+								<div class="col-lg-6 col-md-6">
+									<div style="background-color:#fff"><img src="imgs/test_project1.png" height="190px" width="100%"></div>
+								</div>
+								<p class="col-lg-6 col-md-6 legend">
+									在 Strurs2 框架下以 MVC 设计 Java 为后台，以表格展现 mysql 数据库中流媒体文件的信息，以及对新的流媒体添加信息后上传。
+									<span class="divider"></span>
+									用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。
+									<a href="#" target="_blanck" class="btn btn_custom btn-default">Check It</a>
+								</p>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 slideR" style="margin-bottom: 50px;">
+								<div class="col-lg-6 col-md-6">
+									<div style="background-color:#fff"><img src="imgs/test_project2.png" height="190px" width="100%"></div>
+								</div>
+								<p class="col-lg-6 col-md-6 legend r_legend">
+									Highcharts 为框架， ajax 通过 php 后台查询 mysql 数据库，查询流媒体测试结果。
+									<span class="divider"></span>
+									依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。
+									<a href="http://localhost/CTS_log" target="_blanck" class="btn btn_custom btn-default">Check It</a>
+								</p>
+							</div>
+
+							<div class="col-lg-6 col-md-6 slideL">
+								<div class="col-lg-6 col-md-6">
+									<div style="background-color:#fff"><img src="imgs/test_project3.jpg" height="190px" width="100%"></div>
+								</div>
+								<p class="col-lg-6 col-md-6 legend">
+									Bootstrap Table 为框架，Client 端通过 mysql 查询 AutomationCase 在固定平台的不同job的测试结果。
+									<span class="divider"></span>
+									可通过搜索、过滤、日期查询等方式，展现每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到每次测试结果的日志、状态以及一键 Restart。
+								
+									<a href="http://localhost/ci" target="_blanck" class="btn btn_custom btn-default">Check It</a>
+								</p>
+							</div>
+							
+							<div class="col-lg-6 col-md-6 slideR">
+								<div class="col-lg-6 col-md-6">
+									<div style="background-color:#fff"><img src="imgs/test_project4.jpg" height="190px" width="100%"></div>
+								</div>
+								<p class="col-lg-6 col-md-6 legend r_legend">
+									<a href="#" target="_blanck" class="btn btn_custom btn-default">Check It</a>
+								</p>
+							</div>
+							
+						</div>
 				</section>
       
 			</div>

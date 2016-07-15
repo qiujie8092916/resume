@@ -1,12 +1,14 @@
 ﻿*{ margin:0; padding:0;}
+body{font-family: Microsoft YaHei  !important;}
+h1, h2, h3, h4, h5, h6{ display:inline;}
 
-.btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; 
+.btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s;}
 .btn_custom:hover{ background: transparent; color: #fff;}
-.contenttitle{ -webkit-animation: headerMotion 2.6s; -moz-animation: headerMotion 2.6s; -o-animation: headerMotion 2.6s; animation: headerMotion 2.6s;}
-.contenttitle h1, .contenttitle h2, .contenttitle h3, .contenttitle h4, .contenttitle h5, .contenttitle h6{ display:inline;}
-.cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);}
-.decoration{ width: 0px; height: 0; margin: 0 auto; margin-top:5px;
+.contenttitle{display: none}
+.cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+	-webkit-animation: headerMotion 1s; -moz-animation: headerMotion 1s; -o-animation: headerMotion 1s; animation: headerMotion 1s;}
+.decoration{ width: 0px; height: 0; margin: 0 auto 10px auto; margin-top:5px;
 	-moz-transition: width 1s;/* Firefox 4 */ -webkit-transition: width 1s;/* Safari and Chrome */ -o-transition: width 1s; /* Opera */}
 .decoration:after{ content:""; display: block; border-bottom:1px solid #fff;}
 .demo1Btn{ width: 50px; height: 50px; line-height: 50px; border: 2px solid rgba(255,255,255,0.5); text-align: center; right: 50px; bottom: 50px; z-index: 99; position: fixed; font-weight: 400; display: none; color: #fff; cursor: pointer; overflow: hidden; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;
@@ -15,24 +17,34 @@
 .demo1Btn a{ color: white; text-decoration: none; text-align: center; display: block;}
 .demo1Btn a:hover{text-decoration:none}
 .demo1Btn:hover .first-link{ margin-top: -50px;}
-.divider{ height: 1px; margin: 12px 1px; overflow: hidden; background-color: #e5e5e5; border-bottom: 1px solid #fff;}
+.divider{ border-bottom: 1px solid transparent; height: 1px; display: block; margin: 3px 0;}
 .first-link{ margin-top: 0em;   
   -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; transition: 0.5s;}
 .homebackground{ overflow: hidden; padding-top: 7% ;margin-top: 0; width:100%;
 	-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out;}
-
+.lead{ margin-top: 10px;}
 .lead_adv{ font-size:17px;}
-.logo{ display: inline-block; margin-right:20px; float: left; height: 60px; width: 60px;}
-.logo img{ margin-top: 5px; border-radius: 30px; position: absolute; transition: box-shadow .5s;}
+.legend.r_legend{ padding-left: 7px !important;}
+.legend:not(.r_legend){ padding-left: 7px !important; padding-right: 10px !important;}
+.logo{ display: inline-block; margin-right:20px; float: left; height: 60px; width: 60px; position: relative;}
+.logo img{ margin-top: 5px; border-radius: 30px; position: absolute; transition: box-shadow .5s; left: 0;}
 .logo #persion2{ opacity:0 }
 .logo img:hover{ box-shadow: 0 0 10px #1FAEFF;}
+.major{ margin-top:20px;}
+.major p{ display：table; height: 190px; position:relative; text-align: left; font-size: 13.5px;}
+.major img{ opacity: 0.7; 
+	-webkit-transition: opacity 0.4s; -moz-transition: opacity 0.4s; -ms-transition: opacity 0.4s; -o-transition: opacity 0.4s; transition: opacity 0.4s;}
+.major img:hover{ opacity: 1;}
 .navbar-default .navbar-nav > li > a { color: #333;}
 .navbar-brand{ display: block; color: #333 !important;}
 .navbar-brand:hover{/*
 	-webkit-animation: shake 0.7s; -moz-animation: shake 0.7s; -o-animation: shake 0.7s; animation: shake 0.7s;*/
 	-webkit-animation: hinge 4s; -moz-animation: hinge 4s; -o-animation: hinge 4s; animation: hinge 4s;}
+.slideL, .slideR{display:none;}
+.slideleft{ -webkit-animation: slideInLeft 1s; -moz-animation: slideInLeft 1s; -o-animation: slideInLeft 1s; animation: slideInLeft 1s;}
+.slideright{ -webkit-animation: slideInRight 1s; -moz-animation: slideInRight 1s; -o-animation: slideInRight 1s; animation: slideInRight 1s;}
 .subt{display:none;}
-.subtitle{ display:inline; -webkit-animation: swing 1s 1s; -moz-animation: swing 1s 1s; -o-animation: swing 1s 1s; animation: swing 1s 1s;}
+.subtitle{ -webkit-animation: swing 1s; -moz-animation: swing 1s; -o-animation: swing 1s; animation: swing 1s;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
 .webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; 
@@ -47,12 +59,21 @@
 
 footer{ background:#555; padding:80px 0; margin-top: -5px;}
 footer p { margin:0 !important;}
+img{ border: 0;}
 nav{ display: -webkit-box; background: rgba(245,245,245,0.8) !important; color: #333 !important; box-shadow: 0 0 10px rgba(51,51,51,0.6); top: 0;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(1), #navSelected{ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(2){ -webkit-animation: navMotion 1.7s; -moz-animation: navMotion 1.7s; -o-animation: navMotion 1.7s; animation: navMotion 1.7s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 1.9s; -moz-animation: navMotion 1.9s; -o-animation: navMotion 1.9s; animation: navMotion 1.9s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2.1s; -moz-animation: navMotion 2.1s; -o-animation: navMotion 2.1s; animation: navMotion 2.1s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2.3s; -moz-animation: navMotion 2.3s; -o-animation: navMotion 2.3s; animation: navMotion 2.3s;}
+
+[class*="col-"] {
+		//padding-left: 0 !important;
+		//padding-right: 0 !important;
+    //padding: 0px !important;
+    //background-color: transparent !important;
+    //border: transparent !important;
+}
 
 /**************************
 			*PHONE*

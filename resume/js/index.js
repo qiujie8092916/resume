@@ -1,9 +1,13 @@
 ﻿$(function(){
 		var $win = $(window)
+		
+		$(".decoration").css("width", 0)
 		setTimeout(function(){
 			var $homebackground_id = $($("#navCurr").children().attr("href"))
+			$homebackground_id.find(".subt").removeClass("subt").addClass("subtitle")
+			$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
-		},2000)
+		},500)
 		
 		if($(document).width() <= 768){
 			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
@@ -20,13 +24,7 @@
 					}
 			})
 		}
-		/*
-		$(".webtip").hover(function(){
-				$(this).next().fadeIn(400)
-		}, function(){
-				$(this).next().fadeOut(400)
-		})
-		*/
+
 		//擦除效果
 		jQuery.extend(jQuery.easing, {
 				easeOutBack: function (x, t, b, c, d, s){
@@ -84,8 +82,13 @@
 						
 						changeActive($bnt)
 						removeActive($bnt)
-						$demo.find(".subt").fadeIn(600).addClass("subtitle")
-						setTimeout(function(){$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())},300)
+						$demo.find(".slideL").removeClass("slideL").addClass("slideleft")
+						$demo.find(".slideR").removeClass("slideR").addClass("slideright")
+						setTimeout(function(){
+							$demo.find(".subt").removeClass("subt").addClass("subtitle")
+							$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
+							$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+						},300)
 						navCurr = $("#navCurr")
 						$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
 						$("#navSelected").width($(".custom_active").width())
