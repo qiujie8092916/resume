@@ -20,7 +20,13 @@
 					}
 			})
 		}
-	
+		/*
+		$(".webtip").hover(function(){
+				$(this).next().fadeIn(400)
+		}, function(){
+				$(this).next().fadeOut(400)
+		})
+		*/
 		//擦除效果
 		jQuery.extend(jQuery.easing, {
 				easeOutBack: function (x, t, b, c, d, s){
@@ -47,10 +53,14 @@
 				setTimeout(function(){
 						var y = $win.scrollTop()
 						var h = $win.height()
-						var res = y / h
+						//var res = y / h
 						var hBtn = $('.demo1Btn')
 						var upM = 'upMotion'
 						var upOM = 'upOutMotion'
+						var d1 = $("#demo1").offset().top,
+								d2 = $("#demo2").offset().top,
+								d3 = $("#demo3").offset().top,
+								d4 = $("#demo4").offset().top;
 						a.stopImmediatePropagation()
 						
 						if(y >= h / 2){
@@ -60,21 +70,22 @@
 						} else{
 								hBtn.fadeOut(1000).removeClass(upM).addClass(upOM);
 						}
+						
 						var $bnt, $demo
-						if(res <= 1){
-								$bnt = $("#demo1Btn")
-								$demo = $("#demo1")
-						} else if((1) < res && res <= (2)){
-								$bnt = $("#demo2Btn")
-								$demo = $("#demo2")
-						} else if((2) <res){
-								$bnt = $("#demo3Btn")
-								$demo = $("#demo3")
+						if(y <= d2){	//res <= 1
+								$bnt = $("#demo1Btn"); $demo = $("#demo1")
+						} else if(y > d2 && y <= d3){	//(1) < res && res <= (2)
+								$bnt = $("#demo2Btn"); $demo = $("#demo2")
+						} else if(y > d3 && y <= d4){	//(2) <res
+								$bnt = $("#demo3Btn"); $demo = $("#demo3")
+						} else if(y > d4){
+								$bnt = $("#demo4Btn"); $demo = $("#demo4")
 						}
+						
 						changeActive($bnt)
 						removeActive($bnt)
+						$demo.find(".subt").fadeIn(600).addClass("subtitle")
 						setTimeout(function(){$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())},300)
-						
 						navCurr = $("#navCurr")
 						$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
 						$("#navSelected").width($(".custom_active").width())

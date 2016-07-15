@@ -9,11 +9,13 @@
 		<link rel="icon" href="imgs/favicon.ico">
     <title>Qiujie's Resume</title>
 
+		<link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Lato:300,400,700'>
     <link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/cover.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 		<link href="css/grid.css" rel="stylesheet">
 		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/jquery.qtip.css" rel="stylesheet">
 		<script>
 			window.onload = function(){window.scrollTo(0, 0)}
 		</script>
@@ -35,8 +37,8 @@
 					<div class="logo">
 						<dl>
 							<dt>
-								<img id="persion1" height="60" width="60" src="imgs/person1.jpg">
-								<img id="persion2" height="60" width="60" src="imgs/person2.jpg">
+								<img id="persion1" height="60" width="60" src="imgs/person1_.jpg">
+								<img id="persion2" height="60" width="60" src="imgs/person2_.jpg">
 							</dt>
 							<dd><dd>
 						</dl>
@@ -47,21 +49,36 @@
         <div id="navbar" class="navbar-collapse collapse inner">
 					<div id="navSelected"></div>
           <ul class="nav navbar-nav navbar-right">
-            <li id="navCurr" class="custom_active"><a id="demo1Btn" href="#demo1">Home</a></li>
-            <li><a id="demo2Btn" href="#demo2">Introduction</a></li>
-            <li><a id="demo3Btn" href="#demo3">Experience</a></li>
+					
+            <li id="navCurr" class="custom_active">
+							<a id="demo1Btn" href="#demo1">Home</a>
+						</li>
+            <li>
+							<a id="demo2Btn" href="#demo2">Introduce</a>
+						</li>
+            <li>
+							<a id="demo3Btn" href="#demo3">Experience</a>
+						</li>
+						<li>
+							<a id="demo4Btn" href="#demo4">Project</a>
+						</li>
 						<li><a href="javascript:alert('qiujieee_empty@outlook.com')">Contact</a></li>
+						
           </ul>
         </div>
       </div>
     </nav>
-	
+		<div class="webtip"></div>
+		<div class="hidden"> <!-- This class should hide the element, change it if needed -->
+				<p>这是一个基于<code>Bootstrap</code>框架下所构建的网站</p>
+				<p>随处可见一些惊喜特效哦 <strong>: )</strong></p>
+		</div>
 	
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
 			
 				<section class="homebackground" id="demo1" style="background:#DD4E3C"><!--homebackground background-image: url(imgs/background1c.jpg)-->
-						<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:210px;">
+						<div class="inner cover contenttitle" style="visibility:hidden; margin-top:210px;">
 							<h4 class="cover-heading"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
 							<p class="decoration"></p>
 							<p class="lead_adv">我是邱杰</p>
@@ -79,9 +96,26 @@
 						<h3 class="cover-heading"><strong>简单介绍</strong></h3>
 						<div class="decoration"></div>
 					</div>
+					<h5 class="subt">Introduce</h5>
 				</section>
 				
-				<section class="homebackground" id="demo3" style="background:#8ACDFF">
+				<section class="homebackground" id="demo3" style="background:#ECF343">
+					<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:100px;">
+						<h3 class="cover-heading"><strong>工作经验</strong></h3>
+						<div class="decoration"></div>
+					</div>
+					<h5 class="subt">Experience</h5>
+				</section>
+				
+				<section class="homebackground" id="demo4" style="background:#8ACDFF">
+					<div class="inner cover contenttitle" style="/visibility:hidden; margin-top:70px;">
+						<h3 class="cover-heading"><strong>项目经验</strong></h3>
+						<div class="decoration"></div>
+						<div class="">
+							
+						</div>
+					</div>
+					<h5 class="subt">Project</h5>
 				</section>
       
 			</div>
@@ -101,11 +135,18 @@
     <script src="js/bootstrap.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/scrolld.min.js"></script>
+		<script src="js/jquery.qtip.js"></script>
 		<script src="js/index.js"></script>
-		
-			<script>
-			$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
-			$('#fadeWhite').fadeOut(400);
+		<script>
+		$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
+		$('.webtip').each(function(){
+				$(this).qtip({
+						content: {text: $(this).next("div")},
+						position: {my: 'left top', at: 'center right'},
+						style: {classes: 'qtip-light qtip-shadow qtip-rounded'}//换样式 阴影 圆角叠加
+				})
+		})
+		$('#fadeWhite').fadeOut(400);
 		</script>
   </body>
 </html>

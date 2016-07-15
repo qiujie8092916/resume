@@ -5,7 +5,8 @@
 .btn_custom:hover{ background: transparent; color: #fff;}
 .contenttitle{ -webkit-animation: headerMotion 2.6s; -moz-animation: headerMotion 2.6s; -o-animation: headerMotion 2.6s; animation: headerMotion 2.6s;}
 .contenttitle h1, .contenttitle h2, .contenttitle h3, .contenttitle h4, .contenttitle h5, .contenttitle h6{ display:inline;}
-.decoration{ width: 0px; height: 39px; margin: 0 auto; margin-top:5px;
+.cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);}
+.decoration{ width: 0px; height: 0; margin: 0 auto; margin-top:5px;
 	-moz-transition: width 1s;/* Firefox 4 */ -webkit-transition: width 1s;/* Safari and Chrome */ -o-transition: width 1s; /* Opera */}
 .decoration:after{ content:""; display: block; border-bottom:1px solid #fff;}
 .demo1Btn{ width: 50px; height: 50px; line-height: 50px; border: 2px solid rgba(255,255,255,0.5); text-align: center; right: 50px; bottom: 50px; z-index: 99; position: fixed; font-weight: 400; display: none; color: #fff; cursor: pointer; overflow: hidden; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;
@@ -30,9 +31,16 @@
 .navbar-brand:hover{/*
 	-webkit-animation: shake 0.7s; -moz-animation: shake 0.7s; -o-animation: shake 0.7s; animation: shake 0.7s;*/
 	-webkit-animation: hinge 4s; -moz-animation: hinge 4s; -o-animation: hinge 4s; animation: hinge 4s;}
+.subt{display:none;}
+.subtitle{ display:inline; -webkit-animation: swing 1s 1s; -moz-animation: swing 1s 1s; -o-animation: swing 1s 1s; animation: swing 1s 1s;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
-
+.webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; 
+	-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;
+	-webkit-transition: all 0.7s; -moz-transition: all 0.7s; -ms-transition: all 0.7s; -o-transition: all 0.7s; transition: all 0.7s;}
+.webtip:hover{ border: 1px solid rgba(255, 255, 255, .5); background: rgba(245,245,245,0.5);}
+.webtips{ position: fixed; top: 85px; left: 40px;}
+	
 #fadeWhite{position: fixed; width: 100%; background: #fff; height: 100%; min-height: 100%; left: 0px; top: 0px; z-index: 99999;}
 #navSelected{ position:absolute; top: 75px; height:39px; line-height:33px;}
 #navSelected:after{ content:""; display: block; border-bottom:2px solid #fff}
@@ -44,7 +52,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(1), #navSelected{ -webkit-animatio
 ul.navbar-right.nav.navbar-nav > li:nth-child(2){ -webkit-animation: navMotion 1.7s; -moz-animation: navMotion 1.7s; -o-animation: navMotion 1.7s; animation: navMotion 1.7s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 1.9s; -moz-animation: navMotion 1.9s; -o-animation: navMotion 1.9s; animation: navMotion 1.9s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2.1s; -moz-animation: navMotion 2.1s; -o-animation: navMotion 2.1s; animation: navMotion 2.1s;}
-
+ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2.3s; -moz-animation: navMotion 2.3s; -o-animation: navMotion 2.3s; animation: navMotion 2.3s;}
 
 /**************************
 			*PHONE*
@@ -69,4 +77,5 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2
 	ul.navbar-right.nav.navbar-nav > li:nth-child(2){ -webkit-animation: navMotion 0.6s; -moz-animation: navMotion 0.6s; -o-animation: navMotion 0.6s; animation: navMotion 0.6s;}
 	ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 0.9s; -moz-animation: navMotion 0.9s; -o-animation: navMotion 0.9s; animation: navMotion 0.9s;}
 	ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 1.2s; -moz-animation: navMotion 1.2s; -o-animation: navMotion 1.2s; animation: navMotion 1.2s;}
+	ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
 }
