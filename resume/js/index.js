@@ -4,10 +4,10 @@
 		$(".decoration").css("width", 0)
 		setTimeout(function(){
 			var $homebackground_id = $($("#navCurr").children().attr("href"))
-			$homebackground_id.find(".subt").removeClass("subt").addClass("subtitle")
+			$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
 			$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
-		},500)
+		},300)
 		
 		if($(document).width() <= 768){
 			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
@@ -82,13 +82,18 @@
 						
 						changeActive($bnt)
 						removeActive($bnt)
-						$demo.find(".slideL").removeClass("slideL").addClass("slideleft")
-						$demo.find(".slideR").removeClass("slideR").addClass("slideright")
+						
+						$(".decoration").css("width", 0)
+
+						$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+						$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
+						$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+						setTimeout(function(){$demo.find(".subt").removeClass("subt").addClass("swing")}, 800)
 						setTimeout(function(){
-							$demo.find(".subt").removeClass("subt").addClass("subtitle")
-							$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
-							$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+							$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")
+							$demo.find(".slideR").removeClass("slideR").addClass("slideInRight")
 						},300)
+						
 						navCurr = $("#navCurr")
 						$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
 						$("#navSelected").width($(".custom_active").width())

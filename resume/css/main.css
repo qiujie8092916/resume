@@ -1,14 +1,14 @@
 ﻿*{ margin:0; padding:0;}
 body{font-family: Microsoft YaHei  !important;}
-h1, h2, h3, h4, h5, h6{ display:inline;}
+h1, h2, h3, h4, h5, h6{ display:inline-block;}
 
 .btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s;}
 .btn_custom:hover{ background: transparent; color: #fff;}
-.contenttitle{display: none}
 .cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	-webkit-animation: headerMotion 1s; -moz-animation: headerMotion 1s; -o-animation: headerMotion 1s; animation: headerMotion 1s;}
-.decoration{ width: 0px; height: 0; margin: 0 auto 10px auto; margin-top:5px;
+.pagetitle{ -webkit-animation: rubberBand 2s; -moz-animation: rubberBand 2s; -o-animation: rubberBand 2s; animation: rubberBand 2s;}
+.decoration{ width: 0px; height: 0; margin: 0 auto 3px auto;
 	-moz-transition: width 1s;/* Firefox 4 */ -webkit-transition: width 1s;/* Safari and Chrome */ -o-transition: width 1s; /* Opera */}
 .decoration:after{ content:""; display: block; border-bottom:1px solid #fff;}
 .demo1Btn{ width: 50px; height: 50px; line-height: 50px; border: 2px solid rgba(255,255,255,0.5); text-align: center; right: 50px; bottom: 50px; z-index: 99; position: fixed; font-weight: 400; display: none; color: #fff; cursor: pointer; overflow: hidden; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;
@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6{ display:inline;}
   -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; transition: 0.5s;}
 .homebackground{ overflow: hidden; padding-top: 7% ;margin-top: 0; width:100%;
 	-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out;}
+.homebackground h3{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);}
 .lead{ margin-top: 10px;}
 .lead_adv{ font-size:17px;}
 .legend.r_legend{ padding-left: 7px !important;}
@@ -40,11 +41,7 @@ h1, h2, h3, h4, h5, h6{ display:inline;}
 .navbar-brand:hover{/*
 	-webkit-animation: shake 0.7s; -moz-animation: shake 0.7s; -o-animation: shake 0.7s; animation: shake 0.7s;*/
 	-webkit-animation: hinge 4s; -moz-animation: hinge 4s; -o-animation: hinge 4s; animation: hinge 4s;}
-.slideL, .slideR{display:none;}
-.slideleft{ -webkit-animation: slideInLeft 1s; -moz-animation: slideInLeft 1s; -o-animation: slideInLeft 1s; animation: slideInLeft 1s;}
-.slideright{ -webkit-animation: slideInRight 1s; -moz-animation: slideInRight 1s; -o-animation: slideInRight 1s; animation: slideInRight 1s;}
-.subt{display:none;}
-.subtitle{ -webkit-animation: swing 1s; -moz-animation: swing 1s; -o-animation: swing 1s; animation: swing 1s;}
+.slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
 .webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; 

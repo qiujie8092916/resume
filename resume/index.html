@@ -12,9 +12,9 @@
 		<link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Lato:300,400,700'>
     <link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/cover.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 <!--<link href="css/grid.css" rel="stylesheet"> -->
-		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/jquery.qtip.css" rel="stylesheet">
 		<script>
 			window.onload = function(){window.scrollTo(0, 0)}
@@ -37,8 +37,8 @@
 					<div class="logo">
 						<dl>
 							<dt>
-								<img id="persion1" height="60" width="60" src="imgs/person1.jpg">
-								<img id="persion2" height="60" width="60" src="imgs/person2.jpg">
+								<img id="persion1" height="60" width="60" src="imgs/person1_.jpg">
+								<img id="persion2" height="60" width="60" src="imgs/person2_.jpg">
 							</dt>
 							<dd><dd>
 						</dl>
@@ -78,7 +78,7 @@
       <div class="site-wrapper-inner">
 			
 				<section class="homebackground" id="demo1" style="background:#DD4E3C"><!--homebackground background-image: url(imgs/background1c.jpg)-->
-						<div class="inner cover" style="/visibility:hidden; margin-top:210px;">
+						<div class="inner cover" style="visibility:hidden; margin-top:210px;">
 							<h4 class="contenttitle"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
 							<p class="decoration"></p>
 							<p class="lead_adv contenttitle">我叫邱杰</p>
@@ -90,22 +90,22 @@
 				
 				<section class="homebackground" id="demo2" style="background:#12F39C">
 					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
-						<h3 class="cover-heading"><strong>简单介绍</strong></h3>
+						<h3 class="animated subtitle"><strong>简单介绍</strong></h3>
 						<div class="decoration"></div>
 					</div>
-					<h5 class="subt">Introduce</h5>
+					<h5 class="animated subt">Introduce</h5>
 				</section>
 				
 				<section class="homebackground" id="demo3" style="background:#8ACDFF; position: relative">
-					<div class="inner cover" style="/visibility:hidden; margin-top:1%;">
-						<h3 class="cover-heading"><strong>项目经验</strong></h3>
+					<div class="inner cover" style="margin-top:1%;">
+						<h3 class="animated subtitle"><strong>项目经验</strong></h3>
 						<div class="decoration"></div>
 						
 					</div>
-					<h5 class="subt">Project</h5>
+					<h5 class="animated subt">Project</h5>
 						<div class="major col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2" style="position:absolute; top: 27%;">
 						
-							<div class="col-lg-6 col-md-6 slideL" style="margin-bottom: 50px;">
+							<div class="col-lg-6 col-md-6 animated slideL" style="margin-bottom: 50px;">
 								<div class="col-lg-6 col-md-6">
 									<div style="background-color:#fff"><img src="imgs/test_project1.png" height="190px" width="100%"></div>
 								</div>
@@ -117,7 +117,7 @@
 								</p>
 							</div>
 							
-							<div class="col-lg-6 col-md-6 slideR" style="margin-bottom: 50px;">
+							<div class="col-lg-6 col-md-6 animated slideR" style="margin-bottom: 50px;">
 								<div class="col-lg-6 col-md-6">
 									<div style="background-color:#fff"><img src="imgs/test_project2.png" height="190px" width="100%"></div>
 								</div>
@@ -129,7 +129,7 @@
 								</p>
 							</div>
 
-							<div class="col-lg-6 col-md-6 slideL">
+							<div class="col-lg-6 col-md-6 animated slideL">
 								<div class="col-lg-6 col-md-6">
 									<div style="background-color:#fff"><img src="imgs/test_project3.jpg" height="190px" width="100%"></div>
 								</div>
@@ -142,7 +142,7 @@
 								</p>
 							</div>
 							
-							<div class="col-lg-6 col-md-6 slideR">
+							<div class="col-lg-6 col-md-6 animated slideR">
 								<div class="col-lg-6 col-md-6">
 									<div style="background-color:#fff"><img src="imgs/test_project4.jpg" height="190px" width="100%"></div>
 								</div>
@@ -156,10 +156,10 @@
 				
 				<section class="homebackground" id="demo4" style="background:#ECF343">
 					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
-						<h3 class="cover-heading"><strong>工作经验</strong></h3>
+						<h3 class="animated subtitle"><strong>工作经验</strong></h3>
 						<div class="decoration"></div>
 					</div>
-					<h5 class="subt">Experience</h5>
+					<h5 class="animated subt">Experience</h5>
 				</section>
 				
       
@@ -172,7 +172,7 @@
     </div>  
 
 		<footer>
-			<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>.</p>
+			<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>. | <a href="https://github.com/qiujie8092916" target="_blank">Github</p>
 		</footer>
 		
 <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js"></script>-->
@@ -183,6 +183,7 @@
 		<script src="js/jquery.qtip.js"></script>
 		<script src="js/index.js"></script>
 		<script>
+		$('#fadeWhite').fadeOut(400);
 		$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
 		$('.webtip').each(function(){
 				$(this).qtip({
@@ -191,7 +192,6 @@
 						style: {classes: 'qtip-light qtip-shadow qtip-rounded'}//换样式 阴影 圆角叠加
 				})
 		})
-		$('#fadeWhite').fadeOut(400);
 		</script>
   </body>
 </html>
