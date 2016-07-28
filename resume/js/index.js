@@ -87,7 +87,11 @@
 
 						$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 						$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
-						$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+						if($demo.attr("id") == "demo1"){
+							$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
+						} else{
+							$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+						}
 						setTimeout(function(){$demo.find(".subt").removeClass("subt").addClass("swing")}, 800)
 						setTimeout(function(){
 							$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")

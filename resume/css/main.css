@@ -1,6 +1,7 @@
 ﻿*{ margin:0; padding:0;}
 body{font-family: Microsoft YaHei  !important;}
 h1, h2, h3, h4, h5, h6{ display:inline-block;}
+h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 
 .btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s;}
