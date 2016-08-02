@@ -60,7 +60,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 #demo2 article:after{ bottom: 0; right: 0; border-right: 2px solid #fff; border-bottom: 2px solid #fff;}
 #demo2 article:before,#demo2 article:after{position:absolute; width: 40px; height: 40px; content: "";}
 #demo2 article{ position: relative; padding: 1% 1%; margin-top: 4%;}
-/*#demo2 article p{visibility: hidden;}*/
+#demo2 article p{visibility: hidden;}
 #fadeWhite{position: fixed; width: 100%; background: #fff; height: 100%; min-height: 100%; left: 0px; top: 0px; z-index: 99999;}
 #github img{vertical-align: bottom;}
 #github:hover, #github:focus{text-decoration: none;}
