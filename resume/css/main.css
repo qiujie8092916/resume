@@ -1,10 +1,12 @@
 ﻿*{ margin:0; padding:0;}
 body{font-family: Microsoft YaHei  !important;}
 h1, h2, h3, h4, h5, h6{ display:inline-block;}
+h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 
 .btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s;}
 .btn_custom:hover{ background: transparent; color: #fff;}
+.btn_custom:visited{background: rgba(255,255,255,0.3) !important; color: white;}
 .cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	-webkit-animation: headerMotion 1s; -moz-animation: headerMotion 1s; -o-animation: headerMotion 1s; animation: headerMotion 1s;}
 .pagetitle{ -webkit-animation: rubberBand 2s; -moz-animation: rubberBand 2s; -o-animation: rubberBand 2s; animation: rubberBand 2s;}
@@ -35,7 +37,7 @@ h1, h2, h3, h4, h5, h6{ display:inline-block;}
 .major p{ display：table; height: 190px; position:relative; text-align: left; font-size: 13.5px;}
 .major img{ opacity: 0.8; 
 	-webkit-transition: opacity 0.4s; -moz-transition: opacity 0.4s; -ms-transition: opacity 0.4s; -o-transition: opacity 0.4s; transition: opacity 0.4s;}
-.major img:hover{ opacity: 1;}
+.major img:hover{ opacity: 1 !important;}
 .navbar-default .navbar-nav > li > a { color: #333;}
 .navbar-brand{ display: block; color: #333 !important;}
 .navbar-brand:hover{/*

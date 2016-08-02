@@ -87,7 +87,11 @@
 
 						$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 						$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
-						$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+						if($demo.attr("id") == "demo1"){
+							$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
+						} else{
+							$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+						}
 						setTimeout(function(){$demo.find(".subt").removeClass("subt").addClass("swing")}, 800)
 						setTimeout(function(){
 							$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")
@@ -136,3 +140,24 @@
 			}
 		)
 })
+
+var php_console = function(){
+	$.when(defer("php/sys_console.php")).done(function(data){
+			//var json_result = eval('(' + data + ')');
+			//var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
+			console.log("over")
+	})
+}
+
+
+function defer(url, data){
+	var df = $.Deferred();
+	$.ajax({
+		type: "post",
+ 		url: url,
+		data: data,
+		async: false,
+		success: function(data, textStatus){df.resolve(data);}
+	});
+	return df.promise();
+}
