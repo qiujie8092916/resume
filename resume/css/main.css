@@ -46,6 +46,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .navbar-brand:hover{/*
 	-webkit-animation: shake 0.7s; -moz-animation: shake 0.7s; -o-animation: shake 0.7s; animation: shake 0.7s;*/
 	-webkit-animation: hinge 4s; -moz-animation: hinge 4s; -o-animation: hinge 4s; animation: hinge 4s;}
+.ski_icon{ margin-top: 4%; position: relative;}
 .slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
@@ -58,7 +59,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 #demo2 article:before{ top: 0; left: 0; border-top: 2px solid #fff; border-left: 2px solid #fff;}	/*#5686D6*/
 #demo2 article:after{ bottom: 0; right: 0; border-right: 2px solid #fff; border-bottom: 2px solid #fff;}
 #demo2 article:before,#demo2 article:after{position:absolute; width: 40px; height: 40px; content: "";}
-#demo2 article{ position: relative; padding: 1% 1%; margin-top: 5%;}
+#demo2 article{ position: relative; padding: 1% 1%; margin-top: 4%;}
 /*#demo2 article p{visibility: hidden;}*/
 #fadeWhite{position: fixed; width: 100%; background: #fff; height: 100%; min-height: 100%; left: 0px; top: 0px; z-index: 99999;}
 #github img{vertical-align: bottom;}
@@ -104,19 +105,23 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 	ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
 }
 
-@font-face {font-family: 'iconfont';
-    src: url('../fonts/iconfont.eot'); /* IE9*/
-    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
-    url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+.icon{
+  font-size: 40px;
+	/*position: absolute;*/
+	bottom: 0;	  
+	line-height: 100px;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
 }
 
-.iconfont{
-	font-family:"iconfont" !important;
-	font-size:16px;
-	font-style:normal;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-stroke-width: 0.2px;
-	-moz-osx-font-smoothing: grayscale;
+.icon:hover{
+  font-size: 60px;
+}
+
+.icon_lists li{
+  float:left;
+  width: 100px;
+  height:180px;
+  text-align: center;
 }
