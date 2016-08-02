@@ -139,6 +139,12 @@
 					$("#persion2").animate({opacity: "0"}, 600)
 			}
 		)
+		
+		$("#github").hover(function(){
+			$(this).find("img").attr("src", "imgs/github_2.png")
+		}, function(){
+			$(this).find("img").attr("src", "imgs/github_1.png")
+		})
 })
 
 var php_console = function(){

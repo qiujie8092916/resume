@@ -14,7 +14,7 @@
 		<link href="css/cover.css" rel="stylesheet">
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
-<!--<link href="css/grid.css" rel="stylesheet"> -->
+<!--<link href="css/grid.css" rel="stylesheet">-->
 		<link href="css/jquery.qtip.css" rel="stylesheet">
 		<script>
 			window.onload = function(){window.scrollTo(0, 0)}
@@ -25,8 +25,8 @@
 		<div id="fadeWhite"> </div>  
 		
 		<nav id="fixedNavBar" class="navbar navbar-default navbar-fixed-top">
-      <div class="container resposive_nav col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-        <div class="navbar-header">
+      <div class="container resposive_nav col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+        <div class="navbar-header" style="visibility:hidden">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -71,6 +71,7 @@
 		<div class="webtip"></div>
 		<div class="hidden"> <!-- This class should hide the element, change it if needed -->
 				<p>这是一个基于<code>Bootstrap</code>框架下所构建的网站</p>
+				<p>适用于 PC 端、移动端</p>
 				<p>随处可见一些惊喜特效哦 <strong>: )</strong></p>
 		</div>
 		
@@ -78,84 +79,97 @@
       <div class="site-wrapper-inner">
 			
 				<section class="homebackground" id="demo1" style="background:#DD4E3C"><!--homebackground background-image: url(imgs/background1c.jpg)-->
-						<div class="inner cover" style="/visibility:hidden; margin-top:210px;">
-							<h4 class="contenttitle"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
-							<p class="decoration"></p>
-							<div style="width: 20px; height: 20px;"></div>
-							<p class="lead_adv contenttitle">我叫邱杰</p>
-							<p class="lead_adv contenttitle">25岁</p>
-							<p class="lead_adv contenttitle">qiujieee_empty@outlook.com</p>
-							<p class="lead_adv contenttitle">Web前端、网站建设</p>
-						</div>
+					<div class="inner cover" style="/visibility:hidden; margin-top:210px;">
+						<h4 class="contenttitle"><strong>只有走在生活的前面，用自己的劳动创造了新的生活的人，才谈得上真正的美。</strong></h4>
+						<p class="decoration"></p>
+						<article style="margin-top: 20px">
+							<p class="fsize contenttitle">我叫邱杰</p>
+							<p class="fsize contenttitle">25岁</p>
+							<p class="fsize contenttitle">qiujieee_empty@outlook.com</p>
+							<p class="fsize contenttitle">Web前端、网站建设</p>
+						</article>
+					</div>
 				</section>
 				
-				<section class="homebackground" id="demo2" style="background:#12F39C">
-					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
+				<section class="homebackground" id="demo2" style="/background:#12F39C; background-color: #686FB3;">
+					<div class="inner cover" style="/visibility:hidden; margin-top:5%;">
 						<h3 class="animated subtitle"><strong>简单介绍</strong></h3>
 						<div class="decoration"></div>
 					</div>
 					<h5 class="animated subt">Introduce</h5>
+					
+					<div>
+						<h4 class="" style="margin-top: 4%; /visibility:hidden;">视觉是人类的第一感官，满意度无外乎是对眼观视觉美的追求、对操作体验好的追求</h4>
+						<article class="col-lg-4col-lg-offset-4 col-md-4 col-md-offset-4">
+							<p class="fsize_">大四上学期自主参加嵌入式软件培训班</p>
+							<p class="fsize_">大四下学期于上海旋极信息技术有限公司实习</p>
+							<p class="fsize_">毕业后作为外包员工就职于中国Marvell上海分公司</p>
+							<p class="fsize_">主要负责建设符合部门需求的网站页面以及编写白盒测试脚本</p>
+						</article>
+					</div>
 				</section>
 				
 				<section class="homebackground" id="demo3" style="background:#8ACDFF; position: relative">
 					<div class="inner cover" style="margin-top:1%;">
 						<h3 class="animated subtitle"><strong>项目经验</strong></h3>
 						<div class="decoration"></div>
+					</div>
+					
+					<h5 class="animated subt">Project</h5>
+					<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="position:absolute; top: 27%;">
+					
+						<div class="col-lg-6 col-md-6 animated slideL" style="margin-bottom: 50px;">
+							<div class="col-lg-6 col-md-6">
+								<div style="background-color:#fff"><img src="imgs/library.png" height="190px" width="100%"></div>
+							</div>
+							<p class="col-lg-6 col-md-6">
+								<span>
+								在 Strurs2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。
+								<span class="divider"></span>
+								用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。
+								</span>
+								<a href="javascript:php_console()" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>
+							</p>
+						</div>
+						
+						<div class="col-lg-6 col-md-6 animated slideR" style="margin-bottom: 50px;">
+							<div class="col-lg-6 col-md-6">
+								<div style="background-color:#fff"><img src="imgs/cts.png" height="190px" width="100%"></div>
+							</div>
+							<p class="col-lg-6 col-md-6">
+								Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。
+								<span class="divider"></span>
+								依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。
+								<a href="/CTS_log" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>
+							</p>
+						</div>
+
+						<div class="col-lg-6 col-md-6 animated slideL">
+							<div class="col-lg-6 col-md-6">
+								<div style="background-color:#fff"><img src="imgs/ci.png" height="190px" width="100%"></div>
+							</div>
+							<p class="col-lg-6 col-md-6">
+								Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。
+								<span class="divider"></span>
+								可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。
+							
+								<a href="/ci" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>
+							</p>
+						</div>
+						
+						<div class="col-lg-6 col-md-6 animated slideR">
+							<div class="col-lg-6 col-md-6">
+								<div style="background-color:#fff"><img src="imgs/test_project4.jpg" height="190px" width="100%"></div>
+							</div>
+							<p class="col-lg-6 col-md-6 legend">
+								<a href="/monitor" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>
+							</p>
+						</div>
 						
 					</div>
-					<h5 class="animated subt">Project</h5>
-						<div class="major col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2" style="position:absolute; top: 27%;">
-						
-							<div class="col-lg-6 col-md-6 animated slideL" style="margin-bottom: 50px;">
-								<div class="col-lg-6 col-md-6">
-									<div style="background-color:#fff"><img src="imgs/library.png" height="190px" width="100%"></div>
-								</div>
-								<p class="col-lg-6 col-md-6 legend">
-									在 Strurs2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。
-									<span class="divider"></span>
-									用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。
-									<a href="javascript:php_console()" target="_blanck" class="btn btn_custom btn-default">Check It</a>
-								</p>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 animated slideR" style="margin-bottom: 50px;">
-								<div class="col-lg-6 col-md-6">
-									<div style="background-color:#fff"><img src="imgs/cts.png" height="190px" width="100%"></div>
-								</div>
-								<p class="col-lg-6 col-md-6 legend r_legend">
-									Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。
-									<span class="divider"></span>
-									依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。
-									<a href="/CTS_log" target="_blanck" class="btn btn_custom btn-default">Check It</a>
-								</p>
-							</div>
-
-							<div class="col-lg-6 col-md-6 animated slideL">
-								<div class="col-lg-6 col-md-6">
-									<div style="background-color:#fff"><img src="imgs/ci.png" height="190px" width="100%"></div>
-								</div>
-								<p class="col-lg-6 col-md-6 legend">
-									Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。
-									<span class="divider"></span>
-									可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。
-								
-									<a href="/ci" target="_blanck" class="btn btn_custom btn-default">Check It</a>
-								</p>
-							</div>
-							
-							<div class="col-lg-6 col-md-6 animated slideR">
-								<div class="col-lg-6 col-md-6">
-									<div style="background-color:#fff"><img src="imgs/test_project4.jpg" height="190px" width="100%"></div>
-								</div>
-								<p class="col-lg-6 col-md-6 legend r_legend">
-									<a href="/monitor" target="_blanck" class="btn btn_custom btn-default">Check It</a>
-								</p>
-							</div>
-							
-						</div>
 				</section>
 				
-				<section class="homebackground" id="demo4" style="background:#ECF343">
+				<section class="homebackground" id="demo4" style="/background:#ECF343; background-color: #D7CB3E">
 					<div class="inner cover" style="/visibility:hidden; margin-top:100px;">
 						<h3 class="animated subtitle"><strong>工作经验</strong></h3>
 						<div class="decoration"></div>
@@ -173,7 +187,7 @@
     </div>  
 
 		<footer>
-			<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>. | <a href="https://github.com/qiujie8092916" target="_blank">Github</p>
+			<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>.&nbsp;&nbsp;&nbsp;<a href="https://github.com/qiujie8092916" target="_blank" id="github"><img src="imgs/github_1.png"></a></p>
 		</footer>
 		
 		<script src="js/jquery-2.1.4.js"></script>
@@ -189,7 +203,7 @@
 				$(this).qtip({
 						content: {text: $(this).next("div")},
 						position: {my: 'left top', at: 'center right'},
-						style: {classes: 'qtip-light qtip-shadow qtip-rounded'}//换样式 阴影 圆角叠加
+						style: {classes: 'qtip-light qtip-shadow qtip-rounded'} 
 				})
 		})
 		</script>
