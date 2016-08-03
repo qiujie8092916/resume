@@ -2,50 +2,24 @@
 		var $win = $(window)
 		
 		$(".decoration").css("width", 0)
+		
 		setTimeout(function(){
 			var $homebackground_id = $($("#navCurr").children().attr("href"))
 			$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
 			$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
-		},300)
-		
-		if($(document).width() <= 768){
-			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
-				//$("ul.nav.navbar-nav.navbar-right").toggle()
-				$("#navbar").removeClass("in")
-				$("button.navbar-toggle").css("background", "transparent")
-			})
 			
-			$("button.navbar-toggle.collapsed").click(function(){
-					if(!$("#navbar").hasClass("in")){
-							$(this).css("background", "#ddd")
-					} else{
-							$(this).css("background", "transparent")
-					}
-			})
-		}
-
-		//擦除效果
-		jQuery.extend(jQuery.easing, {
-				easeOutBack: function (x, t, b, c, d, s){
-						s = s || 1.3;
-						return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
-				}
-		});
-	
-	//nav初始化选中
-		var navCurr = $("#navCurr")
-		$("#navSelected").css("left", navCurr[0].offsetLeft)
-		var changeActive = function(e){
-				e.parent().attr("id", "navCurr")
-				e.parent().addClass("custom_active")
-		}
-		var removeActive = function(e){
-				e.parent().siblings().each(function(){
-						$(this).removeClass("custom_active")
-						$(this).removeAttr("id")
+			var $intro_p = $homebackground_id.find(".intro .fsize_")
+			$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, "easeOutElastic", function(){
+				$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
+					$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
+						$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
+							$intro_p.eq(3).animate({bottom:"0"}, 600, "linear")
+						})
+					})
 				})
-		}
+			})
+		},300)
 		
 		$win.scroll(function(a){
 				setTimeout(function(){
@@ -92,7 +66,19 @@
 						} else{
 							$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
 						}
-						setTimeout(function(){$demo.find(".subt").removeClass("subt").addClass("swing")}, 800)
+						setTimeout(function(){
+							$demo.find(".subt").removeClass("subt").addClass("swing")
+							var $intro_p = $demo.find(".intro p")
+							$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, "easeOutElastic", function(){
+								$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
+									$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
+										$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
+											$intro_p.eq(3).animate({bottom:"0"}, 600, "linear")
+										})
+									})
+								})
+							})
+						}, 800)
 						setTimeout(function(){
 							$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")
 							$demo.find(".slideR").removeClass("slideR").addClass("slideInRight")
@@ -105,6 +91,46 @@
 						return false;
 				}, 200);
 		})
+		
+		if($(document).width() <= 768){
+			$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
+				//$("ul.nav.navbar-nav.navbar-right").toggle()
+				$("#navbar").removeClass("in")
+				$("button.navbar-toggle").css("background", "transparent")
+			})
+			
+			$("button.navbar-toggle.collapsed").click(function(){
+					if(!$("#navbar").hasClass("in")){
+							$(this).css("background", "#ddd")
+					} else{
+							$(this).css("background", "transparent")
+					}
+			})
+		}
+
+		//擦除效果
+		jQuery.extend(jQuery.easing, {
+				easeOutBack: function (x, t, b, c, d, s){
+						s = s || 1.3;
+						return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+				}
+		});
+	
+	//nav初始化选中
+		var navCurr = $("#navCurr")
+		$("#navSelected").css("left", navCurr[0].offsetLeft)
+		var changeActive = function(e){
+				e.parent().attr("id", "navCurr")
+				e.parent().addClass("custom_active")
+		}
+		var removeActive = function(e){
+				e.parent().siblings().each(function(){
+						$(this).removeClass("custom_active")
+						$(this).removeAttr("id")
+				})
+		}
+		
+		
 		
 		$("#navbar ul li").off("click").on("click", function(){
 				$(this).siblings("li").each(function(){
@@ -144,6 +170,13 @@
 			$(this).find("img").attr("src", "imgs/github_2.png")
 		}, function(){
 			$(this).find("img").attr("src", "imgs/github_1.png")
+		})
+		
+		$(".icon").hover(function(){
+			$(this).css("cursor", "pointer")
+			$(this).parents(".li_icon").addClass("rubberBand")
+		}, function(){
+			$(this).parents(".li_icon").removeClass("rubberBand	")
 		})
 })
 
