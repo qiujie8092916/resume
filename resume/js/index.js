@@ -9,8 +9,13 @@
 			$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
 			
+			$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
+			setTimeout(function(){
+				$homebackground_id.find(".li_icon").removeClass("fadeInDown")
+				$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
+			}, 1000)
 			var $intro_p = $homebackground_id.find(".intro .fsize_")
-			$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, "easeOutElastic", function(){
+			$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, function(){
 				$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
 					$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
 						$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
@@ -68,6 +73,14 @@
 						}
 						setTimeout(function(){
 							$demo.find(".subt").removeClass("subt").addClass("swing")
+							if($demo.find(".li_icon").css("visibility") != "visible"){
+								$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
+							}
+							setTimeout(function(){
+								$demo.find(".li_icon").removeClass("fadeInDown")
+								$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
+							}, 1000)
+			
 							var $intro_p = $demo.find(".intro p")
 							$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, "easeOutElastic", function(){
 								$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
@@ -153,6 +166,8 @@
 				$("#navSelected").width($(".custom_active").width())
 		})
 		
+		var s = $(".ski_icon").find(".li_icon:nth-child(2)")
+		s.css("left", "calc(50% - "+s.width()/2+"px)")	
 		$("#navSelected").width($(".custom_active").width())
 		$(".homebackground").css("height", $(window).height())
 		$(window).resize(function() {
@@ -171,13 +186,55 @@
 		}, function(){
 			$(this).find("img").attr("src", "imgs/github_1.png")
 		})
-		
-		$(".icon").hover(function(){
-			$(this).css("cursor", "pointer")
-			$(this).parents(".li_icon").addClass("rubberBand")
-		}, function(){
-			$(this).parents(".li_icon").removeClass("rubberBand	")
+
+		$("#icon_html").off("click").on("click", function(){
+			$("#triangle_up").css("left", "10px")
+			
+			$("#detail_css").fadeOut("fast", function(){
+				$("#detail_js").fadeOut("fast", function(){
+					$("#detail_html").fadeIn("fast")
+				})
+			})
 		})
+		
+		$("#icon_css").off("click").on("click", function(){
+			$("#triangle_up").css("left", "calc(50% - 10px)")
+			
+			$("#detail_html").fadeOut("fast", function(){
+				$("#detail_js").fadeOut("fast", function(){
+					$("#detail_css").fadeIn("fast")
+				})
+			})
+		})
+		
+		$("#icon_js").off("click").on("click", function(){
+			$("#triangle_up").css("left", "calc(100% - 30px)")
+			
+			$("#detail_html").fadeOut("fast", function(){
+				$("#detail_css").fadeOut("fast", function(){
+					$("#detail_js").fadeIn("fast")
+				})
+			})
+		})
+		
+		$(".ski_icon .li_icon .icon").each(function(){
+			$(this).on("click", function(){
+				if($(this).parents(".li_icon").css("transform") == "matrix(1, 0, 0, 1, 0, 0)" || $(this).parents(".li_icon").css("transform") == "none"){
+					$(this).parents(".li_icon").css("-webkit-transform", "rotateY(360deg)")
+					$(this).parents(".li_icon").css("-moz-transform", "rotateY(360deg)")
+					$(this).parents(".li_icon").css("-ms-transform", "rotateY(360deg)")
+					$(this).parents(".li_icon").css("-o-transform", "rotateY(360deg)")
+					$(this).parents(".li_icon").css("transform", "rotateY(360deg)")
+				} else{
+					$(this).parents(".li_icon").css("-webkit-transform", "rotateY(0deg)")
+					$(this).parents(".li_icon").css("-moz-transform", "rotateY(0deg)")
+					$(this).parents(".li_icon").css("-ms-transform", "rotateY(0deg)")
+					$(this).parents(".li_icon").css("-o-transform", "rotateY(0deg)")
+					$(this).parents(".li_icon").css("transform", "rotateY(0deg)")
+				}
+			})
+		})
+		
 })
 
 var php_console = function(){
