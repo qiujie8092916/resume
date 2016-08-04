@@ -30,7 +30,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .icon{ font-size: 60px; /*line-height: 100px; clear: both;*/}
 .icon:hover{ cursor: pointer;}
 .icon_div{ position: relative; margin-top: 10%;}
-.icon_detail{ /*height: 100%;*/width: calc(100% - 15px); position: absolute; top: 120px; left: 1%; background-color: rgba(255, 255, 255, 1); border-radius: 4px; color: #333; padding: 3px 0; box-shadow: 0 0 10px rgba(51,51,51,0.6); visibility: hidden;
+.icon_detail{ /*height: 100%;*/width: calc(100% - 15px); position: absolute; top: 100%; left: 1%; background-color: rgba(255, 255, 255, 1); border-radius: 4px; color: #333; padding: 3px 0; box-shadow: 0 0 10px rgba(51,51,51,0.6); visibility: hidden;
 	-webkit-transition: all 1s; -moz-transition: all 1s; -ms-transition: all 1s; -o-transition: all 1s; transition: all 1s;}
 .icon_detail #detail_html, .icon_detail #detail_css, .icon_detail #detail_js{margin-bottom: 0}
 .icon_detail #detail_html li, .icon_detail #detail_css li, .icon_detail #detail_js li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);} 
@@ -66,7 +66,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 	-webkit-transition: all 0.7s; -moz-transition: all 0.7s; -ms-transition: all 0.7s; -o-transition: all 0.7s; transition: all 0.7s;}
 .webtip:hover{ border: 1px solid rgba(255, 255, 255, .5); background: rgba(245,245,245,0.5);}
 .webtips{ position: fixed; top: 85px; left: 40px;}
-#demo2 .intro{ position: relative; padding: 0.5% 0.5%; margin-top: calc(120px + 10%); width: 80%; overflow: hidden;}
+#demo2 .intro{ position: relative; padding: 0.5% 0.5%; margin-top: calc(100px + 10%); width: 80%; overflow: hidden;}
 #demo2 .intro:before{ top: 0; left: 0; border-top: 2px solid #fff; border-left: 2px solid #fff;}
 #demo2 .intro:after{ bottom: 0; right: 0; border-right: 2px solid #fff; border-bottom: 2px solid #fff;}
 #demo2 .intro:before, #demo2 .intro:after{position:absolute; width: 7%; height: 20%; content: "";}
