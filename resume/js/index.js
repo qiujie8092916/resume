@@ -9,9 +9,9 @@
 			$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 			$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
 			
-			$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
+			$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
 			setTimeout(function(){
-				$homebackground_id.find(".li_icon").removeClass("fadeInDown")
+				$homebackground_id.find(".li_icon").removeClass("fadeInUp")
 				$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
 			}, 1000)
 			var $intro_p = $homebackground_id.find(".intro .fsize_")
@@ -74,10 +74,10 @@
 						setTimeout(function(){
 							$demo.find(".subt").removeClass("subt").addClass("swing")
 							if($demo.find(".li_icon").css("visibility") != "visible"){
-								$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
+								$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
 							}
 							setTimeout(function(){
-								$demo.find(".li_icon").removeClass("fadeInDown")
+								$demo.find(".li_icon").removeClass("fadeInUp")
 								$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
 							}, 1000)
 			
