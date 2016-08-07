@@ -32,8 +32,8 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .icon_div{ position: relative; margin-top: 10%;}
 .icon_detail{ /*height: 100%;*/width: calc(100% - 15px); position: absolute; top: 100%; left: 1%; background-color: rgba(255, 255, 255, 1); border-radius: 4px; color: #333; padding: 3px 0; box-shadow: 0 0 10px rgba(51,51,51,0.6); visibility: hidden;
 	-webkit-transition: all 1s; -moz-transition: all 1s; -ms-transition: all 1s; -o-transition: all 1s; transition: all 1s;}
-.icon_detail #detail_html, .icon_detail #detail_css, .icon_detail #detail_js{margin-bottom: 0}
-.icon_detail #detail_html li, .icon_detail #detail_css li, .icon_detail #detail_js li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);} 
+.icon_detail .detailImg{margin-bottom: 0}
+.icon_detail .detailImg li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);} 
 .lead{ margin-top: 10px;}
 .fsize{ font-size:17px;}
 .fsize_{ font-size:16px; position: relative; bottom: -300px; line-height: 30px}
@@ -57,7 +57,9 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .ski_icon .li_icon{ position: absolute; /*width: 100px; height:100px; */text-align: center; visibility: hidden; padding: 0;
 	  -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
 .ski_icon .li_icon:nth-child(1){ left: 0}/*60 = 120/2($(".ski_icon .li_icon").width())*/
-.ski_icon .li_icon:nth-child(3){ right: 0}
+.ski_icon .li_icon:nth-child(2){ left: calc((100% - 240px) / 3 + 60px)}
+.ski_icon .li_icon:nth-child(3){ left: calc(2 * (100% - 240px) / 3 + 120px)}
+.ski_icon .li_icon:nth-child(4){ right: 0}
 .slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}

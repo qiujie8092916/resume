@@ -166,8 +166,8 @@
 				$("#navSelected").width($(".custom_active").width())
 		})
 		
-		var s = $(".ski_icon").find(".li_icon:nth-child(2)")
-		s.css("left", "calc(50% - "+s.width()/2+"px)")	
+		//var s = $(".ski_icon").find(".li_icon:nth-child(2)")
+		//s.css("left", "calc(50% - "+s.width()/2+"px)")	
 		$("#navSelected").width($(".custom_active").width())
 		$(".homebackground").css("height", $(window).height())
 		$(window).resize(function() {
@@ -188,31 +188,49 @@
 		})
 
 		$("#icon_html").off("click").on("click", function(){
-			$("#triangle_up").css("left", "10px")
+			$("#triangle_up").css("left", "calc(30px - 20px)")
 			
 			$("#detail_css").fadeOut("fast", function(){
 				$("#detail_js").fadeOut("fast", function(){
-					$("#detail_html").fadeIn("fast")
+					$("#detail_more").fadeOut("fast", function(){
+						$("#detail_html").fadeIn("fast")
+					})
 				})
 			})
 		})
 		
 		$("#icon_css").off("click").on("click", function(){
-			$("#triangle_up").css("left", "calc(50% - 10px)")
+			$("#triangle_up").css("left", "calc((100% - 240px) / 3 + 75px)")
 			
 			$("#detail_html").fadeOut("fast", function(){
 				$("#detail_js").fadeOut("fast", function(){
-					$("#detail_css").fadeIn("fast")
+					$("#detail_more").fadeOut("fast", function(){
+						$("#detail_css").fadeIn("fast")
+					})
 				})
 			})
 		})
 		
 		$("#icon_js").off("click").on("click", function(){
+			$("#triangle_up").css("left", "calc(2 * (100% - 240px) / 3 + 140px)")
+			
+			$("#detail_html").fadeOut("fast", function(){
+				$("#detail_css").fadeOut("fast", function(){
+					$("#detail_more").fadeOut("fast", function(){
+						$("#detail_js").fadeIn("fast")
+					})
+				})
+			})
+		})
+		
+		$("#icon_more").off("click").on("click", function(){
 			$("#triangle_up").css("left", "calc(100% - 30px)")
 			
 			$("#detail_html").fadeOut("fast", function(){
 				$("#detail_css").fadeOut("fast", function(){
-					$("#detail_js").fadeIn("fast")
+					$("#detail_js").fadeOut("fast", function(){
+						$("#detail_more").fadeIn("fast")
+					})
 				})
 			})
 		})
