@@ -37,7 +37,8 @@
 						var d1 = $("#demo1").offset().top,
 								d2 = $("#demo2").offset().top,
 								d3 = $("#demo3").offset().top,
-								d4 = $("#demo4").offset().top;
+								d4 = $("#demo4").offset().top,
+								d5 = $("#demo5").offset().top;
 						a.stopImmediatePropagation()
 						
 						if(y >= h / 2){
@@ -49,14 +50,16 @@
 						}
 						
 						var $bnt, $demo
-						if(y <= d2){	//res <= 1
+						if(y < d2){	//res <= 1
 								$bnt = $("#demo1Btn"); $demo = $("#demo1")
-						} else if(y > d2 && y <= d3){	//(1) < res && res <= (2)
+						} else if(y >= d2 && y < d3){	//(1) < res && res <= (2)
 								$bnt = $("#demo2Btn"); $demo = $("#demo2")
-						} else if(y > d3 && y <= d4){	//(2) <res
+						} else if(y >= d3 && y < d4){	//(2) <res
 								$bnt = $("#demo3Btn"); $demo = $("#demo3")
-						} else if(y > d4){
+						} else if(y >= d4 && y < d4 + 1){
 								$bnt = $("#demo4Btn"); $demo = $("#demo4")
+						} else if(y > d4 + 2){
+								$bnt = $("#demo5Btn"); $demo = $("#demo5")
 						}
 						
 						changeActive($bnt)
