@@ -1,3 +1,76 @@
 {
+  "demo1": {
+		"contenttitle": "视觉是人类的第一感官，满意度无外乎是对眼观视觉美的追求、对操作体验好的追求。",
+		"fsize": [
+			"我叫邱杰",
+			"25岁",
+			"qiujieee_empty@outlook.com",
+			"Web前端、网站建设"
+		]
+	},
 	
+	
+	"demo2": {
+		"subtitle": "简单介绍",
+		"subt": "Introduce",
+		"detail_html": [
+			"深刻理解Web标准",
+			"熟练运用html标签",
+			"熟悉xml及xhtml标记语言",
+			"掌握html5如canvas、svg新特性"
+		],
+		"detail_css": [
+			"熟练运用css及css3新属性",
+			"注重浏览器兼容性，熟悉常见的css hack",
+			"掌握css预编译器Less及Sass"
+		],
+		"detail_js": [
+			"掌握jQuery",
+			"熟练运用Ajax前后台通信",
+			"熟练运用Bootstrap、Highchrts等主流框架",
+			"注重JavaScript性能优化"
+		],
+		"detail_more": [
+			"掌握Mysql，熟练运用联合查询",
+			"掌握C、C++、Python、Java主流编程语言",
+			"熟悉Photoshop，动画表情上架微信表情商店",
+			"熟悉网站从环境、建站，到维护全方面过程"
+		],
+		"fsize_": [
+			"大四上学期自主参加嵌入式软件培训班",
+			"大四下学期于上海旋极信息技术有限公司实习",
+			"毕业后作为外包员工就职于中国Marvell上海分公司",
+			"主要负责建设符合部门需求的网站页面以及编写白盒测试脚本"
+		]
+	},
+	
+	
+	"demo3": {
+		"subtitle": "项目经验",
+		"subt": "Project",
+		"project": [
+			{"library": [
+				"在 Struts2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。",
+				"用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。"
+			]},
+			{"CTS_log": [
+				"Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。",
+				"依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。"
+			]},
+			{"ci": [
+				"Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。",
+				"可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。"
+			]},
+			{"monitor": [
+				"",
+				""
+			]}
+		]
+	},
+	
+	
+	"demo4": {
+		"subtitle": "工作经验",
+		"subt": "Experience"
+	}
 }

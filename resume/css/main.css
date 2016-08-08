@@ -27,6 +27,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .homebackground{ overflow: hidden; padding-top: 7%; margin-top: 0; width:100%;
 	-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out;}
 .homebackground h3{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);}
+.homebackground, footer{position: relative}
 .icon{ font-size: 60px; /*line-height: 100px; clear: both;*/}
 .icon:hover{ cursor: pointer;}
 .icon_div{ position: relative; margin-top: 10%;}
@@ -49,6 +50,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 	-webkit-transition: opacity 0.4s; -moz-transition: opacity 0.4s; -ms-transition: opacity 0.4s; -o-transition: opacity 0.4s; transition: opacity 0.4s;}
 .major img:hover{ opacity: 1 !important;}
 .navbar-default .navbar-nav > li > a { color: #333;}
+.navbar-default .navbar-nav > .active > a{color: #333 !important; background-color: transparent !important;}
 .navbar-brand{ display: block; color: #333 !important;}
 .navbar-brand:hover{
 	-webkit-animation: bounce 0.7s; -moz-animation: bounce 0.7s; -o-animation: bounce 0.7s; animation: bounce 0.7s;
