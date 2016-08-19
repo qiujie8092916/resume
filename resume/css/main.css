@@ -65,7 +65,7 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
-.webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; 
+.webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; z-index: 100;
 	-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;
 	-webkit-transition: all 0.7s; -moz-transition: all 0.7s; -ms-transition: all 0.7s; -o-transition: all 0.7s; transition: all 0.7s;}
 .webtip:hover{ border: 1px solid rgba(255, 255, 255, .5); background: rgba(245,245,245,0.5);}

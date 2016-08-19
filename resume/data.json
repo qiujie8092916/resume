@@ -26,14 +26,13 @@
 		],
 		"detail_js": [
 			"掌握jQuery",
+			"掌握Angular，熟练指令的编写，模块组件化",
 			"熟练运用Ajax前后台通信",
-			"熟练运用Bootstrap、Highchrts等主流框架",
-			"注重JavaScript性能优化"
+			"熟练运用Bootstrap、Highchrts等主流框架"
 		],
 		"detail_more": [
 			"掌握Mysql，熟练运用联合查询",
 			"掌握C、C++、Python、Java主流编程语言",
-			"熟悉Photoshop，动画表情上架微信表情商店",
 			"熟悉网站从环境、建站，到维护全方面过程"
 		],
 		"fsize_": [
@@ -62,8 +61,8 @@
 				"可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。"
 			]},
 			{"monitor": [
-				"",
-				""
+				"Bootstrap 为框架，用于管控 Automation Case 的网站",
+				"有效地管控在线的 PC ，以及可以查看不同 Case 执行的历史情况，登录后可以一键对在线 PC 进行重启下线等操作，多对多的选择 PC 根据需求用以跑不同的 Case，以及可以上传新的Automation Case。"
 			]}
 		]
 	},
