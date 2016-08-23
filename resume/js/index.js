@@ -194,7 +194,7 @@ var fill_data = function(){
 														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
-													<h5 class="animated subt">' + item.subt + '</h5>'
+													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 					var article = '<div class="center-block article" style="width:35%;">\
 														<div class="icon_div" style="height:100px;">\
 															<ul class="list-unstyled list-inline ski_icon">\
@@ -245,7 +245,7 @@ var fill_data = function(){
 														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
-													<h5 class="animated subt">' + item.subt + '</h5>'
+													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
 					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="position:absolute; top: 27%;">'
 					$.each(item.project, function(ii, iitem){
@@ -278,22 +278,37 @@ var fill_data = function(){
 				
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
-					var subtitle = '<div class="inner cover" style="/visibility:hidden; margin-top: 2%">\
+					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
 														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
-													<h5 class="animated subt">' + item.subt + '</h5>'
+													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody =  '<div class="timeline col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3" style="position:relative;">'
+					var subbody =  '<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 cssanimations" style="margin-top: 2%">\
+														<section id="cd-timeline" class="cd-container">'
 					$.each(item.experience, function(i, e){
-						subbody += '<div class="timeline_item">\
-													<div class="timeline_timebucket"><p>' + e[0] + '</p></div>\
-													<div class="timeline_icon"></div>\
-													<div class="timeline_content"><p>' + e[1] + '</p></div>\
-												</div>'
+						subbody += '<div class="cd-timeline-block">'
+						$.each(e, function(ii, ee){
+							if(ii === "picture"){
+								subbody += '<div class="cd-timeline-img cd-picture is-hidden">\
+															<img src="imgs/' + ee + '.svg" alt="Picture">\
+														</div>'
+							} else{
+								subbody += '<div class="cd-timeline-content is-hidden">\
+													<div class="text-left"><h5><strong>' + ee[0] + '</strong></h5></div><hr>'
+								subbody	+= '<ul>'
+								$.each(ee[1], function(iii, eee){
+									subbody	+= '<li class="text-left">' + eee + '</li>'
+								})
+								subbody	+= '</ul>'
+								subbody += '<span class="cd-date">' + ii + '</span></div>'
+							}
+						})
+						subbody += '</div>'
 					})
-					subbody += '</div>'
+					subbody += '</section></div>'
 					
+					//$("#" + i).append(subtitle)
 					$("#" + i).append(subtitle + subbody)
 				}
 			})
@@ -307,8 +322,8 @@ var fill_data = function(){
 
 var homepage_animate = function(){
 	$(".decoration").css("width", 0)
+	var $homebackground_id = $($("#navCurr").children().attr("href"))
 	setTimeout(function(){
-		var $homebackground_id = $($("#navCurr").children().attr("href"))
 		$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
 		$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 		$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
@@ -329,6 +344,13 @@ var homepage_animate = function(){
 			})
 		})
 	},300)
+	
+	setTimeout(function(){
+		$homebackground_id.find("#cd-timeline").addClass("before")
+		$homebackground_id.find('.cd-timeline-block').each(function(){
+			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+		})
+	}, 800)
 }
 
 var scroll_animate = function($win){
@@ -399,6 +421,11 @@ var scroll_animate = function($win){
 							})
 						})
 					})
+				})
+				
+				$demo.find("#cd-timeline").addClass("before")
+				$demo.find('.cd-timeline-block').each(function(){
+					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 				})
 			}, 800)
 			
