@@ -278,13 +278,23 @@ var fill_data = function(){
 				
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
-					var subtitle = '<div class="inner cover" style="/visibility:hidden; margin-top:100px;">\
+					var subtitle = '<div class="inner cover" style="/visibility:hidden; margin-top: 2%">\
 														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
 													<h5 class="animated subt">' + item.subt + '</h5>'
-					$("#" + i).append(subtitle)
+													
+					var subbody =  '<div class="timeline col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3" style="position:relative;">'
+					$.each(item.experience, function(i, e){
+						subbody += '<div class="timeline_item">\
+													<div class="timeline_timebucket"><p>' + e[0] + '</p></div>\
+													<div class="timeline_icon"></div>\
+													<div class="timeline_content"><p>' + e[1] + '</p></div>\
+												</div>'
+					})
+					subbody += '</div>'
 					
+					$("#" + i).append(subtitle + subbody)
 				}
 			})
 		},
@@ -416,4 +426,20 @@ function defer(url, data){
 		success: function(data, textStatus){df.resolve(data);}
 	});
 	return df.promise();
+}
+
+Date.prototype.Format = function (fmt) { //author: meizz 
+	var o = {
+			"M+": this.getMonth() + 1, //month
+			"d+": this.getDate(), //day
+			"h+": this.getHours(), //hour
+			"m+": this.getMinutes(), //minute
+			"s+": this.getSeconds(), //second
+			"q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+			"S": this.getMilliseconds() //millisecond
+	};
+	if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	for (var k in o)
+	if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+	return fmt;
 }

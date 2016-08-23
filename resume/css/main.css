@@ -1,7 +1,16 @@
 ﻿*{ margin:0; padding:0;}
-body{font-family: Microsoft YaHei  !important;}
+body{font-family: Microsoft YaHei !important;}
 h1, h2, h3, h4, h5, h6{ display:inline-block;}
 h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
+footer{ background:#555; padding:80px 0; margin-top: -5px;}
+footer p { margin:0 !important;}
+img{ border: 0;}
+nav{ display: -webkit-box; background: rgba(245,245,245,0.8) !important; color: #333 !important; box-shadow: 0 0 10px rgba(51,51,51,0.6); top: 0;}
+ul.navbar-right.nav.navbar-nav > li:nth-child(1), #navSelected{ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
+ul.navbar-right.nav.navbar-nav > li:nth-child(2){ -webkit-animation: navMotion 1.7s; -moz-animation: navMotion 1.7s; -o-animation: navMotion 1.7s; animation: navMotion 1.7s;}
+ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 1.9s; -moz-animation: navMotion 1.9s; -o-animation: navMotion 1.9s; animation: navMotion 1.9s;}
+ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2.1s; -moz-animation: navMotion 2.1s; -o-animation: navMotion 2.1s; animation: navMotion 2.1s;}
+ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2.3s; -moz-animation: navMotion 2.3s; -o-animation: navMotion 2.3s; animation: navMotion 2.3s;}
 
 /*.btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s; -moz-transition: background-color .4s; -o-transition: background-color .4s;}*/
@@ -9,9 +18,10 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 	transition: background-color .4s; -webkit-transition: background-color .4s; -moz-transition: background-color .4s; -o-transition: background-color .4s;}
 .btn_custom:hover{ background: transparent; color: #fff;}
 .btn_custom:visited{background: rgba(255,255,255,0.3) !important; color: white;}
+
 .cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	-webkit-animation: headerMotion 1s; -moz-animation: headerMotion 1s; -o-animation: headerMotion 1s; animation: headerMotion 1s;}
-.pagetitle{ -webkit-animation: rubberBand 2s; -moz-animation: rubberBand 2s; -o-animation: rubberBand 2s; animation: rubberBand 2s;}
+	
 .decoration{ width: 0px; height: 0; margin: 0 auto 3px auto;
 	-moz-transition: width 1s;/* Firefox 4 */ -webkit-transition: width 1s;/* Safari and Chrome */ -o-transition: width 1s; /* Opera */}
 .decoration:after{ content:""; display: block; border-bottom:1px solid #fff;}
@@ -22,39 +32,50 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .demo1Btn a:hover{text-decoration:none}
 .demo1Btn:hover .first-link{ margin-top: -50px;}
 .divider{ border-bottom: 1px solid transparent; height: 1px; display: block; margin: 3px 0;}
+
 .first-link{ margin-top: 0em;   
   -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; transition: 0.5s;}
-.homebackground{ overflow: hidden; padding-top: 7%; margin-top: 0; width:100%;
+.fsize{ font-size:17px;}
+.fsize_{ font-size:16px; position: relative; bottom: -300px; line-height: 30px}
+	
+.homebackground{ overflow: hidden; padding-top: 7%; margin-top: 0; width:100%; position: relative;
 	-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out;}
 .homebackground h3{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);}
 .homebackground, footer{position: relative}
+.homebackground a:focus, .homebackground a:hover { color: inherit !important; }
+
 .icon{ font-size: 60px; /*line-height: 100px; clear: both;*/}
 .icon:hover{ cursor: pointer;}
 .icon_div{ position: relative; margin-top: 10%;}
 .icon_detail{ /*height: 100%;*/width: calc(100% - 15px); position: absolute; top: 100%; left: 1%; background-color: rgba(255, 255, 255, 1); border-radius: 4px; color: #333; padding: 3px 0; box-shadow: 0 0 10px rgba(51,51,51,0.6); visibility: hidden;
 	-webkit-transition: all 1s; -moz-transition: all 1s; -ms-transition: all 1s; -o-transition: all 1s; transition: all 1s;}
 .icon_detail .detailImg{margin-bottom: 0}
-.icon_detail .detailImg li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);} 
+.icon_detail .detailImg li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);}
+
 .lead{ margin-top: 10px;}
-.fsize{ font-size:17px;}
-.fsize_{ font-size:16px; position: relative; bottom: -300px; line-height: 30px}
 .legend.r_legend{ padding-left: 7px !important;}
 .legend:not(.r_legend){ padding-left: 7px !important; padding-right: 10px !important;}
 .logo{ display: inline-block; margin-right:20px; float: left; height: 60px; width: 60px; position: relative;}
 .logo img{ margin-top: 5px; border-radius: 30px; position: absolute; transition: box-shadow .5s; left: 0;}
 .logo #persion2{ opacity:0 }
 .logo img:hover{ box-shadow: 0 0 10px #1FAEFF;}
+
 .major{ margin-top:20px;}
 .major p{ display：table; height: 190px; position:relative; text-align: left; font-size: 13.5px;}
 .major img{ opacity: 0.8; 
 	-webkit-transition: opacity 0.4s; -moz-transition: opacity 0.4s; -ms-transition: opacity 0.4s; -o-transition: opacity 0.4s; transition: opacity 0.4s;}
 .major img:hover{ opacity: 1 !important;}
+
 .navbar-default .navbar-nav > li > a { color: #333;}
 .navbar-default .navbar-nav > .active > a{color: #333 !important; background-color: transparent !important;}
 .navbar-brand{ display: block; color: #333 !important;}
 .navbar-brand:hover{
 	-webkit-animation: bounce 0.7s; -moz-animation: bounce 0.7s; -o-animation: bounce 0.7s; animation: bounce 0.7s;
 /*-webkit-animation: hinge 4s; -moz-animation: hinge 4s; -o-animation: hinge 4s; animation: hinge 4s;*/}
+
+.pagetitle{ -webkit-animation: rubberBand 2s; -moz-animation: rubberBand 2s; -o-animation: rubberBand 2s; animation: rubberBand 2s;}
+.panel-group{ margin-bottom: 0px; }
+
 .ski_icon{/*margin: 0 35% 5% 35%;*/ position: relative; }
 .ski_icon .li_icon{ position: absolute; /*width: 100px; height:100px; */text-align: center; visibility: hidden; padding: 0;
 	  -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
@@ -63,13 +84,26 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 .ski_icon .li_icon:nth-child(3){ left: calc(2 * (100% - 240px) / 3 + 120px)}
 .ski_icon .li_icon:nth-child(4){ right: 0}
 .slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
+
+.timeline:before{ content: '1'; width: 1px; height: 100%; font-size: 0; overflow: hidden; display: inline-block; background: #fff; position: absolute; left: 25%;/*text-align: center;*/}
+.timeline a, .timeline a:hover, .timeline a:focus{ text-decoration: none;}
+.timeline .panel-heading{ background-color: transparent; }
+.timeline_item{ position: relative; list-style-type: none; margin-bottom: 30px; min-height: 40px;}
+.timeline_item p{ margin-top: 10px; }
+.timeline_timebucket{ position: absolute; text-align: right; width: 20%;}
+.timeline_icon{ position: absolute; left: 21.6%; width: 40px; height: 40px; border-radius: 50%; background-color: #fff; overflow: hidden;}
+.timeline_content{ position: absolute; /*width: 30%;*/ left: 30%;}
+
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
+
 .webtip{ position: absolute; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,0.3); display: block; top: 85px; left: 10px; cursor: help; z-index: 100;
 	-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;
 	-webkit-transition: all 0.7s; -moz-transition: all 0.7s; -ms-transition: all 0.7s; -o-transition: all 0.7s; transition: all 0.7s;}
 .webtip:hover{ border: 1px solid rgba(255, 255, 255, .5); background: rgba(245,245,245,0.5);}
 .webtips{ position: fixed; top: 85px; left: 40px;}
+.well{ color: #333;}
+
 #demo2 .intro{ position: relative; padding: 0.5% 0.5%; margin-top: calc(100px + 10%); width: 80%; overflow: hidden;}
 #demo2 .intro:before{ top: 0; left: 0; border-top: 2px solid #fff; border-left: 2px solid #fff;}
 #demo2 .intro:after{ bottom: 0; right: 0; border-right: 2px solid #fff; border-bottom: 2px solid #fff;}
@@ -82,15 +116,6 @@ h4.cover-heading{margin-top: 20px; margin-bottom: 10px;}
 #navSelected:after{ content: ""; display: block; border-bottom: 2px solid #fff}
 #triangle_up{ width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 20px solid rgba(255, 255, 255, 1); position: absolute; top: -20px; left: 10px;
 	-webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
-footer{ background:#555; padding:80px 0; margin-top: -5px;}
-footer p { margin:0 !important;}
-img{ border: 0;}
-nav{ display: -webkit-box; background: rgba(245,245,245,0.8) !important; color: #333 !important; box-shadow: 0 0 10px rgba(51,51,51,0.6); top: 0;}
-ul.navbar-right.nav.navbar-nav > li:nth-child(1), #navSelected{ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
-ul.navbar-right.nav.navbar-nav > li:nth-child(2){ -webkit-animation: navMotion 1.7s; -moz-animation: navMotion 1.7s; -o-animation: navMotion 1.7s; animation: navMotion 1.7s;}
-ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 1.9s; -moz-animation: navMotion 1.9s; -o-animation: navMotion 1.9s; animation: navMotion 1.9s;}
-ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2.1s; -moz-animation: navMotion 2.1s; -o-animation: navMotion 2.1s; animation: navMotion 2.1s;}
-ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2.3s; -moz-animation: navMotion 2.3s; -o-animation: navMotion 2.3s; animation: navMotion 2.3s;}
 
 
 /**************************
