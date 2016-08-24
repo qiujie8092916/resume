@@ -91,6 +91,10 @@
 			})
 		})
 		
+		$(".cd-timeline-img").off("click").on("click", function(){
+			$(this).parents(".cd-timeline-block").find("ul").slideToggle(400)
+		})
+		
 })
 
 
@@ -297,7 +301,7 @@ var fill_data = function(){
 							} else{
 								subbody += '<div class="cd-timeline-content is-hidden">\
 													<div class="text-left"><h5><strong>' + ee[0] + '</strong></h5></div><hr>'
-								subbody	+= '<ul>'
+								subbody	+= '<ul style="display: none;">'
 								$.each(ee[1], function(iii, eee){
 									subbody	+= '<li class="text-left">' + eee + '</li>'
 								})
