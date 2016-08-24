@@ -106,12 +106,13 @@ var removeActive = function(e){
 		})
 }
 
-var php_console = function(){
+var php_console = function(){/*
 	$.when(defer("php/sys_console.php")).done(function(data){
 			//var json_result = eval('(' + data + ')');
 			//var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
 			console.log("over")
-	})
+	})*/
+	var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
 }
 
 var bindTabActive = function(){
@@ -284,13 +285,13 @@ var fill_data = function(){
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody =  '<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 cssanimations" style="margin-top: 2%">\
+					var subbody =  '<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 cssanimations" style="margin-top: 2%">\
 														<section id="cd-timeline" class="cd-container">'
 					$.each(item.experience, function(i, e){
 						subbody += '<div class="cd-timeline-block">'
 						$.each(e, function(ii, ee){
 							if(ii === "picture"){
-								subbody += '<div class="cd-timeline-img cd-picture is-hidden">\
+								subbody += '<div class="cd-timeline-img ' + ee + '-backgroundColor is-hidden">\
 															<img src="imgs/' + ee + '.svg" alt="Picture">\
 														</div>'
 							} else{
@@ -307,8 +308,6 @@ var fill_data = function(){
 						subbody += '</div>'
 					})
 					subbody += '</section></div>'
-					
-					//$("#" + i).append(subtitle)
 					$("#" + i).append(subtitle + subbody)
 				}
 			})
@@ -332,9 +331,9 @@ var homepage_animate = function(){
 		setTimeout(function(){
 			$homebackground_id.find(".li_icon").removeClass("fadeInUp")
 			$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
-		}, 1000)
+		}, 300)
 		var $intro_p = $homebackground_id.find(".intro .fsize_")
-		$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, function(){
+		$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, function(){
 			$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
 				$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
 					$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
@@ -410,10 +409,10 @@ var scroll_animate = function($win){
 				setTimeout(function(){
 					$demo.find(".li_icon").removeClass("fadeInUp")
 					$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
-				}, 1000)
+				}, 300)
 
 				var $intro_p = $demo.find(".intro p")
-				$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 700, "easeOutElastic", function(){
+				$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, "easeOutElastic", function(){
 					$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
 						$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
 							$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
@@ -427,7 +426,7 @@ var scroll_animate = function($win){
 				$demo.find('.cd-timeline-block').each(function(){
 					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 				})
-			}, 800)
+			}, 500)
 			
 			setTimeout(function(){
 				$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")

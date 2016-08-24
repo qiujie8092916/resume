@@ -16,16 +16,13 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(3){ -webkit-animation: navMotion 1
 ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 2.1s; -moz-animation: navMotion 2.1s; -o-animation: navMotion 2.1s; animation: navMotion 2.1s;}
 ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2.3s; -moz-animation: navMotion 2.3s; -o-animation: navMotion 2.3s; animation: navMotion 2.3s;}
 
-/*.btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
-	transition: background-color .4s; -webkit-transition: background-color .4s; -moz-transition: background-color .4s; -o-transition: background-color .4s;}*/
 .btn_custom{ color:#fff; background: rgba(255,255,255,0.3); font-weight:bold; border:1px solid transparent; padding: 8px 60px; border-radius: 6px; position: absolute; bottom:0; left: 50%; margin-left: -87.275px;
 	transition: background-color .4s; -webkit-transition: background-color .4s; -moz-transition: background-color .4s; -o-transition: background-color .4s;}
 .btn_custom:hover{ background: transparent; color: #fff;}
 .btn_custom:visited{background: rgba(255,255,255,0.3) !important; color: white;}
 
-#cd-timeline::before{ width: 0px; transition: width .6s; -webkit-transition: width .6s; -moz-transition: width .6s; -o-transition: width .6s;}
-#cd-timeline.before::before{ width: 4px;}
-.cd-timeline-content h5, .cd-timeline-content ul{ margin-left: 15px;}
+.cd-timeline-img.study-backgroundColor{ background-color: #c03b44}
+.cd-timeline-img.work-backgroundColor{ background-color: #75ce66}
 .cover-heading{text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
 	-webkit-animation: headerMotion 1s; -moz-animation: headerMotion 1s; -o-animation: headerMotion 1s; animation: headerMotion 1s;}
 	
@@ -43,7 +40,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 .first-link{ margin-top: 0em;   
   -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; transition: 0.5s;}
 .fsize{ font-size:17px;}
-.fsize_{ font-size:16px; position: relative; bottom: -300px; line-height: 30px}
+.fsize_{ font-size:15px; position: relative; bottom: -300px; line-height: 30px}
 	
 .homebackground{ overflow: hidden; padding-top: 7%; margin-top: 0; width:100%; position: relative;
 	-webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out;}
@@ -57,7 +54,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 .icon_detail{ /*height: 100%;*/width: calc(100% - 15px); position: absolute; top: 100%; left: 1%; background-color: rgba(255, 255, 255, 1); border-radius: 4px; color: #333; padding: 3px 0; box-shadow: 0 0 10px rgba(51,51,51,0.6); visibility: hidden;
 	-webkit-transition: all 1s; -moz-transition: all 1s; -ms-transition: all 1s; -o-transition: all 1s; transition: all 1s;}
 .icon_detail .detailImg{margin-bottom: 0}
-.icon_detail .detailImg li{margin: 5px 0; font-size: 12px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);}
+.icon_detail .detailImg li{margin: 5px 0; font-size: 13px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);}
 
 .lead{ margin-top: 10px;}
 .legend.r_legend{ padding-left: 7px !important;}
@@ -91,16 +88,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 .ski_icon .li_icon:nth-child(3){ left: calc(2 * (100% - 240px) / 3 + 120px)}
 .ski_icon .li_icon:nth-child(4){ right: 0}
 .slideL, .slideR, .subtitle, .subt, .contenttitle{visibility: hidden;}
-/*
-.timeline:before{ content: '1'; width: 1px; height: 100%; font-size: 0; overflow: hidden; display: inline-block; background: #fff; position: absolute; left: 30%;}
-.timeline a, .timeline a:hover, .timeline a:focus{ text-decoration: none;}
-.timeline .panel-heading{ background-color: transparent; }
-.timeline_item{ position: relative; list-style-type: none; margin-bottom: 30px; min-height: 40px;}
-.timeline_item p{ margin-top: 10px; }
-.timeline_timebucket{ position: absolute; text-align: right; width: 25%;}
-.timeline_icon{ position: absolute; left: calc(25% + 20px); width: 40px; height: 40px; border-radius: 50%; background-color: #fff; overflow: hidden;}
-.timeline_content{ position: absolute; left: 35%;}
-*/
+
 .upMotion{ -webkit-animation: upMotion 1s; -moz-animation: upMotion 1s; -o-animation: upMotion 1s; animation: upMotion 1s;}
 .upOutMotion{ -webkit-animation: upOutMotion 1s; -moz-animation: upOutMotion 1s; -o-animation: upOutMotion 1s; animation: upOutMotion 1s;}
 
@@ -111,11 +99,12 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 .webtips{ position: fixed; top: 85px; left: 40px;}
 .well{ color: #333;}
 
+#cd-timeline::before{ width: 0px; transition: width .6s; -webkit-transition: width .6s; -moz-transition: width .6s; -o-transition: width .6s;}
+#cd-timeline.before::before{ width: 4px;}
 #demo2 .intro{ position: relative; padding: 0.5% 0.5%; margin-top: calc(100px + 10%); width: 80%; overflow: hidden;}
 #demo2 .intro:before{ top: 0; left: 0; border-top: 2px solid #fff; border-left: 2px solid #fff;}
 #demo2 .intro:after{ bottom: 0; right: 0; border-right: 2px solid #fff; border-bottom: 2px solid #fff;}
 #demo2 .intro:before, #demo2 .intro:after{position:absolute; width: 7%; height: 20%; content: "";}
-/*#demo2 .intro p{visibility: hidden;}*/
 #fadeWhite{position: fixed; width: 100%; background: #fff; height: 100%; min-height: 100%; left: 0px; top: 0px; z-index: 99999;}
 #github img{vertical-align: bottom;}
 #github:hover, #github:focus{text-decoration: none;}
@@ -151,6 +140,3 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 2
 	ul.navbar-right.nav.navbar-nav > li:nth-child(4){ -webkit-animation: navMotion 1.2s; -moz-animation: navMotion 1.2s; -o-animation: navMotion 1.2s; animation: navMotion 1.2s;}
 	ul.navbar-right.nav.navbar-nav > li:nth-child(5){ -webkit-animation: navMotion 1.5s; -moz-animation: navMotion 1.5s; -o-animation: navMotion 1.5s; animation: navMotion 1.5s;}
 }
-
-.popover{ color: #333; }
-.popover-title{display: block;}
