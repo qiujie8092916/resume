@@ -15,24 +15,23 @@
 		"subt": "Brief",
 		"detail_html": [
 			"深刻理解Web标准",
-			"熟练运用html标签",
+			"灵活运用html标签，标签语义化",
 			"熟悉xml及xhtml标记语言",
 			"掌握html5如canvas、svg新特性"
 		],
 		"detail_css": [
-			"熟练运用css及css3新属性",
-			"注重浏览器兼容性，熟悉常见的css hack",
-			"掌握css预编译器Less及Sass"
+			"熟练运用CSS及CSS3新属性",
+			"充分利用Animate.css等CSS3动画库装饰页面，有利于减少JS不利于爬虫的问题",
+			"掌握CSS预编译器Less及Sass"
 		],
 		"detail_js": [
-			"掌握jQuery",
-			"掌握Angular，熟练指令的编写，模块组件化",
-			"熟练运用Ajax前后台通信",
-			"熟练运用Bootstrap、Highchrts等主流框架"
+			"掌握jQuery、AngularJS，熟练指令的编写，模块组件化",
+			"熟练运用Ajax前后台、跨平台通信",
+			"熟练运用Bootstrap、Foundation、Highcharts、LayerUI等主流Jquery框架"
 		],
 		"detail_more": [
-			"掌握Mysql，熟练运用联合查询",
-			"掌握C、C++、Python、Java主流编程语言",
+			"掌握数据库语言Mysql，熟练运用联合查询",
+			"熟练运用后端语言 Java、Python、PHP等",
 			"熟悉网站从环境、建站，到维护全方面过程"
 		],
 		"fsize_": [
