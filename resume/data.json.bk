@@ -48,22 +48,24 @@
 		"subt": "Gallery",
 		"project": [
 			{"library": [
-				"在 Struts2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。"
+				/*"在 Struts2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。",
+				"用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。"*/
 			]},
 			{"CTS_log": [
-				"Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。"
+				"Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。",
+				"依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。"
 			]},
 			{"ci": [
-				"Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。"
+				"Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。",
+				"可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。"
 			]},
 			{"monitor": [
-				"Bootstrap 为框架，用于管控 Automation Case 的网站"
+				"Bootstrap 为框架，用于管控 Automation Case 的网站",
+				"有效地管控在线的 PC ，以及可以查看不同 Case 执行的历史情况，登录后可以一键对在线 PC 进行重启下线等操作，多对多的选择 PC 根据需求用以跑不同的 Case，以及可以上传新的Automation Case。"
 			]},
 			{"mi": [
-				
-			]},
-			{"DuiTang": [
-			
+				/*"Bootstrap 为框架，用于管控 Automation Case 的网站",
+				"有效地管控在线的 PC ，以及可以查看不同 Case 执行的历史情况，登录后可以一键对在线 PC 进行重启下线等操作，多对多的选择 PC 根据需求用以跑不同的 Case，以及可以上传新的Automation Case。"*/
 			]}
 		]
 	},

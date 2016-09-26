@@ -252,27 +252,27 @@ var fill_data = function(){
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="position:absolute; top: 27%;">'
+					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="position:absolute; top: 28%;">'
 					$.each(item.project, function(ii, iitem){
-						for(var key in item.project[ii]){
-							var base_sentense = '<div class="col-lg-6 col-md-6 animated">\
-																		<div class="col-lg-6 col-md-6">\
-																			<div style="background-color:#fff"><img src="imgs/' + key + '.png" height="190px" width="100%"></div>\
+						for(var key in iitem){
+							if(item.project[ii][key][0] === undefined){item.project[ii][key][0] = ''}
+							if(item.project[ii][key][1] === undefined){item.project[ii][key][1] = ''}
+							var base_sentense = '<div class="pro-module animated" data-index="'+ii+'">\
+																		<img src="imgs/' + key + '.png" height="190" width="340" />\
+																		<div class="background-shadow">\
+																			<a href="/' + key + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
 																		</div>\
+																	</div>'
+																	/*
 																		<p class="col-lg-6 col-md-6">\
 																			'+ item.project[ii][key][0] + '<span class="divider"></span>' + item.project[ii][key][1] + '</span>\
 																			<a href="/' + key + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
-																		</p>\
-																	</div>'
-							if(ii === 0){
-								base_sentense = base_sentense.replace('animated"', 'animated slideL" style="margin-bottom: 50px;"')	//href="javascript:php_console()"
-								base_sentense = base_sentense.replace('href="/' + key + '"', 'href="http://localhost:8080/Rlibrary/welcome.jsp"')
-							} else if(ii === 1){
-								base_sentense = base_sentense.replace('animated"', 'animated slideR" style="margin-bottom: 50px;"')
-							} else if(ii === 2){
-								base_sentense = base_sentense.replace('animated"', 'animated slideL"')
-							} else if(ii === 3){
-								base_sentense = base_sentense.replace('animated"', 'animated slideR"')
+																		</p>\*/
+							if(ii >= 0 && ii < 3){
+								base_sentense = base_sentense.replace('animated"', 'animated slideD"')
+								if(ii === 0){base_sentense = base_sentense.replace('href="/' + key + '"', 'href="http://localhost:8080/Rlibrary/welcome.jsp"')}
+							} else if(ii >= 3){
+								base_sentense = base_sentense.replace('animated"', 'animated slideU"')
 							}
 							
 							subbody += base_sentense
@@ -280,7 +280,27 @@ var fill_data = function(){
 					})
 					subbody += '</div>'
 					$("#" + i).append(subtitle + subbody)
-				
+					$(".background-shadow").each(function(){
+						$(this).width($(this).siblings("img").width())
+					})
+					/*
+					$(".background-shadow").css("left", Math.floor(($(".pro-module").outerWidth() - $(".pro-module img").width()) / 2))*/
+					$(".pro-module").each(function(){
+						var i = parseInt($(this).attr("data-index"))
+						if(i === 0){
+							$(this).addClass("left top")
+						} else if(i === 1){
+							$(this).addClass("top")
+						} else if(i === 2){
+							$(this).addClass("right top")
+						} else if(i === 3){
+							$(this).addClass("left bottom")
+						} else if(i === 4){
+							$(this).addClass("bottom")
+						} else if(i === 5){
+							$(this).addClass("right bottom")
+						}
+					})
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
 					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
@@ -433,8 +453,8 @@ var scroll_animate = function($win){
 			}, 500)
 			
 			setTimeout(function(){
-				$demo.find(".slideL").removeClass("slideL").addClass("slideInLeft")
-				$demo.find(".slideR").removeClass("slideR").addClass("slideInRight")
+				$demo.find(".slideU").removeClass("slideU").addClass("slideInUp")
+				$demo.find(".slideD").removeClass("slideD").addClass("slideInDown")
 			},300)
 			
 			navCurr = $("#navCurr")

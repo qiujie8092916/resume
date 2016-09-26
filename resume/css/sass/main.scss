@@ -10,13 +10,32 @@ $black : #333;
 @mixin animate($attrName, $customName, $duration, $timingFunction: ease){
 	-webkit-#{$attrName}: $customName $duration;
 	-moz-#{$attrName}: $customName $duration;
+	-ms-#{$attrName}: $customName $duration;
 	-o-#{$attrName}: $customName $duration;
 	#{$attrName}: $customName $duration;
+}
+
+@mixin transform($keyname){
+	-webkit-transform: $keyname;
+	-moz-transform: $keyname;
+	-ms-transform: $keyname;
+	-o-transform: $keyname;
+	transform: $keyname;
+}
+
+@mixin box-shadow($h, $v, $spread, $color){
+	-webkit-box-shadow: $h $v $spread $color;
+	-moz-box-shadow: $h $v $spread $color;
+	-ms-box-shadow: $h $v $spread $color;
+	-o-box-shadow: $h $v $spread $color;
+	box-shadow: $h $v $spread $color;
 }
 
 @mixin border-radius($value){
 	-webkit-border-radius: $value;
 	-moz-border-radius: $value;
+	-ms-border-radius: $value;
+	-o-border-radius: $value;
 	border-radius: $value;
 }
 
@@ -102,24 +121,20 @@ nav{
 
 .btn_custom{
 	color: $white; 
-	background: rgba(255, 255, 255, 0.3); 
+	background-color: rgba(255, 255, 255, 0.3) !important; 
 	font-weight: bold; 
-	border: 1px solid transparent; 
+	border: 1px solid transparent !important; 
 	padding: 8px 60px; 
 	@include border-radius(6px); 
 	position: absolute; 
-	bottom: 0; 
+	top: -38px;
 	left: 50%;
 	margin-left: -87.275px;
-	@include animate(transition, background-color, .4s);
+	outline: none;
+	@include animate(transition, all, .4s);
 	&:hover{
-		background-color: transparent; 
-		color: $white;
-	}
-	
-	&:visited{
-		background: rgba(255, 255, 255, 0.3) !important; 
-		color: $white;
+		background-color: transparent !important; 
+  	border: 1px solid #fff !important;
 	}
 }
 
@@ -363,14 +378,44 @@ nav{
 		font-size: 13.5px;
 	}
 	img{
-		opacity: 0.8;
-		@include animate(transition, opacity, 0.4s);
+		/*opacity: 0.8;*/
+		@include animate(transition, all, 0.3s);
 	}
 	img:hover{
-		opacity: 1 !important;
+		/*opacity: 1 !important;*/
+		@include transform(translate3d(0, -3px, 0));
+		@include box-shadow(0, 15px, 30px, rgba(0, 0, 0, 0.1));
+	}
+	.background-shadow{
+		height: 190px;
+		width: 384px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		@include animate(transition, all, 0.2s);
+	}
+	.pro-module{
+		display: inline-block;
+		@include animate(transition, all, 0.3s);
+		/*cursor: pointer;*/
+		&:hover{
+			img{
+				@include transform(translate3d(0, -3px, 0));
+				@include box-shadow(0, 15px, 30px, rgba(0, 0, 0, 0.1));
+			}
+			.background-shadow{
+				@include transform(translate3d(0, -3px, 0));
+				@include box-shadow(0, 15px, 30px, rgba(0, 0, 0, 0.1));
+				background-color: rgba(0, 0, 0, .3);
+				.btn_custom{
+					top: calc(50% - 19px);	
+				}
+			}
+		}
 	}
 }
-
+ 
 .#{$nav}-default .#{$nav}-nav{
 	& > li > a { 
 		color: $black;
@@ -397,8 +442,20 @@ nav{
 	margin-bottom: 0px; 
 }
 
-.slideL, .slideR, .subtitle, .subt, .contenttitle{
+.slideU, .slideD, .subtitle, .subt, .contenttitle{
 	visibility: hidden;
+}
+
+.top{
+	margin-bottom: 70px;	
+}
+
+.left{
+	margin-right: 9%;	
+}
+
+.right{
+	margin-left: 9%;
 }
 
 .upMotion{ 
@@ -408,7 +465,7 @@ nav{
 .upOutMotion{ 
 	@include animate(animation, upOutMotion, 1s);
 }
-
+ 
 .webtip{ 
 	position: absolute; 
 	width: 20px; 
