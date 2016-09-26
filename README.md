@@ -5,6 +5,6 @@ This is a simple website example about my personal resume which is constructed b
 <ol>
 	<li>home page</li>
 	<li>brief introduction page</li>
-	<li>work-experience (total: 4)</li>
+	<li>work-experience (total: 6)</li>
 	<li>time-line</li>
 </ol>
