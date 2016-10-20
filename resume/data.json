@@ -5,7 +5,7 @@
 			"我叫邱杰",
 			"25岁",
 			"qiujieee_empty@outlook.com",
-			"Web前端、网站建设"
+			"web前端、网站建设"
 		]
 	},
 
@@ -50,7 +50,7 @@
 			{"library": [
 				"在 Struts2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。"
 			]},
-			{"CTS_log": [
+			{"log_android": [
 				"Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。"
 			]},
 			{"ci": [

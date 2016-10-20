@@ -11,6 +11,7 @@
 
 		<link href='css/font.css' rel='stylesheet' type='text/css'>
 		<link href='../../fonts/font.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/jquery.fullPage.css">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/iconfont.css" rel="stylesheet">
 		<link href="css/cover.css" rel="stylesheet">
@@ -53,23 +54,23 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse inner">
 					<div id="navSelected"></div>
-          <ul class="nav navbar-nav navbar-right" role="tablist">
+          <ul class="nav navbar-nav navbar-right" role="tablist" id="menu">
 					
-            <li id="navCurr" class="custom_active">
+            <li id="navCurr" data-menuanchor="demo1" class="active animated">
 							<a id="demo1Btn" href="#demo1">Home</a>
 						</li>
-            <li>
+            <li data-menuanchor="demo2" class="animated">
 							<a id="demo2Btn" href="#demo2">Brief</a>
 						</li>
-            <li>
+            <li data-menuanchor="demo3" class="animated">
 							<a id="demo3Btn" href="#demo3">Gallery</a>
 						</li>
-						<li>
+						<li data-menuanchor="demo4" class="animated">
 							<a id="demo4Btn" href="#demo4">Timeline</a>
-						</li>
-						<li>
+						</li><!--
+						<li data-menuanchor="demo5" class="animated">
 							<a id="demo5Btn" href="#demo5">Contact</a>
-						</li>
+						</li>-->
 						<!--<li><a href="javascript:alert('qiujieee_empty@outlook.com')">Contact</a></li>-->
           </ul>
         </div>
@@ -88,16 +89,20 @@
 		
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
-				<section class="homebackground" id="demo1" style="background:#f05c4d"> <!--DD4E3C-->
+				<section class="homebackground section">
 				</section>
 				
-				<section class="homebackground" id="demo2" style="background-color: #686FB3;">
+				<section class="homebackground section">
 				</section>
 				
-				<section class="homebackground" id="demo3" style="background:#549fea; position: relative">
+				<section class="homebackground section" style="position: relative">
 				</section>
 				
-				<section class="homebackground" id="demo4" style="background-color: #ffd863"> <!--fcd04b-->
+				<section class="homebackground section" style="position: relative;">
+				
+					<footer id="demo5">
+						<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>.&nbsp;&nbsp;&nbsp;<a href="https://github.com/qiujie8092916" target="_blank" id="github"><img src="imgs/github_1.png"></a></p>
+					</footer>
 				</section>
 			</div>
     </div>
@@ -107,20 +112,18 @@
 			<a href="">UP</a>
     </div>  
 
-		<footer id="demo5">
-			<p>Like it? Contact <a href="#" title="Here we go">qiujieee_empty@outlook.com</a>.&nbsp;&nbsp;&nbsp;<a href="https://github.com/qiujie8092916" target="_blank" id="github"><img src="imgs/github_1.png"></a></p>
-		</footer>
 		
 		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/jquery.fullPage.js"></script>
     <script src="js/bootstrap.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/scrolld.min.js"></script>
+<!--<script src="js/scrolld.min.js"></script>-->
 		<script src="js/jquery.qtip.js"></script>
 		<script src="js/transition.js"></script>
 		<script src="js/index.js"></script>
 		<script>
 		$('#fadeWhite').fadeOut(400);
-		$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
+		//$("[id*='Btn']").stop(true).on('click', function (e) {e.preventDefault();$(this).scrolld();})
 		$('.webtip').each(function(){
 				$(this).qtip({
 						content: {text: $(this).next("div")},

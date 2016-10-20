@@ -77,9 +77,12 @@ hr{
 
 footer{
 	background: #555;
-	padding: 80px 0;
-	margin-top: -5px;
-	position: relative;
+	padding: 70px 0;    
+	margin-bottom: 135px;
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	
 	p{
 		margin:0 !important;
 	}
@@ -110,11 +113,11 @@ nav{
 @for $i from 1 to 6{
 	@if $i == 1{
 		ul.#{$nav}-right.nav.#{$nav}-nav > li:nth-child(#{$i}), #navSelected{
-			@include animate(animation, navMotion, (1.3 + #{$i} * 0.2)s)
+			@include animate(animation, navMotion, calc(1.3s + #{$i} * 0.2s))
 		}
 	} @else{
 		ul.#{$nav}-right.nav.#{$nav}-nav > li:nth-child(#{$i}){
-				@include animate(animation, navMotion, (1.3 + #{$i} * 0.2)s)
+				@include animate(animation, navMotion, calc(1.3s + #{$i} * 0.2s))
 		}
 	}
 }
@@ -470,7 +473,7 @@ nav{
 	position: absolute; 
 	width: 20px; 
 	height: 20px; 
-	border: 1px solid rgba(255,255,255,0.3); 
+	border: 1px solid rgba(255,255,255,0.7); 
 	display: block; 
 	top: 85px; 
 	left: 10px; 
@@ -479,7 +482,7 @@ nav{
 	@include border-radius(20px);
 	@include animate(transition, all, .7s);
 	&:hover{
-		border: 1px solid rgba(255, 255, 255, .5);
+		border: 1px solid rgba(255, 255, 255, .9);
 		background: rgba(245, 245, 245, .5);
 	}
 }
@@ -518,7 +521,7 @@ nav{
 #navSelected{ 
 	position: absolute; 
 	top: 75px; 
-	height: 39px; 
+	height: 5px; 
 	line-height: 33px;
 	&:after{ 
 		content: ""; 
@@ -550,7 +553,7 @@ nav{
 	margin-top: 120px; 
 }
 
-.custom_active{ 
+.active{ 
 	border-bottom: 0;
 }
 
@@ -565,8 +568,8 @@ nav{
 	background-size: contain;
 }
 
-.#{$nav}-default .#{$nav}-nav > li:not(.custom_active):not(.dropdown) > a:hover, 
-.#{$nav}-default .#{$nav}-nav > li:not(.custom_active):not(.dropdown) > a:focus { 
+.#{$nav}-default .#{$nav}-nav > li:not(.active):not(.dropdown) > a:hover, 
+.#{$nav}-default .#{$nav}-nav > li:not(.active):not(.dropdown) > a:focus { 
 	border-bottom: 0; 
 	color:#FF6F79; 
 }
@@ -611,7 +614,7 @@ nav .logo{
 
 @for $i from 1 to 6{
 	ul.#{$nav}-right.nav.#{$nav}-nav > li:nth-child(#{$i}){
-		@include animate(animation, navMotion, (#{$i} * 0.3)s)
+		@include animate(animation, navMotion, calc(#{$i} * 0.3s))
 	}
 }
 }

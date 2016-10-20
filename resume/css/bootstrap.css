@@ -4572,8 +4572,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   /*color: #c7c7c7;*/
 	color: #777;
 }
-.navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:hover,
-.navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:focus {
+.navbar-default .navbar-nav > li:not(.active):not(.dropdown) > a:hover,
+.navbar-default .navbar-nav > li:not(.active):not(.dropdown) > a:focus {
   /*color: #333;*/
   background-color: transparent;
 	/*border-bottom: 2px solid rgba(255, 255, 255, 1);*/

@@ -30,9 +30,11 @@ hr {
 
 footer {
   background: #555;
-  padding: 80px 0;
-  margin-top: -5px;
-  position: relative; }
+  padding: 70px 0;
+  margin-bottom: 135px;
+  bottom: 0;
+  position: absolute;
+  width: 100%; }
   footer p {
     margin: 0 !important; }
   footer #github img {
@@ -52,39 +54,39 @@ nav {
   top: 0; }
 
 ul.navbar-right.nav.navbar-nav > li:nth-child(1), #navSelected {
-  -webkit-animation: navMotion 1.3 + 1 * 0.2 s;
-  -moz-animation: navMotion 1.3 + 1 * 0.2 s;
-  -ms-animation: navMotion 1.3 + 1 * 0.2 s;
-  -o-animation: navMotion 1.3 + 1 * 0.2 s;
-  animation: navMotion 1.3 + 1 * 0.2 s; }
+  -webkit-animation: navMotion calc(1.3s + 1 * 0.2s);
+  -moz-animation: navMotion calc(1.3s + 1 * 0.2s);
+  -ms-animation: navMotion calc(1.3s + 1 * 0.2s);
+  -o-animation: navMotion calc(1.3s + 1 * 0.2s);
+  animation: navMotion calc(1.3s + 1 * 0.2s); }
 
 ul.navbar-right.nav.navbar-nav > li:nth-child(2) {
-  -webkit-animation: navMotion 1.3 + 2 * 0.2 s;
-  -moz-animation: navMotion 1.3 + 2 * 0.2 s;
-  -ms-animation: navMotion 1.3 + 2 * 0.2 s;
-  -o-animation: navMotion 1.3 + 2 * 0.2 s;
-  animation: navMotion 1.3 + 2 * 0.2 s; }
+  -webkit-animation: navMotion calc(1.3s + 2 * 0.2s);
+  -moz-animation: navMotion calc(1.3s + 2 * 0.2s);
+  -ms-animation: navMotion calc(1.3s + 2 * 0.2s);
+  -o-animation: navMotion calc(1.3s + 2 * 0.2s);
+  animation: navMotion calc(1.3s + 2 * 0.2s); }
 
 ul.navbar-right.nav.navbar-nav > li:nth-child(3) {
-  -webkit-animation: navMotion 1.3 + 3 * 0.2 s;
-  -moz-animation: navMotion 1.3 + 3 * 0.2 s;
-  -ms-animation: navMotion 1.3 + 3 * 0.2 s;
-  -o-animation: navMotion 1.3 + 3 * 0.2 s;
-  animation: navMotion 1.3 + 3 * 0.2 s; }
+  -webkit-animation: navMotion calc(1.3s + 3 * 0.2s);
+  -moz-animation: navMotion calc(1.3s + 3 * 0.2s);
+  -ms-animation: navMotion calc(1.3s + 3 * 0.2s);
+  -o-animation: navMotion calc(1.3s + 3 * 0.2s);
+  animation: navMotion calc(1.3s + 3 * 0.2s); }
 
 ul.navbar-right.nav.navbar-nav > li:nth-child(4) {
-  -webkit-animation: navMotion 1.3 + 4 * 0.2 s;
-  -moz-animation: navMotion 1.3 + 4 * 0.2 s;
-  -ms-animation: navMotion 1.3 + 4 * 0.2 s;
-  -o-animation: navMotion 1.3 + 4 * 0.2 s;
-  animation: navMotion 1.3 + 4 * 0.2 s; }
+  -webkit-animation: navMotion calc(1.3s + 4 * 0.2s);
+  -moz-animation: navMotion calc(1.3s + 4 * 0.2s);
+  -ms-animation: navMotion calc(1.3s + 4 * 0.2s);
+  -o-animation: navMotion calc(1.3s + 4 * 0.2s);
+  animation: navMotion calc(1.3s + 4 * 0.2s); }
 
 ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
-  -webkit-animation: navMotion 1.3 + 5 * 0.2 s;
-  -moz-animation: navMotion 1.3 + 5 * 0.2 s;
-  -ms-animation: navMotion 1.3 + 5 * 0.2 s;
-  -o-animation: navMotion 1.3 + 5 * 0.2 s;
-  animation: navMotion 1.3 + 5 * 0.2 s; }
+  -webkit-animation: navMotion calc(1.3s + 5 * 0.2s);
+  -moz-animation: navMotion calc(1.3s + 5 * 0.2s);
+  -ms-animation: navMotion calc(1.3s + 5 * 0.2s);
+  -o-animation: navMotion calc(1.3s + 5 * 0.2s);
+  animation: navMotion calc(1.3s + 5 * 0.2s); }
 
 .btn_custom {
   color: #fff;
@@ -455,7 +457,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   position: absolute;
   width: 20px;
   height: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   display: block;
   top: 85px;
   left: 10px;
@@ -472,7 +474,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   -o-transition: all 0.7s;
   transition: all 0.7s; }
   .webtip:hover {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     background: rgba(245, 245, 245, 0.5); }
 
 /*.webtips{ 
@@ -507,7 +509,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
 #navSelected {
   position: absolute;
   top: 75px;
-  height: 39px;
+  height: 5px;
   line-height: 33px; }
   #navSelected:after {
     content: "";
@@ -536,7 +538,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   .contenttitle {
     margin-top: 120px; }
 
-  .custom_active {
+  .active {
     border-bottom: 0; }
 
   .demo1Btn {
@@ -547,8 +549,8 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   .homebackground {
     background-size: contain; }
 
-  .navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:hover,
-  .navbar-default .navbar-nav > li:not(.custom_active):not(.dropdown) > a:focus {
+  .navbar-default .navbar-nav > li:not(.active):not(.dropdown) > a:hover,
+  .navbar-default .navbar-nav > li:not(.active):not(.dropdown) > a:focus {
     border-bottom: 0;
     color: #FF6F79; }
 
@@ -587,38 +589,38 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
     height: 0; }
 
   ul.navbar-right.nav.navbar-nav > li:nth-child(1) {
-    -webkit-animation: navMotion 1 * 0.3 s;
-    -moz-animation: navMotion 1 * 0.3 s;
-    -ms-animation: navMotion 1 * 0.3 s;
-    -o-animation: navMotion 1 * 0.3 s;
-    animation: navMotion 1 * 0.3 s; }
+    -webkit-animation: navMotion calc(1 * 0.3s);
+    -moz-animation: navMotion calc(1 * 0.3s);
+    -ms-animation: navMotion calc(1 * 0.3s);
+    -o-animation: navMotion calc(1 * 0.3s);
+    animation: navMotion calc(1 * 0.3s); }
 
   ul.navbar-right.nav.navbar-nav > li:nth-child(2) {
-    -webkit-animation: navMotion 2 * 0.3 s;
-    -moz-animation: navMotion 2 * 0.3 s;
-    -ms-animation: navMotion 2 * 0.3 s;
-    -o-animation: navMotion 2 * 0.3 s;
-    animation: navMotion 2 * 0.3 s; }
+    -webkit-animation: navMotion calc(2 * 0.3s);
+    -moz-animation: navMotion calc(2 * 0.3s);
+    -ms-animation: navMotion calc(2 * 0.3s);
+    -o-animation: navMotion calc(2 * 0.3s);
+    animation: navMotion calc(2 * 0.3s); }
 
   ul.navbar-right.nav.navbar-nav > li:nth-child(3) {
-    -webkit-animation: navMotion 3 * 0.3 s;
-    -moz-animation: navMotion 3 * 0.3 s;
-    -ms-animation: navMotion 3 * 0.3 s;
-    -o-animation: navMotion 3 * 0.3 s;
-    animation: navMotion 3 * 0.3 s; }
+    -webkit-animation: navMotion calc(3 * 0.3s);
+    -moz-animation: navMotion calc(3 * 0.3s);
+    -ms-animation: navMotion calc(3 * 0.3s);
+    -o-animation: navMotion calc(3 * 0.3s);
+    animation: navMotion calc(3 * 0.3s); }
 
   ul.navbar-right.nav.navbar-nav > li:nth-child(4) {
-    -webkit-animation: navMotion 4 * 0.3 s;
-    -moz-animation: navMotion 4 * 0.3 s;
-    -ms-animation: navMotion 4 * 0.3 s;
-    -o-animation: navMotion 4 * 0.3 s;
-    animation: navMotion 4 * 0.3 s; }
+    -webkit-animation: navMotion calc(4 * 0.3s);
+    -moz-animation: navMotion calc(4 * 0.3s);
+    -ms-animation: navMotion calc(4 * 0.3s);
+    -o-animation: navMotion calc(4 * 0.3s);
+    animation: navMotion calc(4 * 0.3s); }
 
   ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
-    -webkit-animation: navMotion 5 * 0.3 s;
-    -moz-animation: navMotion 5 * 0.3 s;
-    -ms-animation: navMotion 5 * 0.3 s;
-    -o-animation: navMotion 5 * 0.3 s;
-    animation: navMotion 5 * 0.3 s; } }
+    -webkit-animation: navMotion calc(5 * 0.3s);
+    -moz-animation: navMotion calc(5 * 0.3s);
+    -ms-animation: navMotion calc(5 * 0.3s);
+    -o-animation: navMotion calc(5 * 0.3s);
+    animation: navMotion calc(5 * 0.3s); } }
 
 /*# sourceMappingURL=main.css.map */

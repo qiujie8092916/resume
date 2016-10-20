@@ -1,12 +1,25 @@
 ﻿$(function(){
 		var $win = $(window)
 		
+		$('.site-wrapper-inner').fullpage({		
+			sectionsColor: ['#f05c4d', '#686FB3', '#549fea', '#ffd863'],
+			anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
+			menu: '#menu',
+			resize: false,
+			afterLoad: function(anchorLink, index){
+				$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
+				$("#navSelected").width($(".active").width());
+				
+				scroll_animate(anchorLink)
+			}
+		});
+		
 		fill_data()	//fill pages with 'data.json'
 		homepage_animate()	//#demo1's animation
-		scroll_animate($win)	//bind animation when scrolling
+		//scroll_animate($win)	//bind animation when scrolling
 		bindTabActive()	//connect navigation with pages
 		
-		$("#navSelected").width($(".custom_active").width())
+		$("#navSelected").width($(".active").width())
 		$(".homebackground").css("height", $win.height())
 		$win.resize(function() {
 			$(".homebackground").css("height", $win.height())
@@ -100,12 +113,12 @@
 
 var changeActive = function(e){
 		e.parent().attr("id", "navCurr")
-		e.parent().addClass("custom_active")
+		e.parent().addClass("active")
 }
 
 var removeActive = function(e){
 		e.parent().siblings().each(function(){
-				$(this).removeClass("custom_active")
+				$(this).removeClass("active")
 				$(this).removeAttr("id")
 		})
 }
@@ -158,15 +171,15 @@ var bindTabActive = function(){
 	//nav里的链接hover效果
 	$("#navbar ul li").hover(function(){
 			if(!!$("#navSelected").stop(true).animate({left:$(this)[0].offsetLeft}, 400, "easeOutBack")){
-					$(this).siblings().removeClass("custom_active").end().addClass("custom_active")
-					$("#navSelected").width($(".custom_active").width())
+					$(this).siblings().removeClass("active").end().addClass("active")
+					$("#navSelected").width($(".active").width())
 			}
 	}, function(){
-			$(this).removeClass("custom_active")
-			$("#navCurr").addClass("custom_active")
+			$(this).removeClass("active")
+			$("#navCurr").addClass("active")
 			navCurr = $("#navCurr")
 			$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
-			$("#navSelected").width($(".custom_active").width())
+			$("#navSelected").width($(".active").width())
 	})
 }
 
@@ -186,17 +199,16 @@ var fill_data = function(){
 					$.each(item.fsize, function(ii, iitem){
 						fsize += '<p class="fsize contenttitle">' + iitem + '</p>'
 					})
-					appends += '<div class="inner cover" style="/visibility:hidden; margin-top:210px;">\
+					appends += '<div class="inner cover" style="margin-top: 220px;">\
 												<h4 class="contenttitle"><strong>' + item.contenttitle + '</strong></h4>\
 												<p class="decoration"></p>\
 												<article style="margin-top: 20px">'+ fsize + '</article>\
 											</div>'
-					$("#"+i).append(appends)
+					$('[data-anchor="'+i+'"] .fp-tableCell').append(appends)
 					
 				} else if(i == "demo2"){
 				//--------------------------------------------------------append demo2
-					var subtitle = '<div class="inner cover" style="/visibility:hidden; margin-top:3%;">\
-														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
+					var subtitle = '  <h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
@@ -240,9 +252,9 @@ var fill_data = function(){
 					detail_out += '</div>'
 					descripWords += '</div>'
 					
-					$("#" + i).append(subtitle + article)
-					$("#" + i + " .article").append(descripWords)
-					$("#" + i + " .article .icon_div").append(detail_out)
+					$('[data-anchor="'+i+'"] .fp-tableCell').append(subtitle + article)
+					$('[data-anchor="'+i+'"] .fp-tableCell .article').append(descripWords)
+					$('[data-anchor="'+i+'"] .fp-tableCell .article .icon_div').append(detail_out)
 					
 				} else if(i == "demo3"){
 				//--------------------------------------------------------append demo3
@@ -260,7 +272,7 @@ var fill_data = function(){
 							var base_sentense = '<div class="pro-module animated" data-index="'+ii+'">\
 																		<img src="imgs/' + key + '.png" height="190" width="340" />\
 																		<div class="background-shadow">\
-																			<a href="/' + key + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
+																			<a href="/' + (key === "ci" ? key+'/vip.html' : key) + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
 																		</div>\
 																	</div>'
 																	/*
@@ -279,7 +291,8 @@ var fill_data = function(){
 						}
 					})
 					subbody += '</div>'
-					$("#" + i).append(subtitle + subbody)
+					$('[data-anchor="'+i+'"] .fp-tableCell').append(subtitle + subbody)
+					
 					$(".background-shadow").each(function(){
 						$(this).width($(this).siblings("img").width())
 					})
@@ -332,7 +345,7 @@ var fill_data = function(){
 						subbody += '</div>'
 					})
 					subbody += '</section></div>'
-					$("#" + i).append(subtitle + subbody)
+					$('#demo5').before(subtitle + subbody)
 				}
 			})
 		},
@@ -345,125 +358,74 @@ var fill_data = function(){
 
 var homepage_animate = function(){
 	$(".decoration").css("width", 0)
-	var $homebackground_id = $($("#navCurr").children().attr("href"))
+	var $homebackground_id = $('[data-anchor="'+$("#navCurr").children().attr("href").substring(1)+'"]')
+
+	$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
+	$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+	$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
+	
+	$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
 	setTimeout(function(){
-		$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
-		$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
-		$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
+		$homebackground_id.find(".li_icon").removeClass("fadeInUp")
+		$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
+	}, 300)
+	var $intro_p = $homebackground_id.find(".intro .fsize_")
+	$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, function(){
+		$intro_p.eq(0).animate({bottom:"0"}, 500, "linear", function(){
+			$intro_p.eq(1).animate({bottom:"0"}, 500, "linear", function(){
+				$intro_p.eq(2).animate({bottom:"0"}, 500, "linear", function(){
+					$intro_p.eq(3).animate({bottom:"0"}, 500, "linear")
+				})
+			})
+		})
+	})
+
+	$homebackground_id.find("#cd-timeline").addClass("before")
+	$homebackground_id.find('.cd-timeline-block').each(function(){
+		$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+	})
+}
+
+var scroll_animate = function(anchorLink){
+		var $demo = $('[data-anchor="'+anchorLink+'"]')
 		
-		$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
+		$(".decoration").css("width", 0)
+		$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+		$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
+		if($demo.attr("data-anchor") == "demo1"){
+			$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
+		} else{
+			$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+		}
+
+		$demo.find(".subt").removeClass("subt").addClass("swing")
+		if($demo.find(".li_icon").css("visibility") != "visible"){
+			$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
+		}
 		setTimeout(function(){
-			$homebackground_id.find(".li_icon").removeClass("fadeInUp")
-			$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
+			$demo.find(".li_icon").removeClass("fadeInUp")
+			$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
 		}, 300)
-		var $intro_p = $homebackground_id.find(".intro .fsize_")
-		$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, function(){
-			$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
-				$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
-					$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
-						$intro_p.eq(3).animate({bottom:"0"}, 600, "linear")
+
+		var $intro_p = $demo.find(".intro p")
+		$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, "easeOutElastic", function(){
+			$intro_p.eq(0).animate({bottom:"0"}, 500, "linear", function(){
+				$intro_p.eq(1).animate({bottom:"0"}, 500, "linear", function(){
+					$intro_p.eq(2).animate({bottom:"0"}, 500, "linear", function(){
+						$intro_p.eq(3).animate({bottom:"0"}, 500, "linear")
 					})
 				})
 			})
 		})
-	},300)
-	
-	setTimeout(function(){
-		$homebackground_id.find("#cd-timeline").addClass("before")
-		$homebackground_id.find('.cd-timeline-block').each(function(){
+		
+		$demo.find("#cd-timeline").addClass("before")
+		$demo.find('.cd-timeline-block').each(function(){
 			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 		})
-	}, 800)
-}
 
-var scroll_animate = function($win){
-	$win.scroll(function(a){
-		setTimeout(function(){
-			var y = $win.scrollTop()
-			var h = $win.height()
-			//var res = y / h
-			var hBtn = $('.demo1Btn')
-			var upM = 'upMotion'
-			var upOM = 'upOutMotion'
-			var d1 = $("#demo1").offset().top,
-					d2 = $("#demo2").offset().top,
-					d3 = $("#demo3").offset().top,
-					d4 = $("#demo4").offset().top,
-					d5 = $("#demo5").offset().top;
-			a.stopImmediatePropagation()
-			
-			if(y >= h / 2){
-					hBtn.fadeIn(1).removeClass(upOM).addClass(upM);
-			} else if(y < h / 3){
-					hBtn.fadeOut(1000).removeClass(upM).addClass(upOM);
-			} else{
-					hBtn.fadeOut(1000).removeClass(upM).addClass(upOM);
-			}
-			
-			var $bnt, $demo
-			if(y < d2){	//res <= 1
-					$bnt = $("#demo1Btn"); $demo = $("#demo1")
-			} else if(y >= d2 && y < d3){	//(1) < res && res <= (2)
-					$bnt = $("#demo2Btn"); $demo = $("#demo2")
-			} else if(y >= d3 && y < d4){	//(2) <res
-					$bnt = $("#demo3Btn"); $demo = $("#demo3")
-			} else if(y >= d4 && y <= d4 + 2){
-					$bnt = $("#demo4Btn"); $demo = $("#demo4")
-			} else if(y > d4 + 2){
-					$bnt = $("#demo5Btn"); $demo = $("#demo5")
-			}
-			
-			changeActive($bnt)
-			removeActive($bnt)
-			
-			$(".decoration").css("width", 0)
-
-			$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
-			$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
-			if($demo.attr("id") == "demo1"){
-				$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
-			} else{
-				$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
-			}
-			setTimeout(function(){
-				$demo.find(".subt").removeClass("subt").addClass("swing")
-				if($demo.find(".li_icon").css("visibility") != "visible"){
-					$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
-				}
-				setTimeout(function(){
-					$demo.find(".li_icon").removeClass("fadeInUp")
-					$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
-				}, 300)
-
-				var $intro_p = $demo.find(".intro p")
-				$demo.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, "easeOutElastic", function(){
-					$intro_p.eq(0).animate({bottom:"0"}, 600, "linear", function(){
-						$intro_p.eq(1).animate({bottom:"0"}, 600, "linear", function(){
-							$intro_p.eq(2).animate({bottom:"0"}, 600, "linear", function(){
-								$intro_p.eq(3).animate({bottom:"0"}, 600, "linear")
-							})
-						})
-					})
-				})
-				
-				$demo.find("#cd-timeline").addClass("before")
-				$demo.find('.cd-timeline-block').each(function(){
-					$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-				})
-			}, 500)
-			
-			setTimeout(function(){
-				$demo.find(".slideU").removeClass("slideU").addClass("slideInUp")
-				$demo.find(".slideD").removeClass("slideD").addClass("slideInDown")
-			},300)
-			
-			navCurr = $("#navCurr")
-			$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
-			$("#navSelected").width($(".custom_active").width())
-			
-			return false;
-		}, 150);
-	})
+		$demo.find(".slideU").removeClass("slideU").addClass("slideInUp")
+		$demo.find(".slideD").removeClass("slideD").addClass("slideInDown")
+	
 }
 
 function defer(url, data){
