@@ -77,7 +77,7 @@ hr{
 
 footer{
 	background: #555;
-	padding: 60px 0;    
+	padding: 70px 0;    
 	margin-bottom: 135px;
 	bottom: 0;
 	position: absolute;
