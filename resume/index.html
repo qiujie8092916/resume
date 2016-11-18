@@ -10,7 +10,8 @@
     <title>Qiujie's Resume</title>
 
 		<link href='css/font.css' rel='stylesheet' type='text/css'>
-		<link href='../../fonts/font.css' rel='stylesheet' type='text/css'>
+<!--<link href='../../fonts/font.css' rel='stylesheet' type='text/css'>-->
+		<link href='css/font.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/jquery.fullPage.css">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/iconfont.css" rel="stylesheet">
@@ -18,7 +19,6 @@
 		<link href="css/animate.css" rel="stylesheet">
 		<link href="css/timeline.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
-<!--<link href="css/grid.css" rel="stylesheet">-->
 		<link href="css/jquery.qtip.css" rel="stylesheet">
 		<script>
 			window.onload = function(){window.scrollTo(0, 0)}
@@ -30,16 +30,7 @@
 		
 		<nav id="fixedNavBar" class="navbar navbar-default navbar-fixed-top">
       <div class="container resposive_nav col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-				<div class="col-lg-12 col-md-12">
-				<div class="col-lg-12 col-md-12">
-        <div class="navbar-header" style="/visibility:hidden">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-					
+				<div class="navbar-header">
 					<div class="logo">
 						<dl>
 							<dt>
@@ -50,32 +41,37 @@
 						</dl>
 					</div>
 					<a class="navbar-brand oneng" href="index.html">RESUME</a>
-					
-        </div>
-        <div id="navbar" class="navbar-collapse collapse inner">
+				</div>
+				
+				<div id="navbar" class="navbar-collapse collapse inner in">
 					<div id="navSelected"></div>
-          <ul class="nav navbar-nav navbar-right" role="tablist" id="menu">
+					<ul class="nav navbar-nav navbar-right" role="tablist" id="menu">
 					
-            <li id="navCurr" data-menuanchor="demo1" class="active animated">
-							<a id="demo1Btn" href="#demo1">Home</a>
+						<li id="navCurr" data-menuanchor="demo1" class="active animated">
+							<a id="demo1Btn" href="#demo1">
+								<i class="iconfont">&#xe62f;</i>
+								<span class="nav_assist">Home</span>
+							</a>
 						</li>
-            <li data-menuanchor="demo2" class="animated">
-							<a id="demo2Btn" href="#demo2">Brief</a>
+						<li data-menuanchor="demo2" class="animated">
+							<a id="demo2Btn" href="#demo2">
+								<i class="iconfont">&#xe615;</i>
+								<span class="nav_assist">Brief</span>
+							</a>
 						</li>
-            <li data-menuanchor="demo3" class="animated">
-							<a id="demo3Btn" href="#demo3">Gallery</a>
+						<li data-menuanchor="demo3" class="animated">
+							<a id="demo3Btn" href="#demo3">
+								<i class="iconfont">&#xe62e;</i>
+								<span class="nav_assist">Gallery</span>
+							</a>
 						</li>
 						<li data-menuanchor="demo4" class="animated">
-							<a id="demo4Btn" href="#demo4">Timeline</a>
-						</li><!--
-						<li data-menuanchor="demo5" class="animated">
-							<a id="demo5Btn" href="#demo5">Contact</a>
-						</li>-->
-						<!--<li><a href="javascript:alert('qiujieee_empty@outlook.com')">Contact</a></li>-->
-          </ul>
-        </div>
-				
-				</div>
+							<a id="demo4Btn" href="#demo4">
+								<i class="iconfont">&#xe61e;</i>
+								<span class="nav_assist">Timeline</span>
+							</a>
+						</li>
+					</ul>
 				</div>
       </div>
     </nav>

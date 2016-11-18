@@ -132,7 +132,7 @@ var php_console = function(){/*
 	var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
 }
 
-var bindTabActive = function(){
+var bindTabActive = function(){/*
 	if($(document).width() <= 768){
 		$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
 			//$("ul.nav.navbar-nav.navbar-right").toggle()
@@ -147,7 +147,7 @@ var bindTabActive = function(){
 						$(this).css("background", "transparent")
 				}
 		})
-	}
+	}*/
 
 	//擦除效果
 	jQuery.extend(jQuery.easing, {
@@ -199,7 +199,7 @@ var fill_data = function(){
 					$.each(item.fsize, function(ii, iitem){
 						fsize += '<p class="fsize contenttitle">' + iitem + '</p>'
 					})
-					appends += '<div class="inner cover" style="margin-top: 220px;">\
+					appends += '<div class="inner cover">\
 												<h4 class="contenttitle"><strong>' + item.contenttitle + '</strong></h4>\
 												<p class="decoration"></p>\
 												<article style="margin-top: 20px">'+ fsize + '</article>\
@@ -212,7 +212,7 @@ var fill_data = function(){
 														<div class="decoration"></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
-					var article = '<div class="center-block article" style="width:35%;">\
+					var article = '<div class="center-block article">\
 														<div class="icon_div" style="height:100px;">\
 															<ul class="list-unstyled list-inline ski_icon">\
 																<li class="li_icon animated">\
@@ -264,7 +264,7 @@ var fill_data = function(){
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="position:absolute; top: 28%;">'
+					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">'
 					$.each(item.project, function(ii, iitem){
 						for(var key in iitem){
 							if(item.project[ii][key][0] === undefined){item.project[ii][key][0] = ''}

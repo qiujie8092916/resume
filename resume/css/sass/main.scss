@@ -44,9 +44,11 @@ $black : #333;
 	padding: 0;
 }
 /*
+html{-webkit-text-size-adjust:none;}
+*/
 body{
-	font-family: Microsoft YaHei !important;
-}*/
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
 
 dt{
 	font-weight: inherit;
@@ -104,10 +106,13 @@ img{
 
 nav{
 	display: -webkit-box;
-	background: rgba(245, 245, 245, 0.8) !important;
+	background: rgba(245, 245, 245, 0.8);
 	color: $black !important;
 	box-shadow: 0 0 10px rgba(51 ,51, 51, 0.6);
-	top: 0;
+	
+	ul.navbar-nav li a i{
+		display: none;
+	}
 }
 
 @for $i from 1 to 6{
@@ -228,6 +233,11 @@ nav{
 	margin-top: 0; 
 	width: 100%; 
 	position: relative;
+	&:first-child{
+		.inner.cover{
+			margin-top: 23%;
+		}	
+	}
 	@include animate(transition, all, 0.25s, ease-in-out);
 	h3{
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);	
@@ -235,6 +245,9 @@ nav{
 	a:focus, 
 	a:hover{
 		color: inherit !important;
+	}
+	.article{
+		width: 35%;
 	}
 }
 
@@ -371,8 +384,10 @@ nav{
 	}
 }
 
-.major{ 
-	margin-top:20px;
+.major{
+	position:absolute; 
+	top: 28%;
+	
 	p{
 		display: table; 
 		height: 190px; 
@@ -424,7 +439,7 @@ nav{
 		color: $black;
 	}
 	& > .active > a{
-		color: $black !important; 
+		color: $black; 
 		background-color: transparent !important;
 	}
 }
@@ -549,72 +564,172 @@ nav{
 			*PHONE*
 *************************/
 @media (max-width: 768px){
-.contenttitle{ 
-	margin-top: 120px; 
-}
-
-.active{ 
-	border-bottom: 0;
-}
-
-.demo1Btn{ 
-	right: 5px;
-	.first-link{ 
-		margin-top: -50px;
+	i.iconfont{
+		color: $black;
+		font-size: 30px;
 	}
-}
-
-.homebackground{ 
-	background-size: contain;
-}
-
-.#{$nav}-default .#{$nav}-nav > li:not(.active):not(.dropdown) > a:hover, 
-.#{$nav}-default .#{$nav}-nav > li:not(.active):not(.dropdown) > a:focus { 
-	border-bottom: 0; 
-	color:#FF6F79; 
-}
 	
-.#{$nav}-brand.oneng{
-	font-size: 18px;
-}
-
-.resposive_nav{ 
-	margin: 0; 
-	padding: 0 10px; 
-	width: 100%; 
-}
-
-.webtip{
-	display: none;
-}
-	
-##{$nav}{ 
-	padding: 0; 
-	overflow-x: hidden;
-}
-
-#navSelected{
-	display: none
-}
-	
-button.navbar-toggle{
-	@include animate(transition, background, .9s);
-}
-	
-footer{ 
-	padding: 25px 0; 
-	font-size: 12px;
-}
-
-nav .logo{ 
-	display: none; 
-	width: 0; 
-	height: 0;
-}
-
-@for $i from 1 to 6{
-	ul.#{$nav}-right.nav.#{$nav}-nav > li:nth-child(#{$i}){
-		@include animate(animation, navMotion, calc(#{$i} * 0.3s))
+	h4.cover-heading, p.decoration{
+		display: none;
 	}
-}
+
+	nav.navbar{
+		bottom: 0;    
+		top: initial;
+		background: rgba(245, 245, 245, 1);
+		box-shadow: initial;
+		
+		.navbar-brand.oneng{
+			display: none;	
+		}
+		
+		.container ul.nav{
+			width: 100%;
+			display: -moz-box; 
+	    display: -webkit-box; 
+	    display: box;
+			font-weight: initial;
+			margin: 0;
+			
+			& li{
+				/*display: inline-block;*/
+				-moz-box-flex: 1; 
+		    -webkit-box-flex: 1; 
+		    box-flex: 1;
+				
+				&.active a, &.active i{
+					color: #00D200;	
+				}
+				
+				a{
+					padding-top: 8px;
+    			padding-bottom: 0px;
+					font-size: 12px;
+					color: #B5B4BA;
+					line-height: 20px;
+					
+					span.nav_assist{
+						font-size: 10px;
+						-webkit-transform-origin-x: 0;
+            -webkit-transform: scale(0.5);
+						transform: scale(0.5);
+					}
+				}
+				
+				i{
+					color: #B5B4BA;
+					display: block;
+				} 
+			}
+		}
+	}
+	
+	.intro {
+	&:before, &:after{
+		width: 10%;
+    height: 16%;	
+	}
+		
+		.fsize_{
+			font-size: 12px;	
+		}
+	}
+	
+	.contenttitle{ 
+		margin-top: 120px; 
+	}
+	
+	.active{ 
+		border-bottom: 0;
+	}
+	
+	.demo1Btn{ 
+		right: 5px;
+		.first-link{ 
+			margin-top: -50px;
+		}
+	}
+	
+	.major{
+		top: 25%;
+		
+		img{
+			height: calc(150px / (340/190));
+    	width: 150px;	
+		}	
+	}
+	
+	.top{
+		margin-bottom: 12%;	
+	}
+	
+	.left{
+		margin-right: 8%;		
+	}
+	
+	.homebackground{
+		background-size: contain;
+		padding-top: 15%;
+		
+		&:first-child{
+			p{
+				margin-bottom: 20px;	
+			}
+			.inner.cover{
+				margin-top: 45%;
+			}	
+		}
+	
+		.article{
+			width: 85%;
+		}
+		
+		.icon_div .icon_detail{
+			top: 90%;
+				
+			.detailImg li{
+				font-size: 11px;	
+			}
+		}
+	}
+	
+	.#{$nav}-brand.oneng{
+		font-size: 18px;
+	}
+	
+	.resposive_nav{ 
+		margin: 0; 
+		padding: 0; 
+		width: 100%;
+		height: 45px;
+	}
+	
+	.webtip{
+		display: none;
+	}
+		
+	##{$nav}{ 
+		padding: 0; 
+		overflow-x: hidden;
+	}
+	
+	#navSelected, .navbar-header{
+		display: none
+	}
+		
+	button.navbar-toggle{
+		@include animate(transition, background, .9s);
+	}
+		
+	footer{ 
+		padding: 25px 0; 
+		font-size: 12px;
+	}
+
+	@for $i from 1 to 6{
+		ul.#{$nav}-right.nav.#{$nav}-nav > li:nth-child(#{$i}){
+			@include animate(animation, navMotion, calc(#{$i} * 0.3s))
+		}
+	}
+
 }

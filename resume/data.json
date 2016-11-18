@@ -21,13 +21,13 @@
 		],
 		"detail_css": [
 			"熟练运用CSS及CSS3新属性",
-			"充分利用Animate.css等CSS3动画库装饰页面，有利于减少JS不利于爬虫的问题",
-			"掌握CSS预编译器Less及Sass"
+			"掌握CSS预编译器Less及Sass",
+			"熟悉解决各浏览器兼容问题，优化代码、网页响应速度"
 		],
 		"detail_js": [
-			"掌握jQuery、AngularJS，熟练指令的编写，模块组件化",
-			"熟练运用Ajax前后台、跨平台通信",
-			"熟练运用Bootstrap、Foundation、Highcharts、LayerUI等主流Jquery框架"
+			"掌握JS类库如jQuery、AngularJS，熟练模块组件化",
+			"熟练运用Ajax前后端、跨平台通信",
+			"精通主流框架Bootstrap、Highcharts、LayerUI等"
 		],
 		"detail_more": [
 			"掌握数据库语言Mysql，熟练运用联合查询",
