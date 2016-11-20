@@ -108,7 +108,7 @@ nav{
 	display: -webkit-box;
 	background: rgba(245, 245, 245, 0.8);
 	color: $black !important;
-	box-shadow: 0 0 10px rgba(51 ,51, 51, 0.6);
+	@box-shadow(0, 0, 10px, rgba(51 ,51, 51, 0.6));
 	
 	ul.navbar-nav li a i{
 		display: none;
@@ -129,9 +129,9 @@ nav{
 
 .btn_custom{
 	color: $white; 
-	background-color: rgba(255, 255, 255, 0.3) !important; 
+	background-color: rgba(255, 255, 255, 0.3); 
 	font-weight: bold; 
-	border: 1px solid transparent !important; 
+	border: 1px solid transparent; 
 	padding: 8px 60px; 
 	@include border-radius(6px); 
 	position: absolute; 
@@ -141,8 +141,8 @@ nav{
 	outline: none;
 	@include animate(transition, all, .4s);
 	&:hover{
-		background-color: transparent !important; 
-  	border: 1px solid #fff !important;
+		background-color: transparent; 
+  	border: 1px solid #fff;
 	}
 }
 
@@ -235,8 +235,8 @@ nav{
 	position: relative;
 	&:first-child{
 		.inner.cover{
-			margin-top: 23%;
-		}	
+			margin-top: 13%;
+		}
 	}
 	@include animate(transition, all, 0.25s, ease-in-out);
 	h3{
@@ -625,10 +625,20 @@ nav{
 	}
 	
 	.intro {
-	&:before, &:after{
-		width: 10%;
-    height: 16%;	
-	}
+		&:before, &:after{
+			width: 8%;
+	    height: 10%;
+		}
+		
+		&:before{
+	    border-top-width: 1px;
+	    border-left-width: 1px;	
+		}
+		
+		&:after{
+	  	border-right-width: 1px;
+	    border-bottom-width: 1px;
+		}
 		
 		.fsize_{
 			font-size: 12px;	
@@ -651,9 +661,29 @@ nav{
 	}
 	
 	.major{
-		top: 2%%;
+		top: 25%;
+		
+		.background-shadow{
+			background-color: transparent !important;
+			box-shadow: none !important;
+			transform: initial;
+			
+			.btn_custom{
+				color: $white; 
+				background-color: transparent; 
+				font-weight: bold; 
+				border: 0; 
+				position: absolute; 
+				top: 0 !important;
+				left: 0;
+				margin-left: 0;
+				padding: 0;
+			}
+		}
 		
 		img{
+			transform: initial;
+			box-shadow: none !important;
 			height: calc(150px / (340/190));
     	width: 150px;	
 		}	
@@ -669,19 +699,23 @@ nav{
 	
 	.homebackground{
 		background-size: contain;
-		padding-top: 15%;
+		padding-top: 2%;
 		
 		&:first-child{
 			p{
 				margin-bottom: 20px;	
 			}
 			.inner.cover{
-				margin-top: 45%;
+				margin-top: 40%;
 			}	
 		}
 	
 		.article{
 			width: 85%;
+		}
+		
+		.intro {
+			margin-top: 110px;	
 		}
 		
 		.icon_div .icon_detail{
@@ -716,7 +750,7 @@ nav{
 	#navSelected, .navbar-header{
 		display: none
 	}
-		
+	
 	button.navbar-toggle{
 		@include animate(transition, background, .9s);
 	}

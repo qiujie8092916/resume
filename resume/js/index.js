@@ -18,6 +18,8 @@
 		homepage_animate()	//#demo1's animation
 		//scroll_animate($win)	//bind animation when scrolling
 		bindTabActive()	//connect navigation with pages
+		resize()
+		$(window).resize(function(){resize()});
 		
 		$("#navSelected").width($(".active").width())
 		$(".homebackground").css("height", $win.height())
@@ -38,54 +40,35 @@
 			$(this).find("img").attr("src", "imgs/github_1.png")
 		})
 
-		$("#icon_html").off("click").on("click", function(){
-			$("#triangle_up").css("left", "calc(30px - 20px)")
-			
-			$("#detail_css").fadeOut("fast", function(){
-				$("#detail_js").fadeOut("fast", function(){
-					$("#detail_more").fadeOut("fast", function(){
-						$("#detail_html").fadeIn("fast")
-					})
+		$(".ski_icon").find("img.icon").each(function(i, e){
+			var id = $(this).attr("id")
+			var id_flag = id.substring(id.indexOf("_")+1)
+			var index = i
+			$(this).off("click").on("click", function(){
+				var calc = ""
+				switch(index){
+					case 0:
+						calc = "calc(30px - 20px)";
+						break;
+					case 1:
+						calc = "calc((100% - 240px) / 3 + 75px)";
+						break;
+					case 2:
+						calc = "calc(2 * (100% - 240px) / 3 + 140px)";
+						break;
+					case 3:
+						calc = "calc(100% - 30px)";
+						break;
+				}
+				
+				$("#triangle_up").css("left", calc)
+				$(".icon_detail").children(".detailImg").each(function(){
+					$(this).addClass("hidden")
 				})
+				$("#detail_"+id_flag).removeClass("hidden").fadeIn("fast")
 			})
 		})
-		
-		$("#icon_css").off("click").on("click", function(){
-			$("#triangle_up").css("left", "calc((100% - 240px) / 3 + 75px)")
-			
-			$("#detail_html").fadeOut("fast", function(){
-				$("#detail_js").fadeOut("fast", function(){
-					$("#detail_more").fadeOut("fast", function(){
-						$("#detail_css").fadeIn("fast")
-					})
-				})
-			})
-		})
-		
-		$("#icon_js").off("click").on("click", function(){
-			$("#triangle_up").css("left", "calc(2 * (100% - 240px) / 3 + 140px)")
-			
-			$("#detail_html").fadeOut("fast", function(){
-				$("#detail_css").fadeOut("fast", function(){
-					$("#detail_more").fadeOut("fast", function(){
-						$("#detail_js").fadeIn("fast")
-					})
-				})
-			})
-		})
-		
-		$("#icon_more").off("click").on("click", function(){
-			$("#triangle_up").css("left", "calc(100% - 30px)")
-			
-			$("#detail_html").fadeOut("fast", function(){
-				$("#detail_css").fadeOut("fast", function(){
-					$("#detail_js").fadeOut("fast", function(){
-						$("#detail_more").fadeIn("fast")
-					})
-				})
-			})
-		})
-		
+
 		$(".ski_icon .li_icon .icon").each(function(){
 			$(this).on("click", function(){
 				if($(this).parents(".li_icon").css("transform") == "matrix(1, 0, 0, 1, 0, 0)" || $(this).parents(".li_icon").css("transform") == "none"){
@@ -132,23 +115,7 @@ var php_console = function(){/*
 	var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
 }
 
-var bindTabActive = function(){/*
-	if($(document).width() <= 768){
-		$("ul.nav.navbar-nav.navbar-right li a").on("click", function(){
-			//$("ul.nav.navbar-nav.navbar-right").toggle()
-			$("#navbar").removeClass("in")
-			$("button.navbar-toggle").css("background", "transparent")
-		})
-		
-		$("button.navbar-toggle.collapsed").click(function(){
-				if(!$("#navbar").hasClass("in")){
-						$(this).css("background", "#ddd")
-				} else{
-						$(this).css("background", "transparent")
-				}
-		})
-	}*/
-
+var bindTabActive = function(){
 	//擦除效果
 	jQuery.extend(jQuery.easing, {
 			easeOutBack: function (x, t, b, c, d, s){
@@ -275,11 +242,6 @@ var fill_data = function(){
 																			<a href="/' + (key === "ci" ? key+'/vip.html' : key) + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
 																		</div>\
 																	</div>'
-																	/*
-																		<p class="col-lg-6 col-md-6">\
-																			'+ item.project[ii][key][0] + '<span class="divider"></span>' + item.project[ii][key][1] + '</span>\
-																			<a href="/' + key + '" target="_blanck" class="btn btn_custom btn-default center-block">Check It</a>\
-																		</p>\*/
 							if(ii >= 0 && ii < 3){
 								base_sentense = base_sentense.replace('animated"', 'animated slideD"')
 								if(ii === 0){base_sentense = base_sentense.replace('href="/' + key + '"', 'href="http://localhost:8080/Rlibrary/welcome.jsp"')}
@@ -295,9 +257,7 @@ var fill_data = function(){
 					
 					$(".background-shadow").each(function(){
 						$(this).width($(this).siblings("img").width())
-					})
-					/*
-					$(".background-shadow").css("left", Math.floor(($(".pro-module").outerWidth() - $(".pro-module img").width()) / 2))*/
+					})/*
 					$(".pro-module").each(function(){
 						var i = parseInt($(this).attr("data-index"))
 						if(i === 0){
@@ -313,7 +273,7 @@ var fill_data = function(){
 						} else if(i === 5){
 							$(this).addClass("right bottom")
 						}
-					})
+					})*/
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
 					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
@@ -423,9 +383,91 @@ var scroll_animate = function(anchorLink){
 			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
 		})
 
-		$demo.find(".slideU").removeClass("slideU").addClass("slideInUp")
-		$demo.find(".slideD").removeClass("slideD").addClass("slideInDown")
-	
+		$demo.find(".slideU").removeClass("slideU")
+		$demo.find(".slideD").removeClass("slideD")
+
+}
+
+var resize = function(){
+	if(document.body.offsetWidth <= 768){
+		$(".major").find(".pro-module").each(function(i, e){
+			var img_src = $(this).children("img").attr("src")
+			if(img_src.indexOf("m_") === -1){
+				img_src = img_src.substring(0, img_src.indexOf("/")+1) + "m_" + img_src.substring(img_src.indexOf("/")+1)
+				$(this).children("img").attr("src", img_src)
+			}
+			$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
+			if(i % 2 == 0){
+				$(this).addClass("top").addClass("left")
+				if(i / 2 == 0){
+					$(this).addClass("slideInDown")
+				} else if(i / 2 == 1){
+					$(this).addClass("slideInLeft")
+				} else{
+					$(this).addClass("slideInUp")
+				}
+			} else{
+				$(this).addClass("top")
+				if(i / 2 == 0){
+					$(this).addClass("slideInDown")
+				} else if(i / 2 == 1){
+					$(this).addClass("slideInRight")
+				} else{
+					$(this).addClass("slideInUp")
+				}
+			}
+			
+			$(this).children(".background-shadow").css("width", $(this).children("img").width())
+			$(this).children(".background-shadow").css("height", $(this).children("img").height())
+			
+			$(this).children(".background-shadow").children("a").css("height", $(this).children("img").height())
+			$(this).children(".background-shadow").children("a").css("width", $(this).children("img").width())
+			$(this).children(".background-shadow").children("a").text("")
+		})
+	} else{
+		$(".major").find(".pro-module").each(function(i, e){
+			var img_src = $(this).children("img").attr("src")
+			if(img_src.indexOf("m_") > -1){
+				img_src = img_src.substring(0, img_src.indexOf("m_")) + img_src.substring(img_src.indexOf("m_")+2)
+				$(this).children("img").attr("src", img_src)
+			}
+			$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
+			switch(i){
+				case 0:
+					$(this).addClass("top").addClass("left");
+					$(this).addClass("slideInDown");
+					break;
+				case 1:
+					$(this).addClass("top");
+					$(this).addClass("slideInDown");
+					break;
+				case 2:
+					$(this).addClass("top").addClass("right");
+					$(this).addClass("slideInDown");
+					break;
+				case 3:
+					$(this).addClass("bottom").addClass("left");
+					$(this).addClass("slideInUp");
+					break;
+				case 4:
+					$(this).addClass("bottom");
+					$(this).addClass("slideInUp");
+					break;
+				case 5:
+					$(this).addClass("bottom").addClass("right");
+					$(this).addClass("slideInUp");
+					break;
+				
+			}
+			
+			$(this).children(".background-shadow").css("width", 340)
+			$(this).children(".background-shadow").css("height", 190)
+			
+			$(this).children(".background-shadow").children("a").css("height", "initial")
+			$(this).children(".background-shadow").children("a").css("width", "initial")
+			$(this).children(".background-shadow").children("a").text("Check It")
+		})
+	}
 }
 
 function defer(url, data){
