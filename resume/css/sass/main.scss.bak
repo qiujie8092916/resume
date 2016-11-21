@@ -77,16 +77,18 @@ hr{
 	}
 }
 
+.cover{padding: 7% 20px 0 20px;}
 footer{
 	background: #555;
 	padding: 70px 0;    
-	margin-bottom: 135px;
 	bottom: 0;
 	position: absolute;
 	width: 100%;
 	
 	p{
-		margin:0 !important;
+		margin:0 !important;    
+		height: 25px;
+    width: 100%;
 	}
 	#github{
 		img{
@@ -144,6 +146,11 @@ nav{
 		background-color: transparent; 
   	border: 1px solid #fff;
 	}
+}
+
+.container-timeline{
+	width: 65%;
+	margin: 0 auto;	
 }
 
 .cd-timeline-block {
@@ -227,9 +234,14 @@ nav{
 	font-size: 17px;
 }
 
+.fix-width{
+	width: 1200px;
+	margin: 0 auto;	
+}
+
 .homebackground{ 
 	overflow: hidden; 
-	padding-top: 7%; 
+	/*padding-top: 7%; */
 	margin-top: 0; 
 	width: 100%; 
 	position: relative;
@@ -248,6 +260,7 @@ nav{
 	}
 	.article{
 		width: 35%;
+		min-width: 400px;
 	}
 }
 
@@ -387,6 +400,8 @@ nav{
 .major{
 	position:absolute; 
 	top: 28%;
+	width: 1200px;
+  margin-left: calc(50% - 600px);
 	
 	p{
 		display: table; 
@@ -469,11 +484,11 @@ nav{
 }
 
 .left{
-	margin-right: 9%;	
+	margin-right: 5%;	
 }
 
 .right{
-	margin-left: 9%;
+	margin-left: 5%;
 }
 
 .upMotion{ 
@@ -583,7 +598,12 @@ nav{
 			display: none;	
 		}
 		
-		.container ul.nav{
+		.container{
+			#navbar.inner{
+				padding: 0;
+			}
+			
+			ul.nav{
 			width: 100%;
 			display: -moz-box; 
 	    display: -webkit-box; 
@@ -621,6 +641,7 @@ nav{
 					display: block;
 				} 
 			}
+		}
 		}
 	}
 	
@@ -661,12 +682,14 @@ nav{
 	}
 	
 	.major{
-		top: 25%;
+		top: 25%;    
+		width: inherit;
+    margin-left: 0;
 		
 		.background-shadow{
 			background-color: transparent !important;
 			box-shadow: none !important;
-			transform: initial;
+			transform: initial !important;
 			
 			.btn_custom{
 				color: $white; 
@@ -682,11 +705,16 @@ nav{
 		}
 		
 		img{
-			transform: initial;
+			transform: initial !important;
 			box-shadow: none !important;
 			height: calc(150px / (340/190));
     	width: 150px;	
 		}	
+	}
+	
+	.container-timeline{
+		width: 80%;
+		margin: 0 auto;	
 	}
 	
 	.top{
@@ -699,7 +727,7 @@ nav{
 	
 	.homebackground{
 		background-size: contain;
-		padding-top: 2%;
+		/*padding-top: 2%;*/
 		
 		&:first-child{
 			p{
@@ -712,6 +740,7 @@ nav{
 	
 		.article{
 			width: 85%;
+    	min-width: 0;
 		}
 		
 		.intro {
@@ -742,7 +771,7 @@ nav{
 		display: none;
 	}
 		
-	##{$nav}{ 
+	#{$nav}{ 
 		padding: 0; 
 		overflow-x: hidden;
 	}
@@ -758,6 +787,29 @@ nav{
 	footer{ 
 		padding: 25px 0; 
 		font-size: 12px;
+    bottom: 45px;/*
+    position: initial;
+    margin-top: 20px;*/
+	}
+	
+	.cd-timeline-content{
+		hr{
+	    margin-top: 1px;
+	    margin-bottom: 5px;
+  	}	
+	}
+	
+	.text-left{
+    font-size: 11px;
+    
+		h5{
+			font-size: 12px;	
+    	line-height: 14px;
+		}	
+	}
+	.cd-date{
+		font-size: 11px;
+		padding: 0 !important;
 	}
 
 	@for $i from 1 to 6{

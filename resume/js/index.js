@@ -6,6 +6,7 @@
 			anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
 			menu: '#menu',
 			resize: false,
+			scrollOverflow: true,
 			afterLoad: function(anchorLink, index){
 				$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
 				$("#navSelected").width($(".active").width());
@@ -20,6 +21,15 @@
 		bindTabActive()	//connect navigation with pages
 		resize()
 		$(window).resize(function(){resize()});
+		setTimeout(function(){
+			if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
+				$("footer").css("position", "absolute")
+				$("footer").css("bottom", 45)
+			} else{
+				$("footer").css("position", "initial")
+				$("footer").css("margin-top", 20)
+			}
+		}, 100)
 		
 		$("#navSelected").width($(".active").width())
 		$(".homebackground").css("height", $win.height())
@@ -175,7 +185,7 @@ var fill_data = function(){
 					
 				} else if(i == "demo2"){
 				//--------------------------------------------------------append demo2
-					var subtitle = '  <h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
+					var subtitle = '  <h3 class="animated subtitle cover"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
@@ -231,7 +241,7 @@ var fill_data = function(){
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody = '<div class="major col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">'
+					var subbody = '<div class="major">'
 					$.each(item.project, function(ii, iitem){
 						for(var key in iitem){
 							if(item.project[ii][key][0] === undefined){item.project[ii][key][0] = ''}
@@ -257,23 +267,7 @@ var fill_data = function(){
 					
 					$(".background-shadow").each(function(){
 						$(this).width($(this).siblings("img").width())
-					})/*
-					$(".pro-module").each(function(){
-						var i = parseInt($(this).attr("data-index"))
-						if(i === 0){
-							$(this).addClass("left top")
-						} else if(i === 1){
-							$(this).addClass("top")
-						} else if(i === 2){
-							$(this).addClass("right top")
-						} else if(i === 3){
-							$(this).addClass("left bottom")
-						} else if(i === 4){
-							$(this).addClass("bottom")
-						} else if(i === 5){
-							$(this).addClass("right bottom")
-						}
-					})*/
+					})
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
 					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
@@ -282,7 +276,7 @@ var fill_data = function(){
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody =  '<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 cssanimations" style="margin-top: 2%">\
+					var subbody =  '<div class="container-timeline" style="margin-top: 25px">\
 														<section id="cd-timeline" class="cd-container">'
 					$.each(item.experience, function(i, e){
 						subbody += '<div class="cd-timeline-block">'
@@ -398,23 +392,10 @@ var resize = function(){
 			}
 			$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
 			if(i % 2 == 0){
-				$(this).addClass("top").addClass("left")
-				if(i / 2 == 0){
-					$(this).addClass("slideInDown")
-				} else if(i / 2 == 1){
-					$(this).addClass("slideInLeft")
-				} else{
-					$(this).addClass("slideInUp")
-				}
+				$(this).addClass("top").addClass("left").addClass("slideInLeft")
+				$(this)
 			} else{
-				$(this).addClass("top")
-				if(i / 2 == 0){
-					$(this).addClass("slideInDown")
-				} else if(i / 2 == 1){
-					$(this).addClass("slideInRight")
-				} else{
-					$(this).addClass("slideInUp")
-				}
+				$(this).addClass("top").addClass("slideInRight")
 			}
 			
 			$(this).children(".background-shadow").css("width", $(this).children("img").width())
