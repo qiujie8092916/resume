@@ -31,7 +31,7 @@ hr {
   margin-bottom: 8px; }
 
 .cover {
-  padding: 7% 20px 0 20px; }
+  padding: 5% 20px 0 20px; }
 
 footer {
   background: #555;
@@ -122,7 +122,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
 
 .container-timeline {
   width: 65%;
-  margin: 0 auto; }
+  margin: 25px auto 0 auto; }
 
 .cd-timeline-block .cd-timeline-img.work-backgroundColor {
   background-color: #75ce66; }
@@ -500,6 +500,9 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
     border: 1px solid rgba(255, 255, 255, 0.9);
     background: rgba(245, 245, 245, 0.5); }
 
+.navbar-fixed-top {
+  height: 70px; }
+
 /*.webtips{ 
 	position: fixed;
 	top: 85px;
@@ -627,7 +630,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       margin-top: -50px; }
 
   .major {
-    top: 25%;
+    top: 20%;
     width: inherit;
     margin-left: 0; }
     .major .background-shadow {
@@ -651,8 +654,8 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       width: 150px; }
 
   .container-timeline {
-    width: 80%;
-    margin: 0 auto; }
+    width: 85%;
+    margin: 10px auto 0 auto; }
 
   .top {
     margin-bottom: 12%; }
@@ -667,6 +670,10 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       margin-bottom: 20px; }
     .homebackground:first-child .inner.cover {
       margin-top: 40%; }
+    .homebackground .cover {
+      padding: 1% 20px 0 20px; }
+    .homebackground .section_title {
+      margin-top: 20px; }
     .homebackground .article {
       width: 85%;
       min-width: 0; }
@@ -676,6 +683,9 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       top: 90%; }
       .homebackground .icon_div .icon_detail .detailImg li {
         font-size: 11px; }
+
+  .navbar-fixed-top {
+    height: 45px; }
 
   .navbar-brand.oneng {
     font-size: 18px; }
@@ -704,15 +714,20 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
     transition: background 0.9s; }
 
   footer {
-    padding: 25px 0;
+    padding: 15px 0;
     font-size: 12px;
     /*bottom: 45px;*/
     position: initial;
     margin-top: 20px; }
 
-  .cd-timeline-content hr {
-    margin-top: 1px;
-    margin-bottom: 5px; }
+  .cd-timeline-block {
+    position: relative;
+    margin: 1em 0; }
+    .cd-timeline-block .cd-timeline-content hr {
+      margin-top: 1px;
+      margin-bottom: 5px; }
+    .cd-timeline-block .cd-timeline-content ul li {
+      margin: 1px 0; }
 
   .text-left {
     font-size: 11px; }

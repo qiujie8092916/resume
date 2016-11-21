@@ -4340,10 +4340,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
 		padding-top: 40px;
-  }
+  }/*
 	.navbar-default{
 		height:70px;
-	}
+	}*/
 }
 .navbar-toggle {
   position: relative;

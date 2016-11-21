@@ -6,7 +6,6 @@
 			anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
 			menu: '#menu',
 			resize: false,
-			scrollOverflow: true,
 			afterLoad: function(anchorLink, index){
 				$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
 				$("#navSelected").width($(".active").width());
@@ -17,23 +16,24 @@
 		
 		fill_data()	//fill pages with 'data.json'
 		homepage_animate()	//#demo1's animation
-		//scroll_animate($win)	//bind animation when scrolling
 		bindTabActive()	//connect navigation with pages
 		resize()
 		$(window).resize(function(){resize()});
 		setTimeout(function(){
-			if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
-				$("footer").css("position", "absolute")
-				$("footer").css("bottom", 45)
-			} else{
-				$("footer").css("position", "initial")
-				$("footer").css("margin-top", 20)
+			if(document.body.offsetWidth < 768){
+				if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
+					$("footer").css("position", "fixed")
+					$("footer").css("bottom", 45)
+				} else{
+					$("footer").css("position", "initial")
+					$("footer").css("margin-top", 20)
+				}
 			}
 		}, 100)
 		
 		$("#navSelected").width($(".active").width())
 		$(".homebackground").css("height", $win.height())
-		$win.resize(function() {
+		$win.resize(function(){
 			$(".homebackground").css("height", $win.height())
 		})
 		
@@ -128,35 +128,35 @@ var php_console = function(){/*
 var bindTabActive = function(){
 	//擦除效果
 	jQuery.extend(jQuery.easing, {
-			easeOutBack: function (x, t, b, c, d, s){
-					s = s || 1.3;
-					return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
-			}
+		easeOutBack: function (x, t, b, c, d, s){
+			s = s || 1.3;
+			return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+		}
 	});
 
-//nav初始化选中
+	//nav初始化选中
 	var navCurr = $("#navCurr")
 	$("#navSelected").css("left", navCurr[0].offsetLeft)
 	
 	$("#navbar ul li").off("click").on("click", function(){
-			$(this).siblings("li").each(function(){
-					$(this).removeAttr("id")
-			})
-			$(this).attr("id", "navCurr")
+		$(this).siblings("li").each(function(){
+			$(this).removeAttr("id")
+		})
+		$(this).attr("id", "navCurr")
 	})
 	
 	//nav里的链接hover效果
 	$("#navbar ul li").hover(function(){
-			if(!!$("#navSelected").stop(true).animate({left:$(this)[0].offsetLeft}, 400, "easeOutBack")){
-					$(this).siblings().removeClass("active").end().addClass("active")
-					$("#navSelected").width($(".active").width())
-			}
-	}, function(){
-			$(this).removeClass("active")
-			$("#navCurr").addClass("active")
-			navCurr = $("#navCurr")
-			$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
+		if(!!$("#navSelected").stop(true).animate({left:$(this)[0].offsetLeft}, 400, "easeOutBack")){
+			$(this).siblings().removeClass("active").end().addClass("active")
 			$("#navSelected").width($(".active").width())
+		}
+	}, function(){
+		$(this).removeClass("active")
+		$("#navCurr").addClass("active")
+		navCurr = $("#navCurr")
+		$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
+		$("#navSelected").width($(".active").width())
 	})
 }
 
@@ -185,8 +185,9 @@ var fill_data = function(){
 					
 				} else if(i == "demo2"){
 				//--------------------------------------------------------append demo2
-					var subtitle = '  <h3 class="animated subtitle cover"><strong>' + item.subtitle + '</strong></h3>\
-														<div class="decoration"></div>\
+					var subtitle = '<div class="inner cover">\
+														<h3 class="animated subtitle cover section_title"><strong>' + item.subtitle + '</strong></h3>\
+														<div class="decoration"></div></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 					var article = '<div class="center-block article">\
@@ -235,8 +236,8 @@ var fill_data = function(){
 					
 				} else if(i == "demo3"){
 				//--------------------------------------------------------append demo3
-					var subtitle = '<div class="inner cover" style="margin-top:1%;">\
-														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
+					var subtitle = '<div class="inner cover">\
+														<h3 class="animated subtitle section_title"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
@@ -271,12 +272,12 @@ var fill_data = function(){
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
 					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
-														<h3 class="animated subtitle"><strong>' + item.subtitle + '</strong></h3>\
+														<h3 class="animated subtitle section_title"><strong>' + item.subtitle + '</strong></h3>\
 														<div class="decoration"></div>\
 													</div>\
 													<div><h5 class="animated subt">' + item.subt + '</h5></div>'
 													
-					var subbody =  '<div class="container-timeline" style="margin-top: 25px">\
+					var subbody =  '<div class="container-timeline">\
 														<section id="cd-timeline" class="cd-container">'
 					$.each(item.experience, function(i, e){
 						subbody += '<div class="cd-timeline-block">'
@@ -318,9 +319,9 @@ var homepage_animate = function(){
 	$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
 	$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
 	
-	$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
+	$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
 	setTimeout(function(){
-		$homebackground_id.find(".li_icon").removeClass("fadeInUp")
+		$homebackground_id.find(".li_icon").removeClass("fadeInDown")
 		$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
 	}, 300)
 	var $intro_p = $homebackground_id.find(".intro .fsize_")
@@ -345,19 +346,19 @@ var scroll_animate = function(anchorLink){
 		
 		$(".decoration").css("width", 0)
 		$demo.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
-		$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInUp")
+		$demo.find(".subtitle").removeClass("subtitle").addClass("fadeInDown")
 		if($demo.attr("data-anchor") == "demo1"){
 			$demo.find(".decoration").css("width", $demo.find(".cover-heading").width())
 		} else{
-			$demo.find(".decoration").css("width", $demo.find(".fadeInUp").width())
+			$demo.find(".decoration").css("width", $demo.find(".fadeInDown").width())
 		}
 
 		$demo.find(".subt").removeClass("subt").addClass("swing")
 		if($demo.find(".li_icon").css("visibility") != "visible"){
-			$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInUp")
+			$demo.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
 		}
 		setTimeout(function(){
-			$demo.find(".li_icon").removeClass("fadeInUp")
+			$demo.find(".li_icon").removeClass("fadeInDown")
 			$demo.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
 		}, 300)
 
@@ -383,7 +384,7 @@ var scroll_animate = function(anchorLink){
 }
 
 var resize = function(){
-	if(document.body.offsetWidth <= 768){
+	if(document.body.offsetWidth < 768){
 		$(".major").find(".pro-module").each(function(i, e){
 			var img_src = $(this).children("img").attr("src")
 			if(img_src.indexOf("m_") === -1){
@@ -438,7 +439,6 @@ var resize = function(){
 					$(this).addClass("bottom").addClass("right");
 					$(this).addClass("slideInUp");
 					break;
-				
 			}
 			
 			$(this).children(".background-shadow").css("width", 340)

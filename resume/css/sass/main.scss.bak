@@ -150,7 +150,7 @@ nav{
 
 .container-timeline{
 	width: 65%;
-	margin: 0 auto;	
+	margin: 25px auto 0 auto;
 }
 
 .cd-timeline-block {
@@ -517,6 +517,9 @@ nav{
 	}
 }
 
+.navbar-fixed-top{
+	height: 70px;	
+}
 /*.webtips{ 
 	position: fixed;
 	top: 85px;
@@ -682,7 +685,7 @@ nav{
 	}
 	
 	.major{
-		top: 25%;    
+		top: 20%;    
 		width: inherit;
     margin-left: 0;
 		
@@ -713,8 +716,8 @@ nav{
 	}
 	
 	.container-timeline{
-		width: 80%;
-		margin: 0 auto;	
+		width: 85%;
+		margin: 10px auto 0 auto;	
 	}
 	
 	.top{
@@ -735,9 +738,18 @@ nav{
 			}
 			.inner.cover{
 				margin-top: 40%;
+				
 			}	
 		}
-	
+		
+		.cover {
+		 	padding: 1% 20px 0 20px;
+		}
+		
+		.section_title{
+			margin-top: 20px;	
+		}
+		
 		.article{
 			width: 85%;
     	min-width: 0;
@@ -756,6 +768,10 @@ nav{
 		}
 	}
 	
+	.navbar-fixed-top{
+		height: 45px;	
+	}
+
 	.#{$nav}-brand.oneng{
 		font-size: 18px;
 	}
@@ -785,18 +801,26 @@ nav{
 	}
 		
 	footer{ 
-		padding: 25px 0; 
+		padding: 15px 0; 
 		font-size: 12px;
-    bottom: 45px;/*
+    /*bottom: 45px;*/
     position: initial;
-    margin-top: 20px;*/
+    margin-top: 20px;
 	}
-	
-	.cd-timeline-content{
-		hr{
-	    margin-top: 1px;
-	    margin-bottom: 5px;
-  	}	
+	.cd-timeline-block {
+    position: relative;
+    margin: 1em 0;
+		
+		.cd-timeline-content{
+			hr{
+		    margin-top: 1px;
+		    margin-bottom: 5px;
+	  	}
+	  	
+	  	ul li{
+	  		margin: 1px 0;	
+	  	}
+		}
 	}
 	
 	.text-left{
