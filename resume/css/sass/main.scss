@@ -46,6 +46,7 @@ $black : #333;
 /*
 html{-webkit-text-size-adjust:none;}
 */
+a{outline: none !important;}
 body{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
 }
@@ -91,6 +92,8 @@ footer{
     width: 100%;
 	}
 	#github{
+		display: inline-block;
+		
 		img{
 			vertical-align: bottom;
 		}
@@ -150,7 +153,7 @@ nav{
 
 .container-timeline{
 	width: 65%;
-	margin: 25px auto 0 auto;
+	margin: 4% auto 0 auto;
 }
 
 .cd-timeline-block {
@@ -168,7 +171,7 @@ nav{
 
 .cover-heading{
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-	@include animate(animation, headerMotion, .5s)
+	@include animate(animation, headerMotion, 1s)
 }
 
 .decoration{
@@ -442,7 +445,7 @@ nav{
 				@include box-shadow(0, 15px, 30px, rgba(0, 0, 0, 0.1));
 				background-color: rgba(0, 0, 0, .3);
 				.btn_custom{
-					top: calc(50% - 19px);	
+					top: calc(50% - 19px);
 				}
 			}
 		}

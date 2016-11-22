@@ -1,112 +1,115 @@
 ﻿$(function(){
-		var $win = $(window)
-		
-		$('.site-wrapper-inner').fullpage({		
-			sectionsColor: ['#f05c4d', '#686FB3', '#549fea', '#ffd863'],
-			anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
-			menu: '#menu',
-			resize: false,
-			scrollingSpeed: 500,
-			afterLoad: function(anchorLink, index){
-				if(index === 1){
-					homepage_animate($('[data-anchor="demo1"]'))	//#demo1's animation
-				}
-				$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
-				$("#navSelected").width($(".active").width());
-				scroll_animate(anchorLink)
-			},
-		});
-		
-		fill_data()	//fill pages with 'data.json'
-		bindTabActive()	//connect navigation with pages
-		$(window).resize(function(){
-			resize($("#demo2"))
-		});
-		if(window.location.hash === "#demo1"){
-			homepage_animate($('[data-anchor="demo1"]'))
+	var $win = $(window)
+	if(window.location.hash === ""){window.location.hash = "#demo1"}
+
+	$('.site-wrapper-inner').fullpage({		
+		sectionsColor: ['#f05c4d', '#686FB3', '#549fea', '#ffd863'],
+		anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
+		menu: '#menu',
+		resize: false,
+		scrollingSpeed: 500,
+		afterLoad: function(anchorLink, index){
+			if(index === 1){
+				homepage_animate($('[data-anchor="demo1"]'))	//#demo1's animation
+			}
+			$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
+			$("#navSelected").width($(".active").width());
+			scroll_animate(anchorLink)
 		}
-		
-		setTimeout(function(){
-			if(document.body.offsetWidth < 768){
-				if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
-					$("footer").css("position", "fixed")
-					$("footer").css("bottom", 45)
-				} else{
-					$("footer").css("position", "initial")
-					$("footer").css("margin-top", 20)
-				}
+	});
+	
+	fill_data()	//fill pages with 'data.json'
+	bindTabActive()	//connect navigation with pages
+	$(window).resize(function(){
+		resize($("#demo2"))
+	});
+	if(window.location.hash === "#demo1"){
+		homepage_animate($('[data-anchor="demo1"]'))
+		$("#navbar ul li").eq(3).trigger("click")
+	}
+	
+	setTimeout(function(){
+		if(document.body.offsetWidth < 768){
+			if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
+				$("footer").css("position", "fixed")
+				$("footer").css("bottom", 45)
+			} else{
+				$("footer").css("position", "initial")
+				$("footer").css("margin-top", 20)
 			}
-		}, 100)
-		
-		$("#navSelected").width($(".active").width())
+		}
+	}, 100)
+	
+	$("#navSelected").width($(".active").width())
+	$(".homebackground").css("height", $win.height())
+	$win.resize(function(){
 		$(".homebackground").css("height", $win.height())
-		$win.resize(function(){
-			$(".homebackground").css("height", $win.height())
-		})
-		
-		$(".logo img").hover(function(){
-					$("#persion2").animate({opacity: "1"}, 600)
-			}, function(){
-					$("#persion2").animate({opacity: "0"}, 600)
-			}
-		)
-		
-		$("#github").hover(function(){
-			$(this).find("img").attr("src", "imgs/github_2.png")
+	})
+	
+	$(".logo img").hover(function(){
+				$("#persion2").animate({opacity: "1"}, 600)
 		}, function(){
-			$(this).find("img").attr("src", "imgs/github_1.png")
-		})
+				$("#persion2").animate({opacity: "0"}, 600)
+		}
+	)
+	
+	$("#github").hover(function(){
+		$(this).find("img").attr("src", "imgs/github_2.png")
+	}, function(){
+		$(this).find("img").attr("src", "imgs/github_1.png")
+	})
 
-		$(".ski_icon").find("img.icon").each(function(i, e){
-			var id = $(this).attr("id")
-			var id_flag = id.substring(id.indexOf("_")+1)
-			var index = i
-			$(this).off("click").on("click", function(){
-				var calc = ""
-				switch(index){
-					case 0:
-						calc = "calc(30px - 20px)";
-						break;
-					case 1:
-						calc = "calc((100% - 240px) / 3 + 75px)";
-						break;
-					case 2:
-						calc = "calc(2 * (100% - 240px) / 3 + 140px)";
-						break;
-					case 3:
-						calc = "calc(100% - 30px)";
-						break;
-				}
-				
-				$("#triangle_up").css("left", calc)
-				$(".icon_detail").children(".detailImg").each(function(){
-					$(this).addClass("hidden")
-				})
-				$("#detail_"+id_flag).removeClass("hidden").fadeIn("fast")
+	$(".ski_icon").find("img.icon").each(function(i, e){
+		var id = $(this).attr("id")
+		var id_flag = id.substring(id.indexOf("_")+1)
+		var index = i
+		$(this).off("click").on("click", function(){
+			var calc = ""
+			switch(index){
+				case 0:
+					calc = "calc(30px - 20px)";
+					break;
+				case 1:
+					calc = "calc((100% - 240px) / 3 + 75px)";
+					break;
+				case 2:
+					calc = "calc(2 * (100% - 240px) / 3 + 140px)";
+					break;
+				case 3:
+					calc = "calc(100% - 30px)";
+					break;
+			}
+			
+			$("#triangle_up").css("left", calc)
+			$(".icon_detail").children(".detailImg").each(function(){
+				$(this).addClass("hidden")
 			})
+			$("#detail_"+id_flag).removeClass("hidden").fadeIn("fast")
 		})
+	})
 
-		$(".ski_icon .li_icon .icon").each(function(){
-			$(this).on("click", function(){
-				if($(this).parents(".li_icon").css("transform") == "matrix(1, 0, 0, 1, 0, 0)" || $(this).parents(".li_icon").css("transform") == "none"){
-					$(this).parents(".li_icon").css("-webkit-transform", "rotateY(360deg)")
-					$(this).parents(".li_icon").css("-moz-transform", "rotateY(360deg)")
-					$(this).parents(".li_icon").css("-ms-transform", "rotateY(360deg)")
-					$(this).parents(".li_icon").css("-o-transform", "rotateY(360deg)")
-					$(this).parents(".li_icon").css("transform", "rotateY(360deg)")
-				} else{
-					$(this).parents(".li_icon").css("-webkit-transform", "rotateY(0deg)")
-					$(this).parents(".li_icon").css("-moz-transform", "rotateY(0deg)")
-					$(this).parents(".li_icon").css("-ms-transform", "rotateY(0deg)")
-					$(this).parents(".li_icon").css("-o-transform", "rotateY(0deg)")
-					$(this).parents(".li_icon").css("transform", "rotateY(0deg)")
-				}
-			})
+	$(".ski_icon .li_icon .icon").each(function(){
+		$(this).off("click").on("click", function(){
+			if($(this).parents(".li_icon").css("transform") == "matrix(1, 0, 0, 1, 0, 0)" || $(this).parents(".li_icon").css("transform") == "none"){
+				$(this).parents(".li_icon").css("-webkit-transform", "rotateY(360deg)")
+				$(this).parents(".li_icon").css("-moz-transform", "rotateY(360deg)")
+				$(this).parents(".li_icon").css("-ms-transform", "rotateY(360deg)")
+				$(this).parents(".li_icon").css("-o-transform", "rotateY(360deg)")
+				$(this).parents(".li_icon").css("transform", "rotateY(360deg)")
+			} else{
+				$(this).parents(".li_icon").css("-webkit-transform", "rotateY(0deg)")
+				$(this).parents(".li_icon").css("-moz-transform", "rotateY(0deg)")
+				$(this).parents(".li_icon").css("-ms-transform", "rotateY(0deg)")
+				$(this).parents(".li_icon").css("-o-transform", "rotateY(0deg)")
+				$(this).parents(".li_icon").css("transform", "rotateY(0deg)")
+			}
 		})
-		
-		$(".cd-timeline-img").off("click").on("click", function(){
-			$(this).parents(".cd-timeline-block").find("ul").slideToggle(400)
-		})
+	})
+	
+	$(".cd-timeline-img").off("click").on("click", function(){
+		$(this).parents(".cd-timeline-block").siblings().find("ul").slideUp(400)
+		$(this).parents(".cd-timeline-block").find("ul").slideToggle(400)
+	})
 		
 })
 
@@ -132,7 +135,7 @@ var php_console = function(){/*
 	var win = window.open("http://localhost:8080/Rlibrary/welcome.jsp");
 }
 
-var bindTabActive = function(){
+function bindTabActive(){
 	//擦除效果
 	jQuery.extend(jQuery.easing, {
 		easeOutBack: function (x, t, b, c, d, s){
@@ -152,19 +155,21 @@ var bindTabActive = function(){
 		$(this).attr("id", "navCurr")
 	})
 	
-	//nav里的链接hover效果
-	$("#navbar ul li").hover(function(){
-		if(!!$("#navSelected").stop(true).animate({left:$(this)[0].offsetLeft}, 400, "easeOutBack")){
-			$(this).siblings().removeClass("active").end().addClass("active")
+	if(!browser.versions.mobile){
+		//nav里的链接hover效果
+		$("#navbar ul li").hover(function(){
+			if(!!$("#navSelected").stop(true).animate({left:$(this)[0].offsetLeft}, 400, "easeOutBack")){
+				$(this).siblings().removeClass("active").end().addClass("active")
+				$("#navSelected").width($(".active").width())
+			}
+		}, function(){
+			$(this).removeClass("active")
+			$("#navCurr").addClass("active")
+			navCurr = $("#navCurr")
+			$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
 			$("#navSelected").width($(".active").width())
-		}
-	}, function(){
-		$(this).removeClass("active")
-		$("#navCurr").addClass("active")
-		navCurr = $("#navCurr")
-		$("#navSelected").stop(true).animate({left:navCurr[0].offsetLeft}, 300, "easeOutBack");
-		$("#navSelected").width($(".active").width())
-	})
+		})
+	}
 }
 
 var fill_data = function(){
@@ -276,6 +281,34 @@ var fill_data = function(){
 					$(".background-shadow").each(function(){
 						$(this).width($(this).siblings("img").width())
 					})
+					if(document.body.offsetWidth < 768){
+						$(".pro-module").each(function(){
+							var i = parseInt($(this).attr("data-index"))
+							if(i % 2 == 0){
+								$(this).addClass("top").addClass("left")
+							} else{
+								$(this).addClass("top")
+							}
+						})
+					} else{
+						$(".pro-module").each(function(){
+							var i = parseInt($(this).attr("data-index"))
+							if(i === 0){
+								$(this).addClass("left top")
+							} else if(i === 1){
+								$(this).addClass("top")
+							} else if(i === 2){
+								$(this).addClass("right top")
+							} else if(i === 3){
+								$(this).addClass("left bottom")
+							} else if(i === 4){
+								$(this).addClass("bottom")
+							} else if(i === 5){
+								$(this).addClass("right bottom")
+							}
+						})
+					}
+					
 				} else if(i == "demo4"){
 				//--------------------------------------------------------append demo4
 					var subtitle = '<div class="inner cover" style="/visibility:hidden;">\
@@ -380,11 +413,8 @@ var scroll_animate = function(anchorLink){
 		$demo.find('.cd-timeline-block').each(function(){
 			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounceIn');
 		})
-
-		$demo.find(".slideU").removeClass("slideU")
-		$demo.find(".slideD").removeClass("slideD")
-		
-		resize($demo)
+		if(anchorLink === "demo3")
+			resize($demo)
 
 }
 
@@ -396,12 +426,11 @@ var resize = function(element){
 				img_src = img_src.substring(0, img_src.indexOf("/")+1) + "m_" + img_src.substring(img_src.indexOf("/")+1)
 				$(this).children("img").attr("src", img_src)
 			}
-			$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
+			//$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
 			if(i % 2 == 0){
-				$(this).addClass("top").addClass("left").addClass("slideInLeft")
-				$(this)
+				$(this).removeClass("slideU").addClass("slideInLeft")
 			} else{
-				$(this).addClass("top").addClass("slideInRight")
+				$(this).removeClass("slideD").addClass("slideInRight")
 			}
 			
 			$(this).children(".background-shadow").css("width", $(this).children("img").width())
@@ -418,32 +447,11 @@ var resize = function(element){
 				img_src = img_src.substring(0, img_src.indexOf("m_")) + img_src.substring(img_src.indexOf("m_")+2)
 				$(this).children("img").attr("src", img_src)
 			}
-			$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
-			switch(i){
-				case 0:
-					$(this).addClass("top").addClass("left");
-					$(this).addClass("slideInDown");
-					break;
-				case 1:
-					$(this).addClass("top");
-					$(this).addClass("slideInDown");
-					break;
-				case 2:
-					$(this).addClass("top").addClass("right");
-					$(this).addClass("slideInDown");
-					break;
-				case 3:
-					$(this).addClass("bottom").addClass("left");
-					$(this).addClass("slideInUp");
-					break;
-				case 4:
-					$(this).addClass("bottom");
-					$(this).addClass("slideInUp");
-					break;
-				case 5:
-					$(this).addClass("bottom").addClass("right");
-					$(this).addClass("slideInUp");
-					break;
+			//$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
+			if(i <= 2){
+				$(this).removeClass("slideD").addClass("slideInDown");
+			} else{
+				$(this).removeClass("slideU").addClass("slideInUp");
 			}
 			
 			$(this).children(".background-shadow").css("width", 340)
@@ -482,4 +490,23 @@ Date.prototype.Format = function (fmt) { //author: meizz
 	for (var k in o)
 	if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
+}
+
+var browser = {
+	versions:function(){
+	 var u = navigator.userAgent, app = navigator.appVersion;
+	 return {//移动终端浏览器版本信息
+				trident: u.indexOf('Trident') > -1, //IE内核
+				presto: u.indexOf('Presto') > -1, //opera内核
+				webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+				gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+				mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+				ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+				android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+				iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+				iPad: u.indexOf('iPad') > -1, //是否iPad
+				webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+		};
+	}(),
+	language:(navigator.browserLanguage || navigator.language).toLowerCase()
 }
