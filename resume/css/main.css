@@ -134,11 +134,11 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
 
 .cover-heading {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-  -webkit-animation: headerMotion 1s;
-  -moz-animation: headerMotion 1s;
-  -ms-animation: headerMotion 1s;
-  -o-animation: headerMotion 1s;
-  animation: headerMotion 1s; }
+  -webkit-animation: headerMotion 0.5s;
+  -moz-animation: headerMotion 0.5s;
+  -ms-animation: headerMotion 0.5s;
+  -o-animation: headerMotion 0.5s;
+  animation: headerMotion 0.5s; }
 
 .decoration {
   width: 0;
@@ -450,7 +450,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
 .panel-group {
   margin-bottom: 0px; }
 
-.slideU, .slideD, .subtitle, .subt, .contenttitle {
+.slideU, .slideD, .subtitle, .subt, .contenttitle, .is-hidden {
   visibility: hidden; }
 
 .top {

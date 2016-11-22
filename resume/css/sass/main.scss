@@ -168,7 +168,7 @@ nav{
 
 .cover-heading{
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-	@include animate(animation, headerMotion, 1s)
+	@include animate(animation, headerMotion, .5s)
 }
 
 .decoration{
@@ -475,7 +475,7 @@ nav{
 	margin-bottom: 0px; 
 }
 
-.slideU, .slideD, .subtitle, .subt, .contenttitle{
+.slideU, .slideD, .subtitle, .subt, .contenttitle, .is-hidden{
 	visibility: hidden;
 }
 

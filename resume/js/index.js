@@ -6,19 +6,26 @@
 			anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
 			menu: '#menu',
 			resize: false,
+			scrollingSpeed: 500,
 			afterLoad: function(anchorLink, index){
+				if(index === 1){
+					homepage_animate($('[data-anchor="demo1"]'))	//#demo1's animation
+				}
 				$("#navSelected").stop(true).animate({left:$(".active")[0].offsetLeft}, 300, "easeOutBack");
 				$("#navSelected").width($(".active").width());
-				
 				scroll_animate(anchorLink)
-			}
+			},
 		});
 		
 		fill_data()	//fill pages with 'data.json'
-		homepage_animate()	//#demo1's animation
 		bindTabActive()	//connect navigation with pages
-		resize()
-		$(window).resize(function(){resize()});
+		$(window).resize(function(){
+			resize($("#demo2"))
+		});
+		if(window.location.hash === "#demo1"){
+			homepage_animate($('[data-anchor="demo1"]'))
+		}
+		
 		setTimeout(function(){
 			if(document.body.offsetWidth < 768){
 				if($("footer")[0].offsetTop + 75 + 45 < $(window).height()){
@@ -287,7 +294,7 @@ var fill_data = function(){
 															<img src="imgs/' + ee + '.svg" alt="Picture">\
 														</div>'
 							} else{
-								subbody += '<div class="cd-timeline-content is-hidden">\
+								subbody += '<div class="cd-timeline-content is-hidden animated">\
 													<div class="text-left"><h5><strong>' + ee[0] + '</strong></h5></div><hr>'
 								subbody	+= '<ul style="display: none;">'
 								$.each(ee[1], function(iii, eee){
@@ -311,19 +318,15 @@ var fill_data = function(){
 	})  
 }
 
-var homepage_animate = function(){
+var homepage_animate = function($homebackground_id){
 	$(".decoration").css("width", 0)
-	var $homebackground_id = $('[data-anchor="'+$("#navCurr").children().attr("href").substring(1)+'"]')
 
 	$homebackground_id.find(".subt").removeClass("subt").addClass("swing")
 	$homebackground_id.find(".contenttitle").removeClass("contenttitle").addClass("cover-heading")
+	
 	$homebackground_id.find(".decoration").css("width", $homebackground_id.find(".decoration").prev(".cover-heading").width())
 	
 	$homebackground_id.find(".li_icon").css("visibility", "visible").addClass("fadeInDown")
-	setTimeout(function(){
-		$homebackground_id.find(".li_icon").removeClass("fadeInDown")
-		$homebackground_id.find(".icon_detail").css("visibility", "visible").addClass("fadeIn")
-	}, 300)
 	var $intro_p = $homebackground_id.find(".intro .fsize_")
 	$homebackground_id.find(".intro").removeClass("hidden").animate({width:"100%"}, 500, function(){
 		$intro_p.eq(0).animate({bottom:"0"}, 500, "linear", function(){
@@ -375,17 +378,19 @@ var scroll_animate = function(anchorLink){
 		
 		$demo.find("#cd-timeline").addClass("before")
 		$demo.find('.cd-timeline-block').each(function(){
-			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+			$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounceIn');
 		})
 
 		$demo.find(".slideU").removeClass("slideU")
 		$demo.find(".slideD").removeClass("slideD")
+		
+		resize($demo)
 
 }
 
-var resize = function(){
+var resize = function(element){
 	if(document.body.offsetWidth < 768){
-		$(".major").find(".pro-module").each(function(i, e){
+		element.find(".pro-module").each(function(i, e){
 			var img_src = $(this).children("img").attr("src")
 			if(img_src.indexOf("m_") === -1){
 				img_src = img_src.substring(0, img_src.indexOf("/")+1) + "m_" + img_src.substring(img_src.indexOf("/")+1)
@@ -407,7 +412,7 @@ var resize = function(){
 			$(this).children(".background-shadow").children("a").text("")
 		})
 	} else{
-		$(".major").find(".pro-module").each(function(i, e){
+		element.find(".pro-module").each(function(i, e){
 			var img_src = $(this).children("img").attr("src")
 			if(img_src.indexOf("m_") > -1){
 				img_src = img_src.substring(0, img_src.indexOf("m_")) + img_src.substring(img_src.indexOf("m_")+2)
