@@ -79,17 +79,12 @@
 					calc = "calc(100% - 30px)";
 					break;
 			}
-			
 			$("#triangle_up").css("left", calc)
 			$(".icon_detail").children(".detailImg").each(function(){
 				$(this).addClass("hidden")
 			})
 			$("#detail_"+id_flag).removeClass("hidden").fadeIn("fast")
-		})
-	})
-
-	$(".ski_icon .li_icon .icon").each(function(){
-		$(this).off("click").on("click", function(){
+	
 			if($(this).parents(".li_icon").css("transform") == "matrix(1, 0, 0, 1, 0, 0)" || $(this).parents(".li_icon").css("transform") == "none"){
 				$(this).parents(".li_icon").css("-webkit-transform", "rotateY(360deg)")
 				$(this).parents(".li_icon").css("-moz-transform", "rotateY(360deg)")
