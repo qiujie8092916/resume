@@ -1,0 +1,17 @@
+*.log
+.DS_Store
+dist/
+node_modules/
+src/project_dao/addPlatform/
+src/project_dao/ci/
+src/project_dao/DuiTang/
+src/project_dao/log_android/
+src/project_dao/mi/
+src/project_dao/monitor/
+src/project_dao/pos/
+src/project_dao/pospa/
+src/project_dao/sandal/
+src/project_dao/sql/
+src/project_dao/getdbname.js
+src/project_dao/global.json
+src/project_dao/index.php
