@@ -1,0 +1,108 @@
+{
+  "demo1": {
+		"contenttitle": "视觉是人类的第一感官，满意度无外乎是对眼观视觉美的追求、对操作体验好的追求。",
+		"fsize": [
+			"我叫邱杰",
+			"25岁",
+			"qiujieee_empty@outlook.com",
+			"Web前端、网站建设"
+		]
+	},
+
+
+	"demo2": {
+		"subtitle": "简要概述",
+		"subt": "Brief",
+		"detail_html": [
+			"深刻理解Web标准",
+			"灵活运用html标签，标签语义化",
+			"熟悉xml及xhtml标记语言",
+			"掌握html5如canvas、svg新特性"
+		],
+		"detail_css": [
+			"熟练运用CSS及CSS3新属性",
+			"充分利用Animate.css等CSS3动画库装饰页面，有利于减少JS不利于爬虫的问题",
+			"掌握CSS预编译器Less及Sass"
+		],
+		"detail_js": [
+			"掌握jQuery、AngularJS，熟练指令的编写，模块组件化",
+			"熟练运用Ajax前后台、跨平台通信",
+			"熟练运用Bootstrap、Foundation、Highcharts、LayerUI等主流Jquery框架"
+		],
+		"detail_more": [
+			"掌握数据库语言Mysql，熟练运用联合查询",
+			"熟练运用后端语言 Java、Python、PHP等",
+			"熟悉网站从环境、建站，到维护全方面过程"
+		],
+		"fsize_": [
+			"大四上学期自主参加嵌入式软件培训班",
+			"大四下学期于上海旋极信息技术有限公司实习",
+			"毕业后就职于中国Marvell上海分公司",
+			"负责部门内网站的开发维护升级以及编写白盒测试脚本"
+		]
+	},
+	
+	
+	"demo3": {
+		"subtitle": "作品展集",
+		"subt": "Gallery",
+		"project": [
+			{"library": [
+				/*"在 Struts2 框架下以 MVC 设计 Java 为后台，以 Jsp 页面上传并展现 Mysql 数据库中流媒体文件的信息，以及添加修改各属性。",
+				"用户登录后，通过设置可保存可分享的偏好、并可通过联合过滤搜索，对流媒体文件的相关属性进行查阅，可对单个文件下载、查询结果列表下载、文件信息修改等功能。"*/
+			]},
+			{"CTS_log": [
+				"Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。",
+				"依次从 Package、Suite、Case、Method 缩小范围对不同版本，以折线图查看结果曲线，最后结果通过热力图显示每个版本上的不同 Method 的测试结果以及相关信息，通过链接跳转可看相关详细信息。"
+			]},
+			{"ci": [
+				"Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。",
+				"可通过搜索、过滤、日期查询等方式，展现不同平台在的不同 Job 下的每轮测试结果以及 Build type、Branch name 等不同相关属性。点击可跳转到kenkins上查询详细结果的日志、状态以及可 Restart build。"
+			]},
+			{"monitor": [
+				"Bootstrap 为框架，用于管控 Automation Case 的网站",
+				"有效地管控在线的 PC ，以及可以查看不同 Case 执行的历史情况，登录后可以一键对在线 PC 进行重启下线等操作，多对多的选择 PC 根据需求用以跑不同的 Case，以及可以上传新的Automation Case。"
+			]},
+			{"mi": [
+				/*"Bootstrap 为框架，用于管控 Automation Case 的网站",
+				"有效地管控在线的 PC ，以及可以查看不同 Case 执行的历史情况，登录后可以一键对在线 PC 进行重启下线等操作，多对多的选择 PC 根据需求用以跑不同的 Case，以及可以上传新的Automation Case。"*/
+			]}
+		]
+	},
+	
+	
+	"demo4": {
+		"subtitle": "时间纵轴",
+		"subt": "Timeline",
+		"experience": [
+			{	
+				"picture": "work",
+				"2015.11 - now":[
+				"外包就职于美满科技有限公司，测试部门网站开发",
+				["1. 建设符合部门需求的网站页面", "2. 用python编写白盒测试脚本"]
+				]
+			},
+			{
+				"picture": "work",
+				"2005.01 - 2015.10":[
+				"就职于旋极信息科技有限公司，网站维护及软件研发", 
+				["1. 对公司网站进行维护","2. 对嵌入式产品进行升级更新"]
+				]
+			},
+			{
+				"picture": "study",
+				"2014.09 - 2014.12":[
+					"山西思软科技有限公司，培训嵌入式开发",
+					["课程:","c、c++、qt 编程、linux 高级编程、arm 体系结构、系统构建、linux 设备驱动等"]
+				]
+			},
+			{
+				"picture": "study",
+				"2011.09 - 2015.06":[
+					"中北大学信息商务学院，通信工程专业", 
+					["主修:", "微机原理、数字电路、模拟电路、数据结构、电路分析、信号与系统、通信原理等"]
+				]
+			}
+		]
+	}
+}
