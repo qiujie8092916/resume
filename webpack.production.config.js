@@ -9,7 +9,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: '[name].[hash:8].js',
+    filename: 'js/[name].[hash:8].js',
     path: path.resolve(__dirname, './dist/webpack'),
     publicPath: '/project_dao/webpack'
   },

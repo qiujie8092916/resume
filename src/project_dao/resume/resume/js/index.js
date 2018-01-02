@@ -417,10 +417,10 @@ var resize = function(element) {
   if (document.body.offsetWidth < 768) {
     element.find(".pro-module").each(function(i, e) {
       var img_src = $(this).children("img").attr("src")
-      if (img_src.indexOf("m_") === -1) {
-        img_src = img_src.substring(0, img_src.indexOf("/") + 1) + "m_" + img_src.substring(img_src.indexOf("/") + 1)
-        $(this).children("img").attr("src", img_src)
-      }
+      /*      if (img_src.indexOf("m_") === -1) {
+              img_src = img_src.substring(0, img_src.indexOf("/") + 1) + "m_" + img_src.substring(img_src.indexOf("/") + 1)
+              $(this).children("img").attr("src", img_src)
+            }*/
       //$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
       if (i % 2 == 0) {
         $(this).removeClass("slideU").addClass("slideInLeft")
@@ -436,10 +436,10 @@ var resize = function(element) {
   } else {
     element.find(".pro-module").each(function(i, e) {
       var img_src = $(this).children("img").attr("src")
-      if (img_src.indexOf("m_") > -1) {
-        img_src = img_src.substring(0, img_src.indexOf("m_")) + img_src.substring(img_src.indexOf("m_") + 2)
-        $(this).children("img").attr("src", img_src)
-      }
+      /*    if (img_src.indexOf("m_") > -1) {
+            img_src = img_src.substring(0, img_src.indexOf("m_")) + img_src.substring(img_src.indexOf("m_") + 2)
+            $(this).children("img").attr("src", img_src)
+          }*/
       //$(this).removeClass("top").removeClass("bottom").removeClass("left").removeClass("right")
       if (i <= 2) {
         $(this).removeClass("slideD").addClass("slideInDown");
