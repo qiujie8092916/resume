@@ -107,7 +107,8 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "src"),
-    host: 'localhost',
+    // host: 'localhost',
+    host: '192.168.99.178',
     port: 8081,
     watchContentBase: true,
     hot: true, // 热启动

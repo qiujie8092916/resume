@@ -5,6 +5,8 @@ node_modules/
 
 src/project_dao/fonts/
 
+*.sass-cache/
+
 src/project_dao/addPlatform/
 src/project_dao/ci/
 src/project_dao/DuiTang/

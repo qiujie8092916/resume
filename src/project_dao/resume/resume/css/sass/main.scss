@@ -51,6 +51,66 @@ $black: #333;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 html{-webkit-text-size-adjust:none;}
 */
@@ -294,6 +354,7 @@ nav {
 .icon_div {
   position: relative;
   margin-top: 10%;
+  height: 100px;
   .ski_icon {
     position: relative;
     .li_icon {
@@ -326,7 +387,7 @@ nav {
   }
   & .icon_detail {
     /*height: 100%;*/
-    width: calc(100% - 15px);
+    width: calc(100% - 5%);
     position: absolute;
     top: 100%;
     left: 1%;
@@ -508,6 +569,75 @@ nav {
 }
 
 
+@media (max-height: 600px) {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -576,6 +706,73 @@ nav {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.webtips{ 
   position: fixed;
   top: 85px;
@@ -635,21 +832,18 @@ nav {
 
 
 
-
-
-
-
-
-
-
 /**************************
       *PHONE*
 *************************/
 
 @media (max-width: 768px) {
+  body {
+    font-size: 62.5%;
+  }
+
   i.iconfont {
     color: $black;
-    font-size: 30px;
+    font-size: 28px;
   }
 
   h4.cover-heading, p.decoration {
@@ -690,11 +884,11 @@ nav {
           }
 
           a {
-            padding-top: 8px;
+            padding-top: .7rem;
             padding-bottom: 0px;
             font-size: 12px;
             color: #B5B4BA;
-            line-height: 20px;
+            line-height: 1.8rem;
 
             span.nav_assist {
               font-size: 10px;
@@ -781,8 +975,7 @@ nav {
   }
 
   .container-timeline {
-    width: 85%;
-    margin: 10px auto 0 auto;
+    width: 90%;
   }
 
   .top {
@@ -805,12 +998,17 @@ nav {
       }
     }
 
+    div:nth-of-type(2) h5 {
+      margin: 0.2em 0;
+    }
+
     .cover {
-      padding: 1% 20px 0 20px;
+      padding: 0% 20px 0 20px;
     }
 
     .section_title {
-      margin-top: 20px;
+      margin-top: 0.9em;
+      margin-bottom: 0.2em;
     }
 
     .article {
@@ -819,20 +1017,22 @@ nav {
     }
 
     .intro {
-      margin-top: 110px;
+      margin-top: 140px;
     }
 
-    .icon_div .icon_detail {
-      top: 90%;
+    .icon_div {
+      .icon_detail {
+        top: 90%;
 
-      .detailImg li {
-        font-size: 11px;
+        .detailImg li {
+          font-size: 12px;
+        }
       }
     }
   }
 
   .navbar-fixed-top {
-    height: 45px;
+    height: 4.4rem;
   }
 
   .#{$nav}-brand.oneng {
@@ -843,7 +1043,7 @@ nav {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 45px;
+    height: 4.4rem;
   }
 
   .webtip {
@@ -864,30 +1064,38 @@ nav {
   }
 
   footer {
-    padding: 15px 0;
+    padding: 1.2em 0;
     font-size: 12px;
     /*bottom: 45px;*/
     position: initial;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .cd-timeline-block {
     position: relative;
-    margin: 1em 0;
-
+    margin: 5% 0;
     .cd-timeline-content {
+      padding: 1.4% 15px;
       hr {
         margin-top: 1px;
         margin-bottom: 5px;
       }
 
-      ul li {
-        margin: 1px 0;
+      ul {
+        li {
+          margin: 1px 0;
+        }
       }
     }
   }
 
+  .major .pro-module>img,
+  .major .pro-module .background-shadow {
+    height: 95px;
+    width: 160px;
+  }
+
   .text-left {
-    font-size: 11px;
+    font-size: 12px;
 
     h5 {
       font-size: 12px;
@@ -903,5 +1111,56 @@ nav {
     ul.#{$nav}-right.nav.#{$nav}-nav>li:nth-child(#{$i}) {
       @include animate(animation, navMotion, calc(#{$i} * 0.3s))
     }
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 3em;
+  }
+}
+
+@media (max-height: 600px) {
+  .homebackground {
+    &::first-child p {
+      margin-bottom: 18px;
+    }
+
+    .icon_div {
+      height: 80px;
+      margin-top: 6%;
+
+      .li_icon .icon {
+        width: 50px;
+      }
+      .icon_detail {
+        width: 110%;
+        left: -5%
+      }
+    }
+    .intro {
+      margin-top: 95px;
+      .fsize_ {
+        margin-bottom: 1%;
+      }
+    }
+    .container-timeline {
+      margin: 8px auto 0 auto;
+      .cd-timeline-block {
+        margin: 2.5% 0;
+        ul {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .major .pro-module>img,
+    .major .pro-module .background-shadow {
+      height: 80px;
+      width: 145px;
+    }
+  }
+  #triangle_up {
+    left: 25px;
   }
 }

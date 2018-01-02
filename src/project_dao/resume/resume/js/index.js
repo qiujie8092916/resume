@@ -48,7 +48,7 @@ $(function() {
     anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
     menu: '#menu',
     resize: false,
-    scrollingSpeed: 500,
+    scrollingSpeed: 0,
     afterLoad: function(anchorLink, index) {
       if (index === 1) {
         homepage_animate($('[data-anchor="demo1"]')) //#demo1's animation
@@ -71,7 +71,7 @@ $(function() {
     if (document.body.offsetWidth < 768) {
       if ($("footer")[0].offsetTop + 75 + 45 < $(window).height()) {
         $("footer").css("position", "fixed")
-        $("footer").css("bottom", 45)
+        $("footer").css("bottom", 44)
       } else {
         $("footer").css("position", "initial")
         $("footer").css("margin-top", 20)
@@ -99,21 +99,27 @@ $(function() {
     var index = i
     $(this).off("click").on("click", function() {
       var calc = ""
+      // calc: ios safafi不支持
       switch (index) {
         case 0:
-          calc = "calc(30px - 20px)";
+          // calc(30px - 20px)
+          calc = $(document.body).height() > 600 ? 10 : 25;
           break;
         case 1:
-          calc = "calc((100% - 240px) / 3 + 75px)";
+          // calc((100% - 240px) / 3 + 75px)
+          calc = ($("#triangle_up").parent().width() - 240) / 3 + 75;
           break;
         case 2:
-          calc = "calc(2 * (100% - 240px) / 3 + 140px)";
+          // calc(2 * (100% - 240px) / 3 + 140px)
+          calc = $(document.body).height() > 600 ? (2 * ($("#triangle_up").parent().width() - 240) / 3 + 140) : (2 * ($("#triangle_up").parent().width() - 240) / 3 + 130);
           break;
         case 3:
-          calc = "calc(100% - 30px)";
+          // calc(100% - 30px)
+          calc = $(document.body).height() > 600 ? $("#triangle_up").parent().width() - 30 : $("#triangle_up").parent().width() - 50;
           break;
       }
-      $("#triangle_up").css("left", calc)
+
+      $("#triangle_up").css("left", calc);
       $(".icon_detail").children(".detailImg").each(function() {
         $(this).addClass("hidden")
       })
@@ -214,7 +220,7 @@ var fill_data = function() {
                       </div>\
                       <div><h5 class="animated subt">' + item.subt + '</h5></div>'
       var article = '<div class="center-block article">\
-                      <div class="icon_div" style="height:100px;">\
+                      <div class="icon_div">\
                           <ul class="list-unstyled list-inline ski_icon">\
                               <li class="li_icon animated">\
                                   <img src="' + imgs.brief.html + '" class="icon animated" id="icon_html">\
