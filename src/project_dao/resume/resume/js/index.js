@@ -48,7 +48,7 @@ $(function() {
     anchors: ['demo1', 'demo2', 'demo3', 'demo4'],
     menu: '#menu',
     resize: false,
-    scrollingSpeed: 0,
+    scrollingSpeed: 500,
     afterLoad: function(anchorLink, index) {
       if (index === 1) {
         homepage_animate($('[data-anchor="demo1"]')) //#demo1's animation

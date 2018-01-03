@@ -111,6 +111,9 @@ $black: #333;
 
 
 
+
+
+
 /*
 html{-webkit-text-size-adjust:none;}
 */
@@ -324,7 +327,7 @@ nav {
   width: 100%;
   position: relative;
   &:first-child {
-    .inner.cover {
+    &.active .inner.cover {
       margin-top: 13%;
     }
   }
@@ -645,6 +648,9 @@ nav {
 
 
 
+
+
+
 /*.pagetitle{ 
   @include animate(animation, rubberBand, 2s)
 }*/
@@ -698,6 +704,9 @@ nav {
 .navbar-fixed-top {
   height: 70px;
 }
+
+
+
 
 
 
@@ -832,6 +841,9 @@ nav {
 
 
 
+
+
+
 /**************************
       *PHONE*
 *************************/
@@ -928,7 +940,7 @@ nav {
     }
   }
 
-  .contenttitle {
+  .active .contenttitle {
     margin-top: 120px;
   }
 
@@ -993,7 +1005,7 @@ nav {
       p {
         margin-bottom: 20px;
       }
-      .inner.cover {
+      &.active .inner.cover {
         margin-top: 40%;
       }
     }

@@ -227,7 +227,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   -ms-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s; }
-  .homebackground:first-child .inner.cover {
+  .homebackground:first-child.active .inner.cover {
     margin-top: 13%; }
   .homebackground h3 {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4); }
@@ -640,7 +640,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
   .intro .fsize_ {
     font-size: 12px; }
 
-  .contenttitle {
+  .active .contenttitle {
     margin-top: 120px; }
 
   .active {
@@ -689,7 +689,7 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
     /*padding-top: 2%;*/ }
     .homebackground:first-child p {
       margin-bottom: 20px; }
-    .homebackground:first-child .inner.cover {
+    .homebackground:first-child.active .inner.cover {
       margin-top: 40%; }
     .homebackground div:nth-of-type(2) h5 {
       margin: 0.2em 0; }
