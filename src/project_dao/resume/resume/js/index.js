@@ -71,7 +71,7 @@ $(function() {
     if (document.body.offsetWidth < 768) {
       if ($("footer")[0].offsetTop + 75 + 45 < $(window).height()) {
         $("footer").css("position", "fixed")
-        $("footer").css("bottom", 44)
+        $("footer").css("bottom", 50)
       } else {
         $("footer").css("position", "initial")
         $("footer").css("margin-top", 20)
@@ -204,7 +204,12 @@ var fill_data = function() {
       //--------------------------------------------------------append demo1
       var fsize = ""
       $.each(item.fsize, function(ii, iitem) {
-        fsize += '<p class="fsize contenttitle">' + iitem + '</p>'
+        if(iitem.indexOf('@') > -1){
+          fsize += '<p class="fsize contenttitle"><a href="'+iitem+'" >' + iitem + '<a></p>'
+        } else {
+          fsize += '<p class="fsize contenttitle">' + iitem + '</p>'
+        }
+        
       })
       appends += '<div class="inner cover">\
                       <h4 class="contenttitle"><strong>' + item.contenttitle + '</strong></h4>\

@@ -327,6 +327,9 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
     font-size: 15px;
     position: relative;
     bottom: -300px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     line-height: 30px; }
 
 .lead {
@@ -603,7 +606,8 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       width: 100%;
       display: -moz-box;
       display: -webkit-box;
-      display: box;
+      /* display: box; */
+      display: flex;
       font-weight: initial;
       margin: 0; }
       nav.navbar .container ul.nav li {
