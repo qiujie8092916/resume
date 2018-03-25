@@ -604,17 +604,17 @@ ul.navbar-right.nav.navbar-nav > li:nth-child(5) {
       padding: 0; }
     nav.navbar .container ul.nav {
       width: 100%;
-      display: -moz-box;
-      display: -webkit-box;
+      display: -moz-flex;
+      display: -webkit-flex;
       /* display: box; */
       display: flex;
       font-weight: initial;
       margin: 0; }
       nav.navbar .container ul.nav li {
         /*display: inline-block;*/
-        -moz-box-flex: 1;
-        -webkit-box-flex: 1;
-        box-flex: 1; }
+        -moz-flex: 1;
+        -webkit-flex: 1;
+        flex: 1; }
         nav.navbar .container ul.nav li.active a, nav.navbar .container ul.nav li.active i {
           color: #00D200; }
         nav.navbar .container ul.nav li a {
