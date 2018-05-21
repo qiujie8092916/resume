@@ -6,8 +6,7 @@ import "@/resume/resume/js/jquery.slimscroll.js";
 import "@/resume/resume/js/jquery.fullPage.js";
 import "@/resume/resume/js/jquery.qtip.js";
 import "@/resume/resume/js/transition.js";
-const _prodVersion = "";
-const data = require("@/resume/resume/data.json?v=" + _prodVersion);
+const data = require("../data.json");
 const imgs = {
   brief: {
     html: require("../imgs/html.png"),
