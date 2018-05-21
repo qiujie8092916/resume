@@ -1,66 +1,123 @@
 {
-  "demo1":
-  {
-    "contenttitle": "视觉是人类的第一感官，满意度即是对眼观视觉感受美的追求、对操作体验好的追求。",
-    "fsize": ["我叫邱杰", "强迫症完美主义者", "qiujieee_empty@outlook.com", "WEB前端、网站建设"]
+  "demo1": {
+    "contenttitle":
+      "视觉是人类的第一感官，满意度即是对眼观视觉感受美的追求、对操作体验好的追求。",
+    "fsize": [
+      "邱杰",
+      "强迫症完美主义者",
+      "qiujieee_empty@outlook.com",
+      "前端、网站建设"
+    ]
   },
-  "demo2":
-  {
+  "demo2": {
     "subtitle": "简要概述",
     "subt": "Brief",
-    "detail_html": ["深刻理解 Web 标准", "灵活运用html标签，标签语义化", "熟悉 xml 及 xhtml 标记语言", "掌握 html5 如 history、geolocation、canvas、svg 等新特性"],
-    "detail_css": ["掌握CSS预编译器 Sass、Less", "熟练运用 css 及 css3 新属性", "解决各浏览器兼容问题，极致优化网页响应"],
-    "detail_js": ["精通 Jquery、Vue等前端热门 JS 框架", "掌握ECMAScript、AMD、CMD等 JS 新标准", "熟练运用Ajax、Axios前后端通信、Pjax局部刷新等", "熟练gulp、webpack等前端热门自动化构建工具", "精通主流样式框架 Bootstrap、ElementUI、Highcharts、LayerUI、Vux等"],
-    "detail_more": ["掌握数据库语言 Mysql，熟练运用联合查询", "掌握服务器端语言 Java、Python、PHP 等", "熟悉网站从环境、建站，到维护全方面过程", "熟悉 Linux 开发环境，Git 版本版本库"],
-    "fsize_": ["大四下学期于旋极信息技术有限公司实习", "毕业后就职于中国 Marvell 上海分公司，负责开发测试部门的各种网站需求", "目前就职于上海都睿网络科技有限公司前端工程师", "负责 SAAS 后台管理系统以及移动端微信H5网站的开发维护、引进前端新技术、高效完成各阶段迭代版本的开发工作", "目前空余时间在学习前端多端跨平台等相关知识"]
+    "detail_html": [
+      "深刻理解 Web 标准",
+      "灵活运用html标签，标签语义化",
+      "熟悉 xml 及 xhtml 标记语言",
+      "掌握 html5 如 history、geolocation、canvas、svg 等新特性"
+    ],
+    "detail_css": [
+      "掌握CSS预编译器 Sass、Less",
+      "熟练运用 css 及 css3 新属性",
+      "解决各浏览器兼容问题，极致优化网页响应"
+    ],
+    "detail_js": [
+      "精通 Jquery、Vue等前端热门 JS 框架",
+      "掌握ECMAScript、AMD、CMD等 JS 新标准",
+      "熟练运用Ajax、Axios前后端通信、Pjax局部刷新等",
+      "熟练gulp、webpack等前端热门自动化构建工具",
+      "精通主流样式框架 Bootstrap、ElementUI、Highcharts、LayerUI、Vux等"
+    ],
+    "detail_more": [
+      "掌握数据库语言 Mysql，熟练运用联合查询",
+      "掌握服务器端语言 Java、Python、PHP 等",
+      "熟悉网站从环境、建站，到维护全方面过程",
+      "熟悉 Linux 开发环境，Git 版本版本库"
+    ],
+    "fsize_": [
+      "大四下学期于旋极信息技术有限公司实习",
+      "毕业后就职于中国 Marvell 上海分公司，负责开发测试部门的各种网站需求",
+      "目前就职于上海都睿网络科技有限公司前端工程师",
+      "负责 SAAS 后台管理系统以及移动端微信H5网站的开发维护、引进前端新技术、高效完成各阶段迭代版本的开发工作",
+      "目前空余时间在学习前端多端跨平台等相关知识"
+    ]
   },
-  "demo3":
-  {
+  "demo3": {
     "subtitle": "作品展集",
     "subt": "Gallery",
     "project": [
-    {
-      "pos": ["sass系统，以 spring MVC 为框架 Java 为后台，眼镜销售的新零售后台管理系统。"]
-    },
-    {
-      "pospa": ["webpack + vue2 + vue-router + cooking + eleUI示例网站。"]
-    },
-    {
-      "log_android": ["Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。"]
-    },
-    {
-      "monitor": ["Bootstrap 为框架，用于管控 Automation Case 的网站"]
-    },
-    {
-      "mi": []
-    },
-    {
-      "DuiTang": []
-    },
-    {
-      "ci": ["Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。"]
-    }]
+      {
+        "pos": [
+          "sass系统，以 spring MVC 为框架 Java 为后台，眼镜销售的新零售后台管理系统。"
+        ]
+      },
+      {
+        "pospa": ["webpack + vue2 + vue-router + cooking + eleUI示例网站。"]
+      },
+      {
+        "sortjs": [""]
+      },
+      {
+        "log_android": [
+          "Highcharts 为框架， ajax 通过 php 后台查询 Google 的 CTS 测试结果。"
+        ]
+      },
+      {
+        "mi": []
+      },
+      {
+        "DuiTang": []
+      },
+      {
+        "ci": [
+          "Bootstrap Table 为框架，Client 端通过 mysql 查询 Jenkins 上的 CI 测试结果。"
+        ]
+      }
+    ]
   },
-  "demo4":
-  {
+  "demo4": {
     "subtitle": "职业生涯",
     "subt": "Timeline",
     "experience": [
-    {
-      "picture": "work",
-      "2016.12 - now": ["上海都睿网络科技有限公司前端负责人，负责公司两条产品线开发及维护", ["1. 根据产品经理的需求，给出适合的解决应对方案", "2. 跟踪并协同开发后台管理系统以及微信H5网站"]]
-    },
-    {
-      "picture": "work",
-      "2015.07 - 2016.12": ["就职于美满科技有限公司，测试部门网站开发", ["1. 建设符合部门需求的网站页面", "2. python编写白盒测试脚本"]]
-    },
-    {
-      "picture": "study",
-      "2014.07 - 2014.11": ["山西思软科技有限公司，培训嵌入式开发", ["课程:", "c、c++、qt 编程、linux 高级编程、arm 体系结构、系统构建、linux 设备驱动等"]]
-    },
-    {
-      "picture": "study",
-      "2011.09 - 2015.06": ["中北大学信息商务学院，通信工程专业", ["主修:", "微机原理、数字电路、模拟电路、数据结构、电路分析、信号与系统、通信原理等"]]
-    }]
+      {
+        "picture": "work",
+        "2016.12 - now": [
+          "上海都睿网络科技有限公司前端负责人，负责公司两条产品线开发及维护",
+          [
+            "1. 根据产品经理的需求，给出适合的解决应对方案",
+            "2. 跟踪并协同开发后台管理系统以及微信H5网站"
+          ]
+        ]
+      },
+      {
+        "picture": "work",
+        "2015.07 - 2016.12": [
+          "就职于美满科技有限公司，测试部门网站开发",
+          ["1. 建设符合部门需求的网站页面", "2. python编写白盒测试脚本"]
+        ]
+      },
+      {
+        "picture": "study",
+        "2014.07 - 2014.11": [
+          "山西思软科技有限公司，培训嵌入式开发",
+          [
+            "课程:",
+            "c、c++、qt 编程、linux 高级编程、arm 体系结构、系统构建、linux 设备驱动等"
+          ]
+        ]
+      },
+      {
+        "picture": "study",
+        "2011.09 - 2015.06": [
+          "中北大学信息商务学院，通信工程专业",
+          [
+            "主修:",
+            "微机原理、数字电路、模拟电路、数据结构、电路分析、信号与系统、通信原理等"
+          ]
+        ]
+      }
+    ]
   }
 }
