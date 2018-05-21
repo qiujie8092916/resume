@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: "js/[name].[hash:8].js",
     path: path.resolve(__dirname, "./dist/webpack"),
-    publicPath: "/project_dao/resume"
+    publicPath: "/resume"
   },
   plugins: [
     new webpack.DefinePlugin({
