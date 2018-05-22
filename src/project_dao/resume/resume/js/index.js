@@ -20,6 +20,7 @@ const imgs = {
     log_android: require("../imgs/log_android.png"),
     monitor: require("../imgs/monitor.png"),
     mi: require("../imgs/mi.png"),
+    sortjs: require("../imgs/sortjs.png"),
     DuiTang: require("../imgs/DuiTang.png")
   },
   misc: {
